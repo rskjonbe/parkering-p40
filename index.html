@@ -68,6 +68,12 @@
         hentes fra Statens vegvesens API for tekniske kjøretøyopplysninger
         for å gjøre det enklere å kontrollere at riktig bil er valgt.
       </li>
+
+      <li>
+        <strong>Valgfritt kjøretøybilde</strong> – brukeren kan selv velge et
+        bilde av bilen for enklere visuell identifikasjon i appen. Bildet
+        behandles kun lokalt på brukerens enhet.
+      </li>
     </ul>
 
 
@@ -82,6 +88,7 @@
       <li>identifisere brukerens eksisterende parkeringskonto</li>
       <li>velge eller registrere riktig kjøretøy</li>
       <li>hente og vise tekniske kjøretøyopplysninger som merke, modell og farge</li>
+      <li>vise et valgfritt kjøretøybilde som brukeren selv har valgt</li>
       <li>kontrollere relevant parkeringstillatelse</li>
       <li>vise parkeringsstatus og eventuell gjenstående tid</li>
       <li>vise relevant informasjon gjennom Live Activities når funksjonen brukes</li>
@@ -123,11 +130,25 @@
       </li>
 
       <li>
+        <strong>Valgfritt kjøretøybilde</strong> – dersom brukeren velger et
+        bilde av bilen, lagres en komprimert kopi lokalt på enheten og knyttes
+        til registreringsnummeret. Bildet sendes ikke til utvikleren,
+        SmartPark, Cloudflare, Statens vegvesen eller andre
+        tredjepartstjenester.
+      </li>
+
+      <li>
         <strong>Teknisk sesjonsinformasjon</strong> – begrenset teknisk
         informasjon kan lagres midlertidig for å håndtere en pågående eller
         uavklart parkeringsregistrering.
       </li>
     </ul>
+
+    <p>
+      Valg av kjøretøybilde skjer gjennom Apples systembaserte bildevelger.
+      Appen får bare tilgang til bildet brukeren selv velger for denne
+      funksjonen.
+    </p>
 
     <p>
       Telefonnummeret brukes ved autentisering mot parkeringstjenesten og er
@@ -189,7 +210,11 @@
     <ul>
       <li>GPS-posisjon</li>
       <li>kontaktliste</li>
-      <li>bilder eller videoer</li>
+      <li>
+        bilder eller videoer til utviklerens servere eller
+        tredjepartstjenester; et valgfritt kjøretøybilde lagres kun lokalt
+        på brukerens enhet
+      </li>
       <li>lydopptak</li>
       <li>helse- eller treningsopplysninger</li>
       <li>betalingskort eller bankopplysninger</li>
@@ -248,6 +273,13 @@
     <p>
       Lokalt lagrede opplysninger kan fjernes ved å logge ut, slette relevante
       data i appen der funksjonaliteten finnes, eller avinstallere appen.
+    </p>
+
+    <p>
+      Et lagret kjøretøybilde kan fjernes direkte i appen med funksjonen
+      «Fjern bilbilde». Bildet slettes også når det aktuelle kjøretøyet
+      fjernes fra appen. Avinstallering av appen fjerner data som ligger i
+      appens lokale lagringsområde.
     </p>
 
     <p>
