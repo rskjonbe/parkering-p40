@@ -6,295 +6,292 @@
 
   <title>Personvernerklæring – Parkeringsassistent P40</title>
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      background: #f7f7f7;
-      color: #222;
-    }
-
-    main {
-      max-width: 820px;
-      margin: 40px auto;
-      padding: 32px;
-      background: white;
-      border-radius: 12px;
-    }
-
-    h1 {
-      margin-top: 0;
-    }
-
-    h2 {
-      margin-top: 32px;
-    }
-
-    .updated {
-      color: #666;
-    }
-
-    .notice {
-      background: #f2f2f2;
-      padding: 16px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    a {
-      color: #0066cc;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #666;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <main>
+  <div class="card">
 
-  <h1>Personvernerklæring – Parkeringsassistent P40</h1>
+    <h1>Personvernerklæring – Parkeringsassistent P40</h1>
 
-  <p class="updated">
-    <strong>Sist oppdatert: 26. september 2026</strong>
-  </p>
+    <p class="updated">
+      <strong>Sist oppdatert: 27. september 2026</strong>
+    </p>
 
-  <div class="notice">
-    <strong>Uavhengig app:</strong>
-    Parkeringsassistent P40 er et uavhengig hjelpeverktøy og er ikke utviklet,
-    godkjent, støttet eller drevet av SmartPark, Trondheim Parkering,
-    Trondheim kommune eller parkeringsoperatøren.
+    <div class="notice">
+      <strong>Uavhengig app:</strong>
+      Parkeringsassistent P40 er et uavhengig hjelpeverktøy og er ikke utviklet,
+      godkjent, støttet eller drevet av SmartPark, Trondheim Parkering,
+      Trondheim kommune eller parkeringsoperatøren.
+    </div>
+
+    <h2>1. Om appen</h2>
+
+    <p>
+      Parkeringsassistent P40 er et hjelpeverktøy for brukere som allerede har
+      tilgang til den aktuelle P40-parkeringsordningen.
+    </p>
+
+    <p>
+      Appen hjelper brukeren med å benytte sin eksisterende parkeringskonto,
+      velge kjøretøy, vise kjøretøyinformasjon og vise relevant parkeringsstatus.
+    </p>
+
+
+    <h2>2. Personopplysninger og andre opplysninger som behandles</h2>
+
+    <p>
+      For å kunne levere funksjonaliteten kan appen behandle følgende opplysninger:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Telefonnummer</strong> – brukes i forbindelse med autentisering
+        mot den underliggende parkeringstjenesten.
+      </li>
+
+      <li>
+        <strong>Bruker- eller kontoidentifikasjon</strong> – brukes for å
+        identifisere og autentisere brukerens eksisterende parkeringskonto.
+      </li>
+
+      <li>
+        <strong>Registreringsnummer på kjøretøy</strong> – brukes for å
+        identifisere hvilket kjøretøy en parkeringstillatelse gjelder for,
+        og kan brukes til å hente tekniske kjøretøyopplysninger.
+      </li>
+
+      <li>
+        <strong>Kjøretøyopplysninger</strong> – merke, modell og farge kan
+        hentes fra Statens vegvesens API for tekniske kjøretøyopplysninger
+        for å gjøre det enklere å kontrollere at riktig bil er valgt.
+      </li>
+    </ul>
+
+
+    <h2>3. Formålet med behandlingen</h2>
+
+    <p>
+      Opplysningene brukes kun for å levere appens funksjonalitet, blant annet for å:
+    </p>
+
+    <ul>
+      <li>autentisere brukeren mot parkeringstjenesten</li>
+      <li>identifisere brukerens eksisterende parkeringskonto</li>
+      <li>velge eller registrere riktig kjøretøy</li>
+      <li>hente og vise tekniske kjøretøyopplysninger som merke, modell og farge</li>
+      <li>kontrollere relevant parkeringstillatelse</li>
+      <li>vise parkeringsstatus og eventuell gjenstående tid</li>
+      <li>vise relevant informasjon gjennom Live Activities når funksjonen brukes</li>
+    </ul>
+
+    <p>
+      Opplysningene brukes ikke til annonsering, markedsføring eller sporing
+      av brukeren på tvers av apper eller nettsteder.
+    </p>
+
+
+    <h2>4. Hva lagres lokalt på enheten?</h2>
+
+    <p>
+      Parkeringsassistent P40 har ingen egen serverdatabase for brukernes
+      personopplysninger.
+    </p>
+
+    <p>
+      I dagens versjon kan følgende informasjon lagres lokalt på brukerens iPhone:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Autentiseringstoken</strong> – lagres sikkert ved hjelp av
+        Apple Keychain slik at brukeren kan forbli innlogget.
+      </li>
+
+      <li>
+        <strong>Registreringsnummer</strong> – registreringsnumre som brukeren
+        legger inn eller velger kan lagres lokalt på enheten for å gjøre appen
+        enklere å bruke.
+      </li>
+
+      <li>
+        <strong>Kjøretøyopplysninger</strong> – merke, modell og farge som er
+        hentet for et registreringsnummer kan lagres lokalt på enheten for å
+        redusere unødvendige nye oppslag.
+      </li>
+
+      <li>
+        <strong>Teknisk sesjonsinformasjon</strong> – begrenset teknisk
+        informasjon kan lagres midlertidig for å håndtere en pågående eller
+        uavklart parkeringsregistrering.
+      </li>
+    </ul>
+
+    <p>
+      Telefonnummeret brukes ved autentisering mot parkeringstjenesten og er
+      ikke ment lagret permanent av Parkeringsassistent P40.
+    </p>
+
+    <p>
+      Parkeringsstatus og gyldighet hentes fra den underliggende
+      parkeringstjenesten. Appen oppretter ikke en egen historikkdatabase over
+      brukerens parkeringer.
+    </p>
+
+
+    <h2>5. Tredjepartstjenester</h2>
+
+    <p>
+      Parkeringsassistent P40 kommuniserer med den underliggende
+      parkeringstjenesten for å utføre funksjoner som brukeren ber om.
+    </p>
+
+    <p>
+      Opplysninger som sendes til denne tjenesten kan behandles og lagres av
+      tjenesteleverandøren i henhold til deres egne vilkår og
+      personvernerklæring.
+    </p>
+
+    <p>
+      For kjøretøyoppslag sendes registreringsnummeret via en Cloudflare Worker
+      som teknisk mellomledd til Statens vegvesens API for tekniske
+      kjøretøyopplysninger. Appen bruker svaret til å vise merke, modell og farge.
+    </p>
+
+    <p>
+      API-et som brukes for kjøretøyoppslaget gir tekniske kjøretøyopplysninger
+      og ikke eierinformasjon. Parkeringsassistent P40 etterspør derfor ikke
+      navn, adresse eller andre eieropplysninger fra dette API-et.
+    </p>
+
+    <p>
+      Vedvarende Workers Logs i utviklerens Cloudflare-dashboard er deaktivert
+      for denne Workeren. Cloudflare og Statens vegvesen kan likevel behandle
+      nødvendige tekniske opplysninger som del av leveringen, sikkerheten og
+      driften av sine tjenester i henhold til sine egne vilkår og
+      personvernregler.
+    </p>
+
+    <p>
+      Parkeringsassistent P40 kontrollerer ikke hvordan tredjepartene behandler
+      opplysninger etter at de er mottatt av tredjepartenes systemer.
+    </p>
+
+
+    <h2>6. Data appen ikke samler inn</h2>
+
+    <p>
+      Parkeringsassistent P40 samler ikke inn følgende for egne formål:
+    </p>
+
+    <ul>
+      <li>GPS-posisjon</li>
+      <li>kontaktliste</li>
+      <li>bilder eller videoer</li>
+      <li>lydopptak</li>
+      <li>helse- eller treningsopplysninger</li>
+      <li>betalingskort eller bankopplysninger</li>
+      <li>annonseringsidentifikatorer</li>
+      <li>data til målrettet annonsering</li>
+      <li>eieropplysninger fra kjøretøyregisteret</li>
+    </ul>
+
+    <p>
+      Appen inneholder ikke annonser og bruker ikke personopplysninger til tracking.
+    </p>
+
+
+    <h2>7. Sikkerhet</h2>
+
+    <p>
+      Informasjon som må lagres lokalt behandles ved hjelp av tilgjengelige
+      sikkerhetsmekanismer i iOS.
+    </p>
+
+    <p>
+      Autentiseringsinformasjon som skal beskyttes lagres i Apple Keychain.
+      Kommunikasjon med eksterne tjenester skjer gjennom krypterte
+      HTTPS-forbindelser.
+    </p>
+
+    <p>
+      API-nøkkelen som brukes mot Statens vegvesen ligger ikke i appen på
+      brukerens enhet. Kjøretøyoppslag sendes via en mellomtjeneste slik at
+      API-nøkkelen ikke distribueres med appen.
+    </p>
+
+
+    <h2>8. Brukerens ansvar</h2>
+
+    <p>
+      Parkeringsassistent P40 er et hjelpeverktøy. Brukeren er selv ansvarlig
+      for å kontrollere at korrekt kjøretøy, parkeringsområde og eventuell
+      parkeringstillatelse er registrert.
+    </p>
+
+    <p>
+      Informasjon som vises i appen skal ikke forstås som en garanti for at
+      parkeringen er gyldig dersom den underliggende parkeringstjenesten ikke
+      har bekreftet registreringen.
+    </p>
+
+
+    <h2>9. Innsyn og sletting</h2>
+
+    <p>
+      Brukeren kan kontakte utvikleren dersom det er spørsmål om hvordan
+      Parkeringsassistent P40 behandler personopplysninger.
+    </p>
+
+    <p>
+      Lokalt lagrede opplysninger kan fjernes ved å logge ut, slette relevante
+      data i appen der funksjonaliteten finnes, eller avinstallere appen.
+    </p>
+
+    <p>
+      Opplysninger som allerede er lagret hos SmartPark, parkeringsoperatøren
+      eller andre tredjepartstjenester må slettes eller administreres gjennom
+      den aktuelle tjenestens egne personvernrutiner.
+    </p>
+
+
+    <h2>10. Endringer i personvernerklæringen</h2>
+
+    <p>
+      Personvernerklæringen kan bli oppdatert dersom appens funksjonalitet eller
+      behandling av personopplysninger endres.
+    </p>
+
+    <p>
+      Dersom appen senere begynner å behandle nye typer personopplysninger,
+      vil personvernerklæringen og relevante opplysninger i App Store bli
+      oppdatert.
+    </p>
+
+
+    <h2>11. Kontakt</h2>
+
+    <p>
+      <strong>Utvikler:</strong> Roar Skjønberg<br>
+      <strong>App:</strong> Parkeringsassistent P40<br>
+      <strong>E-post:</strong>
+      <a href="mailto:rskjonbe@gmail.com">rskjonbe@gmail.com</a>
+    </p>
+
+
+    <nav>
+      <a href="./">Personvern</a>
+      <a href="vilkar.html">Bruksvilkår</a>
+      <a href="support.html">Support</a>
+    </nav>
+
+    <footer>
+      Parkeringsassistent P40 – Personvernerklæring
+    </footer>
+
   </div>
-
-
-  <h2>1. Om appen</h2>
-
-  <p>
-    Parkeringsassistent P40 er et hjelpeverktøy for brukere som allerede har
-    tilgang til den aktuelle P40-parkeringsordningen.
-  </p>
-
-  <p>
-    Appen hjelper brukeren med å benytte sin eksisterende parkeringskonto,
-    velge kjøretøy og vise relevant parkeringsstatus.
-  </p>
-
-
-  <h2>2. Personopplysninger som behandles</h2>
-
-  <p>
-    For å kunne levere funksjonaliteten kan appen behandle følgende
-    opplysninger:
-  </p>
-
-  <ul>
-    <li>
-      <strong>Telefonnummer</strong> – brukes i forbindelse med autentisering
-      mot den underliggende parkeringstjenesten.
-    </li>
-
-    <li>
-      <strong>Bruker- eller kontoidentifikasjon</strong> – brukes for å
-      identifisere og autentisere brukerens eksisterende parkeringskonto.
-    </li>
-
-    <li>
-      <strong>Registreringsnummer på kjøretøy</strong> – brukes for å
-      identifisere hvilket kjøretøy en parkeringstillatelse gjelder for.
-    </li>
-  </ul>
-
-
-  <h2>3. Formålet med behandlingen</h2>
-
-  <p>
-    Opplysningene brukes kun for å levere appens funksjonalitet, blant annet
-    for å:
-  </p>
-
-  <ul>
-    <li>autentisere brukeren mot parkeringstjenesten</li>
-    <li>identifisere brukerens eksisterende parkeringskonto</li>
-    <li>velge eller registrere riktig kjøretøy</li>
-    <li>kontrollere relevant parkeringstillatelse</li>
-    <li>vise parkeringsstatus og eventuell gjenstående tid</li>
-    <li>vise relevant informasjon gjennom Live Activities når funksjonen brukes</li>
-  </ul>
-
-  <p>
-    Opplysningene brukes ikke til annonsering, markedsføring eller sporing
-    av brukeren på tvers av apper eller nettsteder.
-  </p>
-
-
-  <h2>4. Hva lagres lokalt på enheten?</h2>
-
-  <p>
-    Parkeringsassistent P40 har ingen egen serverdatabase for brukernes
-    personopplysninger.
-  </p>
-
-  <p>
-    I dagens versjon kan følgende informasjon lagres lokalt på brukerens
-    iPhone:
-  </p>
-
-  <ul>
-    <li>
-      <strong>Autentiseringstoken</strong> – lagres sikkert ved hjelp av
-      Apple Keychain slik at brukeren kan forbli innlogget.
-    </li>
-
-    <li>
-      <strong>Registreringsnummer</strong> – registreringsnumre som brukeren
-      legger inn eller velger kan lagres lokalt på enheten for å gjøre appen
-      enklere å bruke.
-    </li>
-
-    <li>
-      <strong>Teknisk sesjonsinformasjon</strong> – begrenset teknisk
-      informasjon kan lagres midlertidig for å håndtere en pågående eller
-      uavklart parkeringsregistrering.
-    </li>
-  </ul>
-
-  <p>
-    Telefonnummeret brukes ved autentisering mot parkeringstjenesten og er
-    ikke ment lagret permanent av Parkeringsassistent P40.
-  </p>
-
-  <p>
-    Parkeringsstatus og gyldighet hentes fra den underliggende
-    parkeringstjenesten. Appen oppretter ikke en egen historikkdatabase over
-    brukerens parkeringer.
-  </p>
-
-
-  <h2>5. Tredjepartstjenester</h2>
-
-  <p>
-    Parkeringsassistent P40 kommuniserer med den underliggende
-    parkeringstjenesten for å utføre funksjoner som brukeren ber om.
-  </p>
-
-  <p>
-    Opplysninger som sendes til denne tjenesten kan behandles og lagres av
-    tjenesteleverandøren i henhold til deres egne vilkår og
-    personvernerklæring.
-  </p>
-
-  <p>
-    Parkeringsassistent P40 kontrollerer ikke hvordan tredjeparten behandler
-    opplysninger etter at de er mottatt av tredjepartens systemer.
-  </p>
-
-
-  <h2>6. Data appen ikke samler inn</h2>
-
-  <p>
-    Parkeringsassistent P40 samler ikke inn følgende for egne formål:
-  </p>
-
-  <ul>
-    <li>GPS-posisjon</li>
-    <li>kontaktliste</li>
-    <li>bilder eller videoer</li>
-    <li>lydopptak</li>
-    <li>helse- eller treningsopplysninger</li>
-    <li>betalingskort eller bankopplysninger</li>
-    <li>annonseringsidentifikatorer</li>
-    <li>data til målrettet annonsering</li>
-  </ul>
-
-  <p>
-    Appen inneholder ikke annonser og bruker ikke personopplysninger til
-    tracking.
-  </p>
-
-
-  <h2>7. Sikkerhet</h2>
-
-  <p>
-    Informasjon som må lagres lokalt behandles ved hjelp av tilgjengelige
-    sikkerhetsmekanismer i iOS.
-  </p>
-
-  <p>
-    Autentiseringsinformasjon som skal beskyttes lagres i Apple Keychain.
-    Kommunikasjon med eksterne tjenester skjer gjennom nettverkstilkoblinger
-    som støttes av iOS.
-  </p>
-
-
-  <h2>8. Brukerens ansvar</h2>
-
-  <p>
-    Parkeringsassistent P40 er et hjelpeverktøy. Brukeren er selv ansvarlig
-    for å kontrollere at korrekt kjøretøy, parkeringsområde og eventuell
-    parkeringstillatelse er registrert.
-  </p>
-
-  <p>
-    Informasjon som vises i appen skal ikke forstås som en garanti for at
-    parkeringen er gyldig dersom den underliggende parkeringstjenesten ikke
-    har bekreftet registreringen.
-  </p>
-
-
-  <h2>9. Innsyn og sletting</h2>
-
-  <p>
-    Brukeren kan kontakte utvikleren dersom det er spørsmål om hvordan
-    Parkeringsassistent P40 behandler personopplysninger.
-  </p>
-
-  <p>
-    Lokalt lagrede opplysninger kan fjernes ved å logge ut, slette relevante
-    data i appen der funksjonaliteten finnes, eller avinstallere appen.
-  </p>
-
-  <p>
-    Opplysninger som allerede er lagret hos SmartPark, parkeringsoperatøren
-    eller andre tredjepartstjenester må slettes eller administreres gjennom
-    den aktuelle tjenestens egne personvernrutiner.
-  </p>
-
-
-  <h2>10. Endringer i personvernerklæringen</h2>
-
-  <p>
-    Personvernerklæringen kan bli oppdatert dersom appens funksjonalitet eller
-    behandling av personopplysninger endres.
-  </p>
-
-  <p>
-    Dersom appen senere begynner å behandle nye typer personopplysninger,
-    vil personvernerklæringen og relevante opplysninger i App Store bli
-    oppdatert.
-  </p>
-
-
-  <h2>11. Kontakt</h2>
-
-  <p>
-    <strong>Utvikler:</strong> Roar Skjønberg<br>
-    <strong>App:</strong> Parkeringsassistent P40<br>
-    <strong>E-post:</strong>
-    <a href="mailto:rskjonbe@gmail.com">rskjonbe@gmail.com</a>
-  </p>
-
-
-  <footer>
-    Parkeringsassistent P40 – Personvernerklæring
-  </footer>
-
 </main>
 
 </body>
