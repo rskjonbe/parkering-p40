@@ -89,6 +89,8 @@
       required status information through Apple's WatchConnectivity framework.
       This may include P40 state, registration number, vehicle description,
       expiry time, last verification time and the selected app language.
+      When an additional translated language is used, the local UI translation
+      cache may also be synchronized to the Watch.
     </p>
     <p>
       SmartPark token, phone number, SMS code and other sign-in credentials are
@@ -96,7 +98,25 @@
       on the iPhone.
     </p>
 
-    <h2>5. Third-party services</h2>
+    <h2>5. Language and local translation</h2>
+    <p>
+      Norwegian and English are built-in, reviewed app languages. On devices
+      where Apple Intelligence is available and enabled, the app may offer
+      additional interface languages using Apple's Translation framework.
+      Translated UI text may be cached locally on the device.
+    </p>
+    <p>
+      If a required translation language is not ready, iOS may ask the user to
+      download the relevant language model. Parkeringsassistent P40 does not
+      send these interface strings to the developer's own translation server.
+      English is used as the fallback when a translated string is unavailable.
+    </p>
+    <p>
+      Privacy, terms and support are maintained only in Norwegian and English.
+      Additional app languages open the English versions of these pages.
+    </p>
+
+    <h2>6. Third-party services</h2>
     <p>
       Parkeringsassistent P40 communicates with the underlying parking service
       to perform functions requested by the user. Information sent to that
@@ -121,7 +141,7 @@
       services under their own terms and privacy policies.
     </p>
 
-    <h2>6. Data the app does not collect for its own purposes</h2>
+    <h2>7. Data the app does not collect for its own purposes</h2>
     <ul>
       <li>GPS location</li>
       <li>contacts</li>
@@ -135,7 +155,7 @@
     </ul>
     <p>The app contains no advertising and does not use personal data for tracking.</p>
 
-    <h2>7. Security</h2>
+    <h2>8. Security</h2>
     <p>
       Information that must be stored locally is handled using available iOS
       security mechanisms. Protected authentication information is stored in
@@ -148,7 +168,7 @@
       API key is not distributed with the app.
     </p>
 
-    <h2>8. User responsibility</h2>
+    <h2>9. User responsibility</h2>
     <p>
       Parkeringsassistent P40 is a utility. The user remains responsible for
       checking that the correct vehicle, parking area and any required permit
@@ -159,7 +179,7 @@
       the underlying parking service has not confirmed the registration.
     </p>
 
-    <h2>9. Access and deletion</h2>
+    <h2>10. Access and deletion</h2>
     <p>
       The user may contact the developer with questions about how
       Parkeringsassistent P40 processes personal data.
@@ -178,7 +198,7 @@
       procedures.
     </p>
 
-    <h2>10. Changes to this privacy policy</h2>
+    <h2>11. Changes to this privacy policy</h2>
     <p>
       This privacy policy may be updated if app functionality or the processing
       of personal data changes. If the app later processes new categories of
@@ -186,7 +206,7 @@
       updated.
     </p>
 
-    <h2>11. Contact</h2>
+    <h2>12. Contact</h2>
     <p>
       <strong>Developer:</strong> Roar Skjønberg<br>
       <strong>App:</strong> Parkeringsassistent P40<br>
