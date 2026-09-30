@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use – Parkeringsassistent P40</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>Terms of Use</h1>
+    <p class="intro">Parkeringsassistent P40</p>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      Parkeringsassistent P40 is an independent app and is not developed,
+      approved, supported or operated by SmartPark, Trondheim Parking,
+      Trondheim Municipality or the parking operator.
+    </div>
+
+    <h2>1. About the app</h2>
+    <p>
+      Parkeringsassistent P40 is designed to make it easier to check and request
+      parking for P40. The app communicates with the underlying parking service
+      to check parking status and perform actions requested by the user.
+    </p>
+    <p>
+      The app may also retrieve technical vehicle information to make it easier
+      to verify that the correct vehicle is selected.
+    </p>
+
+    <h2>2. User responsibility</h2>
+    <p>The user is responsible for checking that the information used for parking is correct, including:</p>
+    <ul>
+      <li>that the correct vehicle and registration number are selected</li>
+      <li>that the correct parking area is used</li>
+      <li>that parking is actually registered and active</li>
+      <li>that parking remains valid while the vehicle is parked</li>
+    </ul>
+    <p>Parkeringsassistent P40 is an aid and does not replace the user's responsibility for correct parking.</p>
+
+    <h2>3. Parking status</h2>
+    <p>
+      Parking status shown in the app is based on information received from the
+      underlying parking service and may be delayed, incomplete or temporarily
+      unavailable.
+    </p>
+    <p>
+      If Parkeringsassistent P40 and SmartPark show different status,
+      SmartPark's status must be treated as authoritative. If in doubt, check
+      parking directly in SmartPark.
+    </p>
+
+    <h2>4. Third-party services and vehicle information</h2>
+    <p>
+      Parkeringsassistent P40 depends on external services. These services may
+      change, be temporarily unavailable or return unexpected data.
+    </p>
+    <p>
+      To display vehicle information, a registration number may be sent through
+      a Cloudflare Worker to the Norwegian Public Roads Administration API for
+      technical vehicle information. The app may display make, model and colour.
+    </p>
+    <p>
+      The API provides technical vehicle information rather than owner
+      information. Parkeringsassistent P40 does not request names, addresses or
+      other owner details through this feature.
+    </p>
+    <p>
+      Vehicle information and an optional locally stored vehicle photo are
+      practical aids only. The registration number and actual parking
+      registration determine which vehicle the parking applies to.
+    </p>
+
+    <h2>5. Parking requests</h2>
+    <p>
+      The app attempts to check existing parking status before requesting new
+      P40 parking. The request is stopped if price, required fields or the
+      parking-service response differ from what the app expects for the P40
+      flow.
+    </p>
+    <p>
+      An action in Parkeringsassistent P40 is not by itself confirmation that
+      parking has been registered. The user must verify the actual registration
+      in SmartPark. Parkeringsassistent P40 does not handle payment directly.
+    </p>
+
+    <h2>6. Live Activity, Dynamic Island, Lock Screen and Apple Watch</h2>
+    <p>
+      The app may display active parking information on the Lock Screen,
+      Dynamic Island, Apple Watch Smart Stack and a supported watch-face
+      complication. This may include registration number, vehicle information,
+      start time, end time, remaining time and the time of the last verified
+      status.
+    </p>
+    <p>
+      This is a convenient status display and must not be used as the only
+      confirmation that parking remains active.
+    </p>
+    <p>
+      “Last verified” shows when Parkeringsassistent P40 last received a
+      successful status confirmation. It is not a guarantee that parking is
+      still valid or unchanged at a later time.
+    </p>
+    <p>
+      If the Live Activity or complication indicates that status should be
+      checked, the information may be stale. This warning does not itself mean
+      that parking has ended or become invalid.
+    </p>
+    <p>
+      <strong>Apple Watch actions:</strong> The companion app may ask the paired
+      iPhone to activate P40 or check status. SmartPark checks and any parking
+      request are still performed on the iPhone.
+    </p>
+    <p>
+      An activation request is deliberately not queued for later if the iPhone
+      cannot be reached. An Apple Watch action is not confirmation that parking
+      has been registered.
+    </p>
+
+    <h2>7. Availability and errors</h2>
+    <p>No guarantee is given that the app will always be available, error-free or current.</p>
+    <p>Functionality may be affected by:</p>
+    <ul>
+      <li>missing or unstable internet access</li>
+      <li>changes or downtime in third-party services</li>
+      <li>changes to SmartPark or the parking operator's systems</li>
+      <li>changes to services from the Norwegian Public Roads Administration</li>
+      <li>changes to Cloudflare services</li>
+      <li>changes to iOS, watchOS or other Apple services</li>
+      <li>incorrect or missing user data</li>
+      <li>technical errors in the app or external services</li>
+    </ul>
+
+    <h2>8. Limitation of liability</h2>
+    <p>Use of Parkeringsassistent P40 is at the user's own risk.</p>
+    <p>
+      The developer cannot guarantee that use of the app prevents parking
+      charges, penalties, control fees or other costs, or that parking status,
+      vehicle information, start time, end time or remaining time is always
+      correct or current.
+    </p>
+    <p>
+      The developer is not responsible for loss or costs caused by incorrect
+      information, lack of network access, technical errors, third-party
+      failures or changes to services on which the app depends.
+    </p>
+
+    <h2>9. Privacy</h2>
+    <p>Processing of personal and vehicle information is described in the app's privacy policy.</p>
+    <p><a href="./">Read the privacy policy</a></p>
+
+    <h2>10. Changes to these terms</h2>
+    <p>
+      These terms may be updated if the app's functionality, technical solution
+      or third-party services change. The current version will remain available
+      on this page.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      <strong>Developer:</strong> Roar Skjønberg<br>
+      <strong>App:</strong> Parkeringsassistent P40<br>
+      <strong>Email:</strong> <a href="mailto:rskjonbe@gmail.com">rskjonbe@gmail.com</a>
+    </p>
+
+    <nav>
+      <a href="./">Privacy</a>
+      <a href="vilkar.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="../vilkar.html">Norsk</a>
+    </nav>
+    <footer>Last updated: 30 September 2026</footer>
+  </div>
+</main>
+</body>
+</html>
