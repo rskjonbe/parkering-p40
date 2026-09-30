@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Parkeringsassistent P40</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>Privacy Policy – Parkeringsassistent P40</h1>
+
+    <p class="updated"><strong>Last updated: 30 September 2026</strong></p>
+
+    <div class="notice">
+      <strong>Independent app:</strong>
+      Parkeringsassistent P40 is an independent utility and is not developed,
+      approved, supported or operated by SmartPark, Trondheim Parking,
+      Trondheim Municipality or the parking operator.
+    </div>
+
+    <h2>1. About the app</h2>
+    <p>
+      Parkeringsassistent P40 is a utility for people who already have access
+      to the relevant P40 parking scheme. It helps the user access their
+      existing parking account, select a vehicle, display vehicle information
+      and view relevant parking status.
+    </p>
+
+    <h2>2. Personal data and other information processed</h2>
+    <p>The app may process the following information in order to provide its functionality:</p>
+    <ul>
+      <li><strong>Phone number</strong> – used for authentication with the underlying parking service.</li>
+      <li><strong>User or account identification</strong> – used to identify and authenticate the user's existing parking account.</li>
+      <li><strong>Vehicle registration number</strong> – used to identify the vehicle a parking permit applies to and may be used to retrieve technical vehicle information.</li>
+      <li><strong>Vehicle information</strong> – make, model and colour may be retrieved from the Norwegian Public Roads Administration API for technical vehicle information.</li>
+      <li><strong>Optional vehicle photo</strong> – a photo selected by the user for easier visual identification. The photo is processed locally on the user's device.</li>
+    </ul>
+
+    <h2>3. Purpose of processing</h2>
+    <p>The information is used only to provide app functionality, including to:</p>
+    <ul>
+      <li>authenticate the user with the parking service</li>
+      <li>identify the user's existing parking account</li>
+      <li>select or register the correct vehicle</li>
+      <li>retrieve and display technical vehicle information</li>
+      <li>display an optional vehicle photo selected by the user</li>
+      <li>check the relevant parking permit</li>
+      <li>display parking status and remaining time</li>
+      <li>display relevant information through Live Activities, the Lock Screen, Dynamic Island and a compatible paired Apple Watch when supported by the operating system</li>
+    </ul>
+    <p>The information is not used for advertising, marketing or cross-app or cross-site tracking.</p>
+
+    <h2>4. What is stored locally?</h2>
+    <p>Parkeringsassistent P40 does not maintain its own server database of users' personal data.</p>
+    <p>The following information may be stored locally on the user's iPhone:</p>
+    <ul>
+      <li><strong>Authentication token</strong> – stored securely in Apple Keychain so the user can remain signed in.</li>
+      <li><strong>Registration numbers</strong> – vehicles added or selected by the user may be stored locally.</li>
+      <li><strong>Vehicle information</strong> – make, model and colour may be cached locally to reduce unnecessary lookups.</li>
+      <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
+      <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
+      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry and technical errors. These data are used for troubleshooting and stored locally.</li>
+      <li><strong>Language preference and optional translated UI cache</strong> – the selected app language is stored locally. On supported devices, additional translated UI text may also be cached locally.</li>
+    </ul>
+
+    <p>
+      Vehicle photos are selected using Apple's system photo picker, and the app
+      only receives access to the photo selected by the user.
+    </p>
+    <p>
+      The phone number is used during authentication with the parking service
+      and is not intended to be stored permanently by Parkeringsassistent P40.
+    </p>
+    <p>
+      Parking status and validity are retrieved from the underlying parking
+      service. The app does not create its own parking-history database.
+    </p>
+    <p>
+      Diagnostic data are not sent automatically to the developer. The user may
+      choose “Copy diagnostics” and share the text manually. The copied report
+      is designed not to include the SmartPark token or phone number.
+    </p>
+
+    <p>
+      <strong>Apple Watch companion app:</strong> If the user installs
+      Parkeringsassistent P40 on a paired Apple Watch, the iPhone may send
+      required status information through Apple's WatchConnectivity framework.
+      This may include P40 state, registration number, vehicle description,
+      expiry time, last verification time and the selected app language.
+    </p>
+    <p>
+      SmartPark token, phone number, SMS code and other sign-in credentials are
+      not sent to Apple Watch. SmartPark authentication and parking logic remain
+      on the iPhone.
+    </p>
+
+    <h2>5. Third-party services</h2>
+    <p>
+      Parkeringsassistent P40 communicates with the underlying parking service
+      to perform functions requested by the user. Information sent to that
+      service may be processed and stored by the service provider under its own
+      terms and privacy policy.
+    </p>
+    <p>
+      For vehicle lookups, the registration number is sent through a Cloudflare
+      Worker as a technical intermediary to the Norwegian Public Roads
+      Administration API. The app uses the response to display make, model and
+      colour.
+    </p>
+    <p>
+      This API provides technical vehicle information, not owner information.
+      Parkeringsassistent P40 does not request names, addresses or other owner
+      details from this API.
+    </p>
+    <p>
+      Persistent Workers Logs are disabled for the developer's Cloudflare
+      Worker. Cloudflare and the Norwegian Public Roads Administration may still
+      process technical information required to deliver and secure their
+      services under their own terms and privacy policies.
+    </p>
+
+    <h2>6. Data the app does not collect for its own purposes</h2>
+    <ul>
+      <li>GPS location</li>
+      <li>contacts</li>
+      <li>photos or videos sent to the developer's servers or third-party services; an optional vehicle photo is stored locally only</li>
+      <li>audio recordings</li>
+      <li>health or fitness data</li>
+      <li>payment-card or banking information</li>
+      <li>advertising identifiers</li>
+      <li>data for targeted advertising</li>
+      <li>vehicle-owner information</li>
+    </ul>
+    <p>The app contains no advertising and does not use personal data for tracking.</p>
+
+    <h2>7. Security</h2>
+    <p>
+      Information that must be stored locally is handled using available iOS
+      security mechanisms. Protected authentication information is stored in
+      Apple Keychain. Communication with external services uses encrypted HTTPS
+      connections.
+    </p>
+    <p>
+      The API key used for vehicle lookups is not stored in the app on the
+      user's device. Vehicle requests are routed through an intermediary so the
+      API key is not distributed with the app.
+    </p>
+
+    <h2>8. User responsibility</h2>
+    <p>
+      Parkeringsassistent P40 is a utility. The user remains responsible for
+      checking that the correct vehicle, parking area and any required permit
+      are actually registered.
+    </p>
+    <p>
+      Information shown in the app is not a guarantee that parking is valid if
+      the underlying parking service has not confirmed the registration.
+    </p>
+
+    <h2>9. Access and deletion</h2>
+    <p>
+      The user may contact the developer with questions about how
+      Parkeringsassistent P40 processes personal data.
+    </p>
+    <p>
+      Locally stored information can be removed by signing out, deleting
+      relevant data in the app where available, or uninstalling the app.
+    </p>
+    <p>
+      A saved vehicle photo can be removed directly using “Remove vehicle
+      photo” and is also deleted if the vehicle is removed from the app.
+    </p>
+    <p>
+      Information already stored by SmartPark, the parking operator or other
+      third-party services must be managed through those services' own privacy
+      procedures.
+    </p>
+
+    <h2>10. Changes to this privacy policy</h2>
+    <p>
+      This privacy policy may be updated if app functionality or the processing
+      of personal data changes. If the app later processes new categories of
+      personal data, this policy and relevant App Store information will be
+      updated.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      <strong>Developer:</strong> Roar Skjønberg<br>
+      <strong>App:</strong> Parkeringsassistent P40<br>
+      <strong>Email:</strong> <a href="mailto:rskjonbe@gmail.com">rskjonbe@gmail.com</a>
+    </p>
+
+    <nav>
+      <a href="./">Privacy</a>
+      <a href="vilkar.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="../">Norsk</a>
+    </nav>
+
+    <footer>Parkeringsassistent P40 – Privacy Policy</footer>
+  </div>
+</main>
+</body>
+</html>
