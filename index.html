@@ -150,9 +150,16 @@
       <li>
         <strong>Lokal diagnostikk</strong> – appen kan lagre tidspunkt og
         resultat for siste statuskontroll, siste vellykkede SmartPark-kall,
-        bakgrunnssjekk, session keep-alive, teknisk Apple Watch/
+        bakgrunnssjekk, session keep-alive, status-retry, teknisk Apple Watch/
         WatchConnectivity-status og siste tekniske feil. Denne informasjonen
         brukes til feilsøking og lagres lokalt på enheten.
+      </li>
+
+      <li>
+        <strong>Språkvalg og oversettelsescache</strong> – valgt appspråk
+        lagres lokalt. På støttede enheter kan oversatte grensesnitttekster
+        for tilleggsspråk også lagres lokalt for å unngå unødvendig ny
+        oversettelse.
       </li>
     </ul>
 
@@ -186,8 +193,9 @@
       Parkeringsassistent P40 på en paret Apple Watch, kan iPhone sende
       nødvendig statusinformasjon til klokken ved hjelp av Apples
       WatchConnectivity. Dette kan omfatte P40-status, registreringsnummer,
-      kjøretøybeskrivelse, registrert sluttid og tidspunkt for siste
-      verifisering.
+      kjøretøybeskrivelse, registrert sluttid, tidspunkt for siste
+      verifisering og valgt appspråk. Dersom et tilleggsspråk brukes, kan
+      den lokale oversettelsescachen også synkroniseres til klokken.
     </p>
 
     <p>
@@ -197,7 +205,31 @@
     </p>
 
 
-    <h2>5. Tredjepartstjenester</h2>
+    <h2>5. Språk og lokal oversettelse</h2>
+
+    <p>
+      Norsk og engelsk er innebygde og kvalitetssikrede språk i appen.
+      På enheter der Apple Intelligence er tilgjengelig og aktivert, kan appen
+      i tillegg tilby flere språk. Disse oversettes ved hjelp av Apples
+      Translation-rammeverk og lagres lokalt som en cache på enheten.
+    </p>
+
+    <p>
+      Dersom nødvendig språkmodell ikke er klar, kan iOS be brukeren om å
+      laste den ned. Parkeringsassistent P40 sender ikke disse
+      grensesnitttekstene til utviklerens egen server for oversettelse.
+      Dersom en oversettelse ikke er tilgjengelig, brukes engelsk som
+      fallback.
+    </p>
+
+    <p>
+      Personvern, bruksvilkår og support vedlikeholdes kun på norsk og
+      engelsk. Dersom brukeren velger et annet appspråk, åpnes den engelske
+      versjonen av disse sidene.
+    </p>
+
+
+    <h2>6. Tredjepartstjenester</h2>
 
     <p>
       Parkeringsassistent P40 kommuniserer med den underliggende
@@ -236,7 +268,7 @@
     </p>
 
 
-    <h2>6. Data appen ikke samler inn</h2>
+    <h2>7. Data appen ikke samler inn</h2>
 
     <p>
       Parkeringsassistent P40 samler ikke inn følgende for egne formål:
@@ -263,7 +295,7 @@
     </p>
 
 
-    <h2>7. Sikkerhet</h2>
+    <h2>8. Sikkerhet</h2>
 
     <p>
       Informasjon som må lagres lokalt behandles ved hjelp av tilgjengelige
@@ -283,7 +315,7 @@
     </p>
 
 
-    <h2>8. Brukerens ansvar</h2>
+    <h2>9. Brukerens ansvar</h2>
 
     <p>
       Parkeringsassistent P40 er et hjelpeverktøy. Brukeren er selv ansvarlig
@@ -298,7 +330,7 @@
     </p>
 
 
-    <h2>9. Innsyn og sletting</h2>
+    <h2>10. Innsyn og sletting</h2>
 
     <p>
       Brukeren kan kontakte utvikleren dersom det er spørsmål om hvordan
@@ -324,7 +356,7 @@
     </p>
 
 
-    <h2>10. Endringer i personvernerklæringen</h2>
+    <h2>11. Endringer i personvernerklæringen</h2>
 
     <p>
       Personvernerklæringen kan bli oppdatert dersom appens funksjonalitet eller
@@ -338,7 +370,7 @@
     </p>
 
 
-    <h2>11. Kontakt</h2>
+    <h2>12. Kontakt</h2>
 
     <p>
       <strong>Utvikler:</strong> Roar Skjønberg<br>
@@ -352,6 +384,7 @@
       <a href="./">Personvern</a>
       <a href="vilkar.html">Bruksvilkår</a>
       <a href="support.html">Support</a>
+      <a href="en/">English</a>
     </nav>
 
     <footer>
