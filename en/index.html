@@ -71,7 +71,7 @@
       <li><strong>Vehicle information</strong> – make, model and colour may be cached locally to reduce unnecessary lookups.</li>
       <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
       <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
-      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry and technical errors. These data are used for troubleshooting and stored locally.</li>
+      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. Build 43 may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
       <li><strong>Language preference and optional translated UI cache</strong> – the selected app language is stored locally. On supported devices, additional translated UI text may also be cached locally.</li>
     </ul>
 
@@ -85,7 +85,9 @@
     </p>
     <p>
       Parking status and validity are retrieved from the underlying parking
-      service. The app does not create its own parking-history database.
+      service. The app does not create its own parking-history database. The
+      limited diagnostic event timeline is a troubleshooting aid and is not
+      intended to be a parking history.
     </p>
     <p>
       Diagnostic data are not sent automatically to the developer. The user may
@@ -127,9 +129,11 @@
 
     <p>
       The result is clearly labeled <strong>AI-generated explanation</strong>
-      and <strong>AI-generated recommendation</strong>. AI can be wrong and the
-      result is not confirmation that parking is valid. If status is uncertain,
-      verify it directly in SmartPark.
+      and <strong>AI-generated recommendation</strong>. Build 43 may also use
+      the privacy-filtered Health Check summary and local event timeline when
+      the user chooses “What happened? Explain with AI”. AI can be wrong and
+      the result is not confirmation that parking is valid. If status is
+      uncertain, verify it directly in SmartPark.
     </p>
 
     <p>
