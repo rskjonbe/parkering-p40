@@ -163,10 +163,22 @@
 
     <h2>6. Third-party services</h2>
     <p>
-      Parkeringsassistent P40 communicates with the underlying parking service
-      to perform functions requested by the user. Information sent to that
-      service may be processed and stored by the service provider under its own
-      terms and privacy policy.
+      Parkeringsassistent P40 communicates directly with the underlying parking
+      service (SmartPark/Giant Leap) to perform functions requested by the user.
+    </p>
+    <p>
+      Depending on the function, this may include the phone number and
+      verification information used during sign-in, the authentication token,
+      vehicle registration number, parking start date, active parking/permit
+      information and technical permit identifiers. When the user stops an
+      active P40 parking session, the relevant permit identifier is sent together
+      with a stop command. GPS location is not sent as part of this stop function.
+    </p>
+    <p>
+      This information is used only for app functionality such as
+      authentication and checking, creating or stopping parking sessions.
+      Information sent to the parking service may be processed and stored by
+      the service provider under its own terms and privacy policy.
     </p>
     <p>
       For vehicle lookups, the registration number is sent through a Cloudflare
