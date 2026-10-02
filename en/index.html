@@ -11,7 +11,7 @@
   <div class="card">
     <h1>Privacy Policy – Parkeringsassistent P40</h1>
 
-    <p class="updated"><strong>Last updated: 1 October 2026</strong></p>
+    <p class="updated"><strong>Last updated: 2 October 2026</strong></p>
 
     <div class="notice">
       <strong>Independent app:</strong>
@@ -74,7 +74,7 @@
       <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
       <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
       <li><strong>Local automation state</strong> – the time a new P40 booking was actually created, the vehicle registration number it applies to and, when applicable, the time of a GPS-verified arrival at Sluppen may be stored locally for the same day. The GPS coordinate itself is not stored as parking history.</li>
-      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. Build 43 may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
+      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. The app may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
       <li><strong>Language preference and optional translated UI cache</strong> – the selected app language is stored locally. On supported devices, additional translated UI text may also be cached locally.</li>
     </ul>
 
@@ -132,7 +132,7 @@
 
     <p>
       The result is clearly labeled <strong>AI-generated explanation</strong>
-      and <strong>AI-generated recommendation</strong>. Build 43 may also use
+      and <strong>AI-generated recommendation</strong>. The app may also use
       the privacy-filtered Health Check summary and local event timeline when
       the user chooses “What happened? Explain with AI”. AI can be wrong and
       the result is not confirmation that parking is valid. If status is
@@ -250,8 +250,11 @@
       Parkeringsassistent P40 processes personal data.
     </p>
     <p>
-      Locally stored information can be removed by signing out, deleting
-      relevant data in the app where available, or uninstalling the app.
+      Signing out removes the SmartPark session from Apple Keychain, but saved
+      vehicles, vehicle details, optional vehicle photos and local settings are
+      retained so they are not lost during a normal sign-out. Vehicles and
+      vehicle photos can be removed in the app. Uninstalling the app removes
+      data stored in the app's local container.
     </p>
     <p>
       A saved vehicle photo can be removed directly using “Remove vehicle
