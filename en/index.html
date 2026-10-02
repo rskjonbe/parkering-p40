@@ -46,6 +46,7 @@
       <li><strong>Vehicle registration number</strong> – used to identify the vehicle a parking permit applies to and may be used to retrieve technical vehicle information.</li>
       <li><strong>Vehicle information</strong> – make, model and colour may be retrieved from the Norwegian Public Roads Administration API for technical vehicle information.</li>
       <li><strong>Optional vehicle photo</strong> – a photo selected by the user for easier visual identification. The photo is processed locally on the user's device.</li>
+      <li><strong>Precise location (optional for automation)</strong> – may be used locally on the iPhone to verify whether the user is in the Sluppen area before an automatic P40 release. GPS coordinates are not sent to SmartPark, the developer or other third-party services.</li>
     </ul>
 
     <h2>3. Purpose of processing</h2>
@@ -58,6 +59,7 @@
       <li>display an optional vehicle photo selected by the user</li>
       <li>check the relevant parking permit</li>
       <li>display parking status and remaining time</li>
+      <li>locally verify whether the iPhone is in the Sluppen area during arrival and release automation</li>
       <li>display relevant information through Live Activities, the Lock Screen, Dynamic Island and a compatible paired Apple Watch when supported by the operating system</li>
     </ul>
     <p>The information is not used for advertising, marketing or cross-app or cross-site tracking.</p>
@@ -71,6 +73,7 @@
       <li><strong>Vehicle information</strong> – make, model and colour may be cached locally to reduce unnecessary lookups.</li>
       <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
       <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
+      <li><strong>Local automation state</strong> – the time a new P40 booking was actually created, the vehicle registration number it applies to and, when applicable, the time of a GPS-verified arrival at Sluppen may be stored locally for the same day. The GPS coordinate itself is not stored as parking history.</li>
       <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. Build 43 may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
       <li><strong>Language preference and optional translated UI cache</strong> – the selected app language is stored locally. On supported devices, additional translated UI text may also be cached locally.</li>
     </ul>
@@ -172,7 +175,7 @@
       vehicle registration number, parking start date, active parking/permit
       information and technical permit identifiers. When the user stops an
       active P40 parking session, the relevant permit identifier is sent together
-      with a stop command. GPS location is not sent as part of this stop function.
+      with a stop command. GPS location is used only locally on the iPhone by the optional automation feature and is not sent to SmartPark/Giant Leap as part of arrival or stop verification.
     </p>
     <p>
       This information is used only for app functionality such as
@@ -200,7 +203,6 @@
 
     <h2>7. Data the app does not collect for its own purposes</h2>
     <ul>
-      <li>GPS location</li>
       <li>contacts</li>
       <li>photos or videos sent to the developer's servers or third-party services; an optional vehicle photo is stored locally only</li>
       <li>audio recordings</li>
@@ -210,6 +212,12 @@
       <li>data for targeted advertising</li>
       <li>vehicle-owner information</li>
     </ul>
+    <p>
+      Precise location may be processed locally on the iPhone when the user
+      enables GPS-based P40 automation. The location is not transmitted to the
+      developer, SmartPark or other third-party services by this feature and is
+      not used for tracking, profiling or advertising.
+    </p>
     <p>The app contains no advertising and does not use personal data for tracking.</p>
 
     <h2>8. Security</h2>
