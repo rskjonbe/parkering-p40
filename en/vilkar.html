@@ -86,6 +86,29 @@
       in SmartPark. Parkeringsassistent P40 does not handle payment directly.
     </p>
 
+    <h3>Stopping parking and automation</h3>
+    <p>
+      Parkeringsassistent P40 can stop an active P40 parking session when the
+      user chooses <strong>Stop parking</strong>. Before sending the stop
+      command, the app verifies the expected P40 product, the actually active
+      vehicle and a short-lived active permit. A stop command is not blindly
+      retried when the result is uncertain.
+    </p>
+    <p>
+      If the user enables <strong>Automatic P40</strong>, the app may also
+      consider automatic release no earlier than two hours after a new booking
+      that the automation actually created. Immediately before any automatic
+      stop, a fresh GPS location is processed locally on the device and the
+      active SmartPark status is checked again. If GPS, network, sign-in or
+      SmartPark status is uncertain, the parking session is kept.
+    </p>
+    <p>
+      Automatic stopping is a convenience feature and does not remove the
+      user's responsibility to verify parking status when needed. SmartPark
+      remains the authoritative place to check when status is uncertain or
+      differs.
+    </p>
+
     <h2>6. Live Activity, Dynamic Island, Lock Screen and Apple Watch</h2>
     <p>
       The app may display active parking information on the Lock Screen,
@@ -202,7 +225,7 @@
       <a href="support.html">Support</a>
       <a href="../vilkar.html">Norsk</a>
     </nav>
-    <footer>Last updated: 1 October 2026</footer>
+    <footer>Last updated: 2 October 2026</footer>
   </div>
 </main>
 </body>
