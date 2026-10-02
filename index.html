@@ -84,6 +84,13 @@
         bilde av bilen for enklere visuell identifikasjon i appen. Bildet
         behandles kun lokalt på brukerens enhet.
       </li>
+
+      <li>
+        <strong>Presis posisjon (valgfritt for automatisering)</strong> – kan
+        brukes lokalt på iPhone for å kontrollere om brukeren befinner seg i
+        Sluppen-området før en automatisk P40-frigivelse. GPS-koordinaten
+        sendes ikke til SmartPark, utvikleren eller andre tredjepartstjenester.
+      </li>
     </ul>
 
 
@@ -101,6 +108,10 @@
       <li>vise et valgfritt kjøretøybilde som brukeren selv har valgt</li>
       <li>kontrollere relevant parkeringstillatelse</li>
       <li>vise parkeringsstatus og eventuell gjenstående tid</li>
+      <li>
+        verifisere lokalt om iPhone er i Sluppen-området ved
+        ankomst- og frigivelsesautomatisering
+      </li>
       <li>
         vise relevant informasjon gjennom Live Activities når funksjonen brukes,
         inkludert på låseskjerm, Dynamic Island og kompatibel paret Apple Watch
@@ -155,6 +166,14 @@
         <strong>Teknisk sesjonsinformasjon</strong> – begrenset teknisk
         informasjon kan lagres midlertidig for å håndtere en pågående eller
         uavklart parkeringsregistrering.
+      </li>
+
+      <li>
+        <strong>Lokal automasjonsstatus</strong> – tidspunktet da en ny
+        P40-booking faktisk ble opprettet, registreringsnummeret den gjelder
+        og eventuelt tidspunkt for GPS-verifisert ankomst til Sluppen kan
+        lagres lokalt samme dag. Selve GPS-koordinaten lagres ikke som
+        parkeringshistorikk.
       </li>
 
       <li>
@@ -289,8 +308,9 @@
       registreringsnummer, dato for parkeringsstart, opplysninger om aktiv
       parkering/tillatelse og tekniske tillatelses-ID-er. Når brukeren
       avslutter en aktiv P40-parkering, sendes den aktuelle tillatelses-ID-en
-      sammen med en avslutningskommando. GPS-posisjon sendes ikke som del av
-      denne avslutningsfunksjonen.
+      sammen med en avslutningskommando. GPS-posisjon brukes bare lokalt på
+      iPhone i den valgfrie automasjonsfunksjonen og sendes ikke til
+      SmartPark/Giant Leap som del av ankomst- eller avslutningskontrollen.
     </p>
 
     <p>
@@ -333,7 +353,6 @@
     </p>
 
     <ul>
-      <li>GPS-posisjon</li>
       <li>kontaktliste</li>
       <li>
         bilder eller videoer til utviklerens servere eller
@@ -347,6 +366,13 @@
       <li>data til målrettet annonsering</li>
       <li>eieropplysninger fra kjøretøyregisteret</li>
     </ul>
+
+    <p>
+      Presis posisjon kan behandles lokalt på iPhone når brukeren aktiverer
+      GPS-basert P40-automatisering. Posisjonen overføres ikke til utvikleren,
+      SmartPark eller andre tredjepartstjenester av denne funksjonen og brukes
+      ikke til sporing, profilering eller annonsering.
+    </p>
 
     <p>
       Appen inneholder ikke annonser og bruker ikke personopplysninger til tracking.
