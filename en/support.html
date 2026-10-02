@@ -125,15 +125,31 @@
       languages open the English versions of these pages.
     </p>
 
-    <h2>Automation tips</h2>
+    <h2>Automation</h2>
     <p>
-      Open <strong>… → Automation tips</strong> for step-by-step instructions
-      for running <strong>Activate P40</strong> from Apple's Shortcuts app,
-      including weekday schedules and arrival automation.
+      Open <strong>… → Automation</strong> to enable or disable Automatic P40
+      and choose the start time, weekdays and Sluppen verification radius.
+      The page also shows location-permission and notification status.
     </p>
     <p>
-      Location automation is configured by Apple's Shortcuts system.
-      Parkeringsassistent P40 does not collect GPS location for this feature.
+      iOS still requires the personal triggers to be created in Apple
+      Shortcuts. The app shows which actions to use for
+      <strong>Activate P40</strong>, <strong>Register P40 arrival</strong> and
+      <strong>Release P40 if not arrived</strong>.
+    </p>
+    <p>
+      When automation is enabled, Parkeringsassistent P40 may process a fresh
+      GPS location locally on the device to verify whether it is within the
+      selected Sluppen radius. The location is not sent to SmartPark, the
+      developer or the vehicle-lookup service, and the GPS coordinate is not
+      stored as parking history.
+    </p>
+    <p>
+      Automatic release is considered no earlier than two hours after a new
+      booking that the automation actually created. Immediately before any
+      stop, the app verifies location and SmartPark status again. If location,
+      network, sign-in or SmartPark status is uncertain, the parking session is
+      kept.
     </p>
 
     <h2>Live Activity and Lock Screen</h2>
@@ -153,7 +169,7 @@
 
     <h3>P40 Health Check</h3>
     <p>
-      Build 43 provides a combined health check for SmartPark sign-in,
+      The app provides a combined health check for SmartPark sign-in,
       SmartPark communication, P40 status, notifications, Live Activities,
       background refresh and Apple Watch when configured.
     </p>
