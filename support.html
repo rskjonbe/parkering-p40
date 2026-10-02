@@ -210,19 +210,34 @@
     </p>
 
 
-    <h2>Tips til automatisering</h2>
+    <h2>Automatisering</h2>
 
     <p>
-      I menyen <strong>… → Tips til automatisering</strong> finner du
-      steg-for-steg-oppsett for å kjøre <strong>Aktiver P40</strong> fra
-      Apples Snarveier-app.
+      I menyen <strong>… → Automatisering</strong> kan du slå automatisk P40
+      av eller på og velge starttid, ukedager og radius for Sluppen-kontrollen.
+      Siden viser også status for posisjonstilgang og varsler.
     </p>
 
     <p>
-      Guiden viser blant annet fast tidspunkt på valgte ukedager og
-      ankomstautomatisering rundt Sluppenvegen 17A. Selve stedsautomatiseringen
-      konfigureres i Apples Snarveier-app; Parkeringsassistent P40 samler ikke
-      inn GPS-posisjon for denne funksjonen.
+      iOS krever fortsatt at de personlige triggerne opprettes i Apples
+      Snarveier-app. Appen viser hvilke handlinger som skal brukes for
+      <strong>Aktiver P40</strong>, <strong>Registrer P40-ankomst</strong> og
+      <strong>Frigi P40 hvis ikke ankommet</strong>.
+    </p>
+
+    <p>
+      Når automatiseringen er aktivert kan Parkeringsassistent P40 behandle en
+      fersk GPS-posisjon lokalt på enheten for å kontrollere om den er innenfor
+      valgt Sluppen-radius. Posisjonen sendes ikke til SmartPark, utvikleren
+      eller kjøretøyoppslagstjenesten, og GPS-koordinaten lagres ikke som
+      parkeringshistorikk.
+    </p>
+
+    <p>
+      Automatisk frigivelse skjer tidligst to timer etter en ny booking som
+      automasjonen faktisk opprettet. Rett før eventuell avslutning kontrolleres
+      posisjon og SmartPark-status på nytt. Ved usikker posisjon, nettverk,
+      innlogging eller SmartPark-status beholdes parkeringen.
     </p>
 
 
@@ -294,7 +309,7 @@
 
     <h3>P40 Health Check</h3>
     <p>
-      Build 43 viser en samlet helsesjekk av SmartPark-innlogging,
+      Appen viser en samlet helsesjekk av SmartPark-innlogging,
       SmartPark-kommunikasjon, P40-status, varslinger, Live Activities,
       bakgrunnsoppdatering og Apple Watch når den er konfigurert.
     </p>
