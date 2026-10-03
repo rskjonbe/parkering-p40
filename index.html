@@ -17,7 +17,7 @@
     <h1>Personvernerklæring – Parkeringsassistent P40</h1>
 
     <p class="updated">
-      <strong>Sist oppdatert: 2. oktober 2026</strong>
+      <strong>Sist oppdatert: 3. oktober 2026</strong>
     </p>
 
     <div class="notice">
@@ -214,12 +214,11 @@
 
     <p>
       Diagnostikkdata sendes ikke automatisk til utvikleren. Brukeren kan selv
-      velge funksjonen «Kopier diagnostikk» og deretter dele teksten manuelt
-      ved behov for support. Den kopierte diagnostikken er utformet slik at
-      SmartPark-token og telefonnummer ikke tas med. Den ordinære kopierte
-      rapporten kan inneholde registreringsnummeret til valgt eller aktiv bil.
-      Ved AI-analyse og den innebygde «Send diagnostikk til utvikler»-flyten
-      maskeres kjente registreringsnumre før teksten brukes eller deles.
+      velge funksjonen «Kopier diagnostikk» eller den innebygde
+      «Send diagnostikk til utvikler»-flyten. Før diagnostikk kopieres, brukes
+      av lokal AI eller deles med utvikleren, maskeres kjente
+      registreringsnumre. SmartPark-token, telefonnummer, SMS-kode og andre
+      innloggingsopplysninger tas ikke med.
     </p>
 
 
@@ -258,19 +257,20 @@
     </p>
 
     <p>
-      AI-resultatet vises tydelig som <strong>AI-generert forklaring</strong> og
-      <strong>AI-generert anbefaling</strong>. Appen kan også bruke den
-      personvernfiltrerte Health Check-oppsummeringen og den lokale
-      hendelseslinjen når brukeren velger «Hva skjedde? Forklar med AI».
-      AI kan ta feil og resultatet er ikke en bekreftelse på at parkeringen er
-      gyldig. Ved usikker status skal SmartPark kontrolleres direkte.
+      AI-resultatet vises tydelig som <strong>AI-generert forklaring</strong>.
+      Appen kan også bruke den personvernfiltrerte Health Check-oppsummeringen
+      og den lokale hendelseslinjen når brukeren velger «Hva skjedde? Forklar
+      med AI». Anbefalingen om diagnostikk bør deles er separat,
+      deterministisk P40-logikk og er ikke generert av AI. AI kan ta feil og
+      resultatet er ikke en bekreftelse på at parkeringen er gyldig. Ved
+      usikker status skal SmartPark kontrolleres direkte.
     </p>
 
     <p>
-      Diagnostikk sendes aldri automatisk til utvikleren. Dersom AI-funksjonen
-      anbefaler eller foreslår at deling kan være nyttig, kan brukeren først se
-      nøyaktig hvilken personvernfiltrert tekst som deles og deretter selv velge
-      å sende den til utvikleren.
+      Diagnostikk sendes aldri automatisk til utvikleren. Dersom P40s
+      deterministiske anbefaling tilsier at deling kan være nyttig, kan
+      brukeren først se nøyaktig hvilken personvernfiltrert tekst som deles og
+      deretter selv velge å sende den til utvikleren.
     </p>
 
     <h2>5. Språk og lokal oversettelse</h2>
@@ -318,9 +318,12 @@
 
     <p>
       Disse opplysningene brukes kun for appfunksjonalitet, som autentisering,
-      kontroll, opprettelse og avslutning av parkering. Opplysninger som sendes
-      til parkeringstjenesten kan behandles og lagres av tjenesteleverandøren i
-      henhold til deres egne vilkår og personvernerklæring.
+      kontroll, opprettelse og avslutning av parkering. Som del av den tekniske
+      kommunikasjonen kan appen også sende begrenset klientmetadata, som
+      enhetstype, operativsystem-/klientversjon og språk/locale. Opplysninger
+      som sendes til parkeringstjenesten kan behandles og lagres av
+      tjenesteleverandøren i henhold til deres egne vilkår og
+      personvernerklæring.
     </p>
 
     <p>
