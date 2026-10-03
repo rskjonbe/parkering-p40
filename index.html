@@ -116,8 +116,9 @@
       <li>kontrollere relevant parkeringstillatelse</li>
       <li>vise parkeringsstatus og eventuell gjenstående tid</li>
       <li>
-        verifisere lokalt om iPhone er innenfor den faste 1 km-sonen ved
-        automatisk ankomstregistrering og før eventuell frigivelse
+        verifisere lokalt om en ny manuell parkering ble startet mens iPhone
+        er sikkert utenfor den faste 1 km-sonen, og utføre ankomst- og
+        sikkerhetskontroll etter tidsstyrt automatisk booking
       </li>
       <li>
         vise relevant informasjon gjennom Live Activities når funksjonen brukes,
@@ -482,10 +483,14 @@
     </ul>
 
     <p>
-      Presis posisjon kan behandles lokalt på iPhone når brukeren aktiverer
-      GPS-basert P40-automatisering. Posisjonen overføres ikke til utvikleren,
-      SmartPark eller andre tredjepartstjenester av denne funksjonen og brukes
-      ikke til sporing, profilering eller annonsering.
+      Presis posisjon kan behandles lokalt på iPhone både ved den valgfrie
+      GPS-baserte P40-automatiseringen og som en engangskontroll etter at brukeren
+      manuelt trykker «JEG ER PÅ JOBB» og en ny parkering blir opprettet. Den
+      manuelle kontrollen brukes bare til å varsle dersom telefonen er sikkert
+      utenfor 1 km-sonen; parkeringen frigjøres kun etter et uttrykkelig valg fra
+      brukeren. Posisjonen overføres ikke til utvikleren, SmartPark eller andre
+      tredjepartstjenester av denne funksjonen og brukes ikke til sporing,
+      profilering eller annonsering.
     </p>
 
     <p>
