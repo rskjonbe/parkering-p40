@@ -32,7 +32,9 @@
 
     <p>
       Parkeringsassistent P40 er utviklet for å gjøre det enklere å
-      kontrollere og bestille parkering på P40.
+      kontrollere og bestille parkering på P40. Ved å bruke appen aksepterer
+      brukeren disse vilkårene. Vilkårene begrenser ikke rettigheter som følger
+      av ufravikelig lovgivning.
     </p>
 
     <p>
@@ -159,6 +161,12 @@
       varsel, og slike endringer kan føre til at funksjoner må oppdateres eller
       midlertidig slutter å fungere.
     </p>
+    <p>
+      Appen gir ikke brukeren noen selvstendig rett til SmartPark, P40 eller
+      andre tredjepartstjenester. Brukeren må ha gyldig tilgang til den
+      aktuelle parkeringsordningen og følge vilkårene som gjelder for den
+      underliggende tjenesten.
+    </p>
 
 
     <h2>5. Parkeringsbestilling</h2>
@@ -197,12 +205,16 @@
 
     <p>
       Dersom brukeren aktiverer <strong>Automatisk P40</strong>, kan booking
-      startes av en tidsstyrt Snarvei og, dersom brukeren konfigurerer det,
-      en anbefalt <strong>P40 Ankomststart</strong>-Snarvei med Apples
-      <strong>Arrive</strong>-trigger. Begge kjører den samme handlingen
-      <strong>Aktiver P40</strong>. Etter en relevant booking kan P40 overvåke
-      sin egen native, faste 1 km sikkerhetssone rundt Sluppenvegen 17A for å
-      registrere ankomstbevis. Denne native sonen bestiller aldri parkering.
+      startes av tidsautomasjonen <strong>P40 Start</strong>, som bruker den
+      dedikerte handlingen <strong>Start automatisk P40</strong>, og eventuelt
+      av valgfri <strong>P40 Ankomststart</strong> med Apples
+      <strong>Arrive</strong>-trigger. P40 Ankomststart bruker sin egen
+      dedikerte handling og krever en fersk lokal posisjonskontroll innenfor
+      1 km før eventuell booking. Manuell <strong>Aktiver P40</strong> er
+      separat og kan aldri armere automatisk frigivelse. Valgt starttid er en
+      hard nedre grense; P40 Start godtas ikke før dette tidspunktet. Etter en
+      relevant tidsstyrt booking kan P40 overvåke sin egen native, faste 1 km
+      sikkerhetssone rundt Sluppenvegen 17A for å registrere ankomstbevis. Denne native sonen bestiller aldri parkering.
       Appen håndterer selv sikkerhetskontrollen for automatisk frigivelse;
       brukeren trenger ingen egen «P40 Frigi»-snarvei. P40 ber iOS om
       bakgrunnskjøring tidligst to timer etter en ny booking som den tidsstyrte
@@ -247,7 +259,7 @@
     </p>
 
     <ul>
-      <li>registreringsnummer</li>
+      <li>registreringsnummer, med mindre brukeren har valgt å maskere det på låseskjerm og statusflater</li>
       <li>kjøretøymerke og modell</li>
       <li>farge</li>
       <li>starttid</li>
@@ -376,25 +388,37 @@
     <h2>10. Ansvarsbegrensning</h2>
 
     <p>
-      Bruk av Parkeringsassistent P40 skjer på brukerens eget ansvar.
+      Parkeringsassistent P40 er et uavhengig hjelpeverktøy som er avhengig av
+      tredjepartstjenester, nettverk og operativsystemfunksjoner som utvikleren
+      ikke kontrollerer. Brukeren skal derfor kontrollere faktisk
+      parkeringsstatus i SmartPark når status er usikker eller avviker.
     </p>
 
     <p>
-      Utvikleren kan ikke garantere at bruk av appen hindrer
+      Så langt gjeldende lov tillater, gis det ingen garanti for at appen alltid
+      er tilgjengelig, feilfri eller oppdatert, eller at bruk av appen hindrer
       parkeringsgebyr, kontrollavgift eller andre kostnader.
     </p>
 
     <p>
-      Utvikleren kan heller ikke garantere at parkeringsstatus,
-      kjøretøyopplysninger, starttid, sluttid eller gjenstående tid
-      alltid er korrekt eller oppdatert.
+      Så langt gjeldende lov tillater, er utvikleren ikke ansvarlig for indirekte
+      tap eller kostnader som utelukkende skyldes uriktige brukeropplysninger,
+      manglende nettverk, endringer eller feil hos tredjepartstjenester eller
+      andre forhold utenfor utviklerens rimelige kontroll.
     </p>
 
     <p>
-      Utvikleren er ikke ansvarlig for tap eller kostnader som skyldes
-      feilregistrerte opplysninger, manglende nettverk, tekniske feil,
-      feil hos tredjepartstjenester eller endringer i tjenestene som
-      appen er avhengig av.
+      Ingenting i disse vilkårene begrenser ansvar eller rettigheter som ikke
+      lovlig kan fravikes, herunder eventuelle ufravikelige rettigheter etter
+      norsk lov. Ansvarsbegrensningen gjelder heller ikke i den utstrekning
+      ansvar følger av forsett, grov uaktsomhet eller annet ansvar som etter
+      gjeldende lov ikke kan begrenses.
+    </p>
+
+    <p>
+      Vilkårene reguleres av norsk rett. Dette begrenser ikke eventuelle
+      ufravikelige rettigheter til verneting eller annen beskyttelse som følger
+      av gjeldende lov.
     </p>
 
 
