@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatisk P40 – oppsett og hjelp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div class="card">
+    <p class="eyebrow">Parkeringsassistent P40</p>
+    <h1>Automatisk P40 – oppsett og hjelp</h1>
+    <p class="intro">
+      Denne siden forklarer nøyaktig hva P40 gjør automatisk, hva Apple krever
+      at du setter opp selv i Snarveier, og hvordan du endrer oppsettet senere.
+    </p>
+
+    <div class="notice">
+      <strong>Kort forklart:</strong>
+      Du lager to tidsautomasjoner i Apples Snarveier. P40 håndterer deretter
+      ankomstkontrollen selv med en lokal 1 km sikkerhetssone rundt
+      Sluppenvegen 17A. Geofencen bestiller aldri parkering alene.
+    </div>
+
+    <h2>Hva gjør P40 – og hva må du gjøre selv?</h2>
+    <div class="split-grid">
+      <section class="panel good-panel">
+        <h3>P40 gjør automatisk</h3>
+        <ul>
+          <li>leverer handlingene <strong>Aktiver P40</strong> og <strong>Frigi P40 hvis ikke ankommet</strong> til Snarveier</li>
+          <li>lagrer starttid og ukedager du har valgt i P40</li>
+          <li>registrerer en sikkerhetskandidat bare når en tidsstyrt kjøring faktisk oppretter en ny P40-parkering</li>
+          <li>overvåker ankomst til en fast <strong>1 km-sone</strong> rundt Sluppenvegen 17A når Automatisk P40 er aktivert og posisjon «Alltid» er tillatt</li>
+          <li>gjør en ny, fersk posisjonskontroll før eventuell automatisk frigivelse</li>
+          <li>beholder parkeringen dersom posisjon, innlogging, nettverk eller parkeringsstatus er usikker</li>
+          <li>viser lokal status for siste kjøring og resultat</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h3>Du gjør i Snarveier</h3>
+        <ul>
+          <li>oppretter tidsautomasjonen som starter P40</li>
+          <li>oppretter tidsautomasjonen som kjører sikkerhetskontrollen minst to timer senere</li>
+          <li>velger samme klokkeslett og ukedager som P40 viser</li>
+          <li>tillater at snarveiene kan kjøre når telefonen er låst</li>
+          <li>oppdaterer tids-triggerne i Snarveier hvis du senere endrer starttid eller ukedager i P40</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>Før du starter</h2>
+    <div class="checklist">
+      <div class="check-row"><span>1</span><p>Logg inn i Parkeringsassistent P40 og velg riktig bil.</p></div>
+      <div class="check-row"><span>2</span><p>Åpne <strong>Sett opp / endre automatikk</strong> i P40.</p></div>
+      <div class="check-row"><span>3</span><p>Velg starttid og ukedager, og slå på <strong>Automatisk P40</strong>.</p></div>
+      <div class="check-row"><span>4</span><p>Gi P40 posisjonstilgang <strong>Alltid</strong> og tillat varsler.</p></div>
+    </div>
+
+    <h2>Steg 1 – opprett «P40 Start»</h2>
+    <div class="step">
+      <p><strong>Formål:</strong> starter parkeringsbestillingen på tidspunktet du har valgt.</p>
+      <ol>
+        <li>I P40-veiviseren trykker du <strong>Opprett i Snarveier</strong> for Start P40.</li>
+        <li>Finn P40-handlingen <strong>Aktiver P40</strong> og velg å bruke den i en ny snarvei.</li>
+        <li>Gi snarveien navnet <strong>P40 Start</strong>.</li>
+        <li>I Snarveier velger du <strong>Edit → Automation</strong> og legger til <strong>Time of Day</strong>.</li>
+        <li>Bruk starttid og ukedager som P40 viser.</li>
+        <li>Åpne snarveiens <strong>Info → Privacy</strong> og aktiver <strong>Allow Running When Locked</strong>.</li>
+        <li>Lagre, gå tilbake til P40 og bekreft at oppsettet stemmer.</li>
+      </ol>
+    </div>
+
+    <h2>Steg 2 – P40 håndterer ankomst selv</h2>
+    <div class="step">
+      <p>
+        Du trenger <strong>ikke</strong> lage en egen ankomst-automatisering i Snarveier.
+        Når en automatisk bestilling faktisk er opprettet, bruker P40 en lokal
+        1 km sikkerhetssone rundt Sluppenvegen 17A.
+      </p>
+      <p>
+        Når telefonen kommer inn i sonen, verifiserer P40 posisjonen og registrerer
+        ankomst for den aktuelle bestillingen. Dette er kun en sikkerhetskontroll:
+        <strong>å komme innenfor 1 km uten en aktiv automatisk bestilling starter aldri parkering.</strong>
+      </p>
+    </div>
+
+    <h2>Steg 3 – opprett «P40 Frigi»</h2>
+    <div class="step">
+      <p><strong>Formål:</strong> kontrollerer om en automatisk bestilt plass fortsatt er ubrukt.</p>
+      <ol>
+        <li>I P40-veiviseren trykker du <strong>Opprett i Snarveier</strong> for Frigi ubrukt plass.</li>
+        <li>Finn P40-handlingen <strong>Frigi P40 hvis ikke ankommet</strong>.</li>
+        <li>Gi snarveien navnet <strong>P40 Frigi</strong>.</li>
+        <li>Velg <strong>Edit → Automation → Time of Day</strong>.</li>
+        <li>Bruk kontrolltidspunktet P40 viser. Det er minst to timer etter valgt starttid.</li>
+        <li>Bruk ukedagene P40 viser. Hvis kontrolltidspunktet passerer midnatt, viser P40 dagene kontrollen faktisk skal kjøre.</li>
+        <li>Aktiver <strong>Allow Running When Locked</strong>, lagre og bekreft oppsettet i P40.</li>
+      </ol>
+    </div>
+
+    <h2>Hva skjer ved 2-timerskontrollen?</h2>
+    <div class="flow-list">
+      <div class="flow-item"><strong>Ankomst allerede registrert:</strong> parkeringen beholdes.</div>
+      <div class="flow-item"><strong>Telefonen er nå innenfor 1 km:</strong> ankomst registreres og parkeringen beholdes.</div>
+      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 kontrollerer at samme bil fortsatt har den aktive P40-parkeringen før eventuell frigivelse.</div>
+      <div class="flow-item"><strong>Posisjon «Alltid» mangler:</strong> P40 frigir ikke. Du får et varsel med tidspunktet parkeringen ble bestilt og tidspunktet sikkerhetskontrollen kjørte.</div>
+      <div class="flow-item"><strong>GPS, nettverk, innlogging eller parkeringsstatus er usikker:</strong> P40 frigir ikke.</div>
+    </div>
+
+    <div class="warning">
+      <strong>Fail-safe:</strong>
+      P40 skal heller beholde en mulig ubrukt parkering enn å avslutte en parkering
+      når appen ikke kan dokumentere at sikkerhetsvilkårene er oppfylt.
+    </div>
+
+    <h2>Når du endrer starttid eller ukedager</h2>
+    <div class="step">
+      <ol>
+        <li>Endre verdien i P40.</li>
+        <li>P40 markerer hvilke av de to Snarveiene som må oppdateres.</li>
+        <li>Trykk <strong>Endre / kontroller i Snarveier</strong>. P40 åpner den navngitte snarveien så langt Apples støttede URL-integrasjon tillater.</li>
+        <li>Velg <strong>Edit → Automation</strong> i Snarveier og endre tids-triggeren til verdiene P40 viser.</li>
+        <li>Gå tilbake til P40 og bekreft oppsettet på nytt.</li>
+      </ol>
+      <p class="secondary">
+        Apple gir ikke tredjepartsapper tilgang til å lese eller endre den personlige
+        automasjonstriggeren direkte. P40 kan derfor ikke kontrollere Apples automasjonsliste
+        eller endre tidspunktet stille i bakgrunnen.
+      </p>
+    </div>
+
+    <h2>«Snarveier og status» i P40</h2>
+    <p>
+      Statusbildet viser P40s egen kunnskap: hva du sist bekreftet i veiviseren,
+      siste observerte kjøring av P40-handlingen og siste registrerte resultat.
+      En observert kjøring beviser ikke hvilken Apple-trigger som startet den.
+    </p>
+
+    <h2>Hvis posisjon ikke er tillatt</h2>
+    <p>
+      Automatisk P40 kan fortsatt ha opprettet parkeringen via P40 Start, men P40
+      vil <strong>ikke</strong> avslutte den automatisk uten en sikker posisjonskontroll.
+      Ved sikkerhetskontrollen varsles du om bookingtid og kontrolltid, og får beskjed
+      om å avslutte parkeringen manuelt dersom du ikke står parkert på P40.
+    </p>
+
+    <h2>Personvern</h2>
+    <p>
+      Posisjonen brukes lokalt på enheten for å beregne avstand til Sluppenvegen 17A.
+      GPS-koordinaten sendes ikke til parkeringstjenesten eller utvikleren av denne
+      funksjonen og lagres ikke som parkeringshistorikk. P40 lagrer begrenset lokal
+      automasjonsstatus, blant annet bookingtid, registreringsnummer, eventuell
+      verifisert ankomsttid og siste sikkerhetskontroll.
+    </p>
+
+    <h2>Apple Snarveier – offisiell dokumentasjon</h2>
+    <p>
+      Oppsettet over følger Apples gjeldende Snarveier-modell for iPhone.
+      Apple kan endre navn eller plassering av valg i senere iOS-versjoner.
+    </p>
+    <ul>
+      <li><a href="https://support.apple.com/guide/shortcuts/add-automations-apdfbdbd7123/ios">Apple: Add automations to Shortcuts</a></li>
+      <li><a href="https://support.apple.com/guide/iphone/shortcuts-iph47e1c9d7d/27/ios/27">Apple: Use Shortcuts to automate tasks on iPhone</a></li>
+    </ul>
+
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="index.html">Personvern</a>
+      <a href="vilkar.html">Bruksvilkår</a>
+      <a href="en/automation.html">English</a>
+    </nav>
+
+    <footer>
+      Parkeringsassistent P40 er et uavhengig prosjekt og er ikke utviklet,
+      godkjent, støttet eller drevet av SmartPark, Trondheim Parkering,
+      Trondheim kommune eller parkeringsoperatøren.
+    </footer>
+  </div>
+</main>
+</body>
+</html>
