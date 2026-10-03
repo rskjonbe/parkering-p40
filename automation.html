@@ -18,9 +18,12 @@
 
     <div class="notice">
       <strong>Kort forklart:</strong>
-      Du lager to tidsautomasjoner i Apples Snarveier. P40 håndterer deretter
-      ankomstkontrollen selv med en lokal 1 km sikkerhetssone rundt
-      Sluppenvegen 17A. Geofencen bestiller aldri parkering alene.
+      Du lager <strong>P40 Start</strong> på tid og <strong>P40 Frigi</strong> som
+      sikkerhetskontroll. I tillegg anbefales <strong>P40 Ankomststart</strong>:
+      en Apple Snarveier-automatisering med <strong>Arrive</strong> ved 1 km rundt
+      Sluppenvegen 17A som også kjører <strong>Aktiver P40</strong>. P40s egen
+      native 1 km-sone er en separat sikkerhetsmekanisme etter booking og bestiller
+      aldri parkering alene.
     </div>
 
     <h2>Hva gjør P40 – og hva må du gjøre selv?</h2>
@@ -42,6 +45,7 @@
         <h3>Du gjør i Snarveier</h3>
         <ul>
           <li>oppretter tidsautomasjonen som starter P40</li>
+          <li>kan opprette den anbefalte ankomstautomasjonen <strong>P40 Ankomststart</strong> med Arrive-trigger ved 1 km og handlingen <strong>Aktiver P40</strong></li>
           <li>oppretter tidsautomasjonen som kjører sikkerhetskontrollen minst to timer senere</li>
           <li>velger samme klokkeslett og ukedager som P40 viser</li>
           <li>tillater at snarveiene kan kjøre når telefonen er låst</li>
@@ -73,21 +77,38 @@
       </ol>
     </div>
 
-    <h2>Steg 2 – P40 håndterer ankomst selv</h2>
+    <h2>Steg 2 – anbefalt «P40 Ankomststart»</h2>
     <div class="step">
+      <p><strong>Formål:</strong> ekstra bookingstart når du faktisk ankommer Sluppen, for eksempel helg, kveld eller dager du kommer senere enn vanlig.</p>
+      <ol>
+        <li>Opprett en ny snarvei med P40-handlingen <strong>Aktiver P40</strong>.</li>
+        <li>Gi snarveien navnet <strong>P40 Ankomststart</strong>.</li>
+        <li>Velg <strong>Edit → Automation → Arrive</strong>.</li>
+        <li>Bruk <strong>Sluppenvegen 17A</strong> og radius <strong>1,0 km</strong>.</li>
+        <li>Aktiver <strong>Allow Running When Locked</strong>.</li>
+        <li>Gå tilbake til P40 og bekreft oppsettet.</li>
+      </ol>
       <p>
-        Du trenger <strong>ikke</strong> lage en egen ankomst-automatisering i Snarveier.
-        Når en automatisk bestilling faktisk er opprettet, bruker P40 en lokal
-        1 km sikkerhetssone rundt Sluppenvegen 17A.
-      </p>
-      <p>
-        Når telefonen kommer inn i sonen, verifiserer P40 posisjonen og registrerer
-        ankomst for den aktuelle bestillingen. Dette er kun en sikkerhetskontroll:
-        <strong>å komme innenfor 1 km uten en aktiv automatisk bestilling starter aldri parkering.</strong>
+        Denne Snarveier-geofencen kan starte en P40-bestilling. «Aktiver P40»
+        sjekker alltid om parkering allerede er aktiv før en ny bestilling forsøkes,
+        så tidsstart og ankomststart kan eksistere parallelt uten å blindt lage dobbeltbooking.
       </p>
     </div>
 
-    <h2>Steg 3 – opprett «P40 Frigi»</h2>
+    <h2>Steg 3 – P40s egen 1 km sikkerhetssone</h2>
+    <div class="step">
+      <p>
+        Etter en relevant automatisk booking aktiverer P40 sin <strong>egen native
+        1 km-sone</strong>. Denne er ikke den samme som Snarveier-geofencen over.
+      </p>
+      <p>
+        P40s native sone kan <strong>aldri starte parkering</strong>. Den brukes bare
+        til å registrere ankomstbevis for den aktuelle bookingen og inngår i den
+        senere sikkerhetsvurderingen av om en ubrukt parkering kan frigjøres.
+      </p>
+    </div>
+
+    <h2>Steg 4 – opprett «P40 Frigi»</h2>
     <div class="step">
       <p><strong>Formål:</strong> kontrollerer om en automatisk bestilt plass fortsatt er ubrukt.</p>
       <ol>
@@ -124,17 +145,18 @@
 
     <h2>Har du et eldre oppsett med «P40 Ankomst»?</h2>
     <p>
-      Build 54 trenger ikke lenger en egen ankomst-Snarvei. Den eldre handlingen
-      beholdes for bakoverkompatibilitet, slik at et eksisterende oppsett ikke
-      plutselig slutter å virke. Når Build 54-oppsettet er ferdig konfigurert,
-      er <strong>P40 Ankomst</strong> ikke nødvendig for den nye automatikken.
+      Den eldre <strong>P40 Ankomst</strong>-handlingen registrerte ankomst og
+      beholdes bare for bakoverkompatibilitet. Den skal ikke brukes i nytt oppsett.
+      Den nye anbefalte <strong>P40 Ankomststart</strong> er noe annet: den bruker
+      Apples <strong>Arrive</strong>-trigger og kjører den vanlige handlingen
+      <strong>Aktiver P40</strong> for å kunne starte booking.
     </p>
 
     <h2>Når du endrer starttid eller ukedager</h2>
     <div class="step">
       <ol>
         <li>Endre verdien i P40.</li>
-        <li>P40 markerer hvilke av de to Snarveiene som må oppdateres.</li>
+        <li>P40 markerer hvilke tidsstyrte Snarveier som må oppdateres. «P40 Ankomststart» bruker fast 1 km og påvirkes normalt ikke av tidsendringer.</li>
         <li>Trykk <strong>Endre / kontroller i Snarveier</strong>. P40 åpner den navngitte snarveien så langt Apples støttede URL-integrasjon tillater.</li>
         <li>Velg <strong>Edit → Automation</strong> i Snarveier og endre tids-triggeren til verdiene P40 viser.</li>
         <li>Gå tilbake til P40 og bekreft oppsettet på nytt.</li>
