@@ -62,6 +62,7 @@
     <div class="step">
       <p><strong>Formål:</strong> starter parkeringsbestillingen på tidspunktet du har valgt.</p>
       <ol>
+        <li>Velg først <strong>Bil for automatikk</strong> i P40. Denne bilen er fast for tidsautomatikken og endres ikke bare fordi du velger en annen bil på hjemskjermen.</li>
         <li>I P40-veiviseren trykker du <strong>Opprett i Snarveier</strong> for Start P40.</li>
         <li>Finn P40-handlingen <strong>Aktiver P40</strong> og velg å bruke den i en ny snarvei.</li>
         <li>Gi snarveien navnet <strong>P40 Start</strong>.</li>
@@ -94,7 +95,7 @@
         <li>Finn P40-handlingen <strong>Frigi P40 hvis ikke ankommet</strong>.</li>
         <li>Gi snarveien navnet <strong>P40 Frigi</strong>.</li>
         <li>Velg <strong>Edit → Automation → Time of Day</strong>.</li>
-        <li>Bruk kontrolltidspunktet P40 viser. Det er minst to timer etter valgt starttid.</li>
+        <li>Bruk kontrolltidspunktet P40 viser. Normalt er dette <strong>2 timer og 10 minutter etter planlagt start</strong>. Selve sikkerhetsregelen krever fortsatt minst 2 timer fra den faktiske bekreftede bookingen.</li>
         <li>Bruk ukedagene P40 viser. Hvis kontrolltidspunktet passerer midnatt, viser P40 dagene kontrollen faktisk skal kjøre.</li>
         <li>Aktiver <strong>Allow Running When Locked</strong>, lagre og bekreft oppsettet i P40.</li>
         <li><strong>P40 Frigi er ment for denne tidsautomasjonen.</strong> Den publiseres ikke som en anbefalt Siri-stemmehandling, fordi den kan avslutte en parkering.</li>
@@ -110,6 +111,7 @@
       <div class="flow-item"><strong>Ankomstkontrollen har hatt et avbrudd:</strong> P40 frigir ikke automatisk. Monitoreringen må ha blitt aktivert kort tid etter bookingen og ha vært pålitelig gjennom hele perioden.</div>
       <div class="flow-item"><strong>Riktig parkering:</strong> P40 kontrollerer ikke bare bilen, men også den eksakte SmartPark-parkeringen som automatikken opprettet. En nyere parkering på samme bil kan derfor ikke avsluttes av en gammel sikkerhetskontroll.</div>
       <div class="flow-item"><strong>1 km ankomstkontrollen ble ikke bekreftet aktiv:</strong> P40 frigir ikke. Du får et varsel med bookingtid og kontrolltid og kan avslutte manuelt dersom plassen ikke brukes.</div>
+      <div class="flow-item"><strong>Kontrollen kom for tidlig:</strong> dersom P40 Start var forsinket og det ennå ikke har gått 2 faktiske timer siden bookingen, beholdes parkeringen. Varslet viser bookingtid, kontrolltid og tidligste tidspunkt en ny sikker kontroll kan kjøres.</div>
       <div class="flow-item"><strong>Posisjon «Alltid» mangler:</strong> P40 frigir ikke. Du får et varsel med tidspunktet parkeringen ble bestilt og tidspunktet sikkerhetskontrollen kjørte.</div>
       <div class="flow-item"><strong>GPS, nettverk, innlogging eller parkeringsstatus er usikker:</strong> P40 frigir ikke.</div>
     </div>
@@ -164,7 +166,7 @@
       Posisjonen brukes lokalt på enheten for å beregne avstand til Sluppenvegen 17A.
       GPS-koordinaten sendes ikke til parkeringstjenesten eller utvikleren av denne
       funksjonen og lagres ikke som parkeringshistorikk. P40 lagrer begrenset lokal
-      automasjonsstatus, blant annet bookingtid, registreringsnummer, den tekniske
+      automasjonsstatus, blant annet valgt automatikksbil, bookingtid, registreringsnummer, den tekniske
       SmartPark-ID-en som binder sikkerhetskontrollen til riktig parkering, status
       for kontinuerlig ankomstovervåking, eventuell verifisert ankomsttid og siste
       sikkerhetskontroll.
