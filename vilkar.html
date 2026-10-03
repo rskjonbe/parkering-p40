@@ -153,6 +153,13 @@
       som forventet.
     </p>
 
+    <p>
+      Parkeringsassistent P40 benytter tekniske grensesnitt hos den
+      underliggende parkeringstjenesten. Disse grensesnittene kan endres uten
+      varsel, og slike endringer kan føre til at funksjoner må oppdateres eller
+      midlertidig slutter å fungere.
+    </p>
+
 
     <h2>5. Parkeringsbestilling</h2>
 
@@ -295,18 +302,19 @@
     </p>
 
 
-    <h2>8. AI-generert diagnostikkveiledning</h2>
+    <h2>8. AI-basert diagnostikkveiledning</h2>
     <p>
       På støttede enheter kan appen bruke Apples lokale Foundation Models til å
-      lage en forklaring av teknisk diagnostikk og en anbefaling om det kan være
-      nyttig å sende personvernfiltrert diagnostikk til utvikleren. Dette kan
-      også omfatte en lokal Health Check-oppsummering og en begrenset
-      hendelseslinje med nylige diagnostikkhendelser.
+      lage en forklaring av teknisk diagnostikk. Dette kan også omfatte en lokal
+      Health Check-oppsummering og en begrenset hendelseslinje med nylige
+      diagnostikkhendelser.
     </p>
     <p>
-      Slik tekst er tydelig merket som AI-generert, kan inneholde feil og skal
+      Forklaringen er tydelig merket som AI-generert, kan inneholde feil og skal
       ikke behandles som bekreftelse på at parkering er registrert eller gyldig.
-      Ved usikkerhet skal status kontrolleres direkte i SmartPark.
+      Anbefalingen om diagnostikk bør deles med utvikleren er separat,
+      deterministisk P40-logikk og genereres ikke av AI. Ved usikkerhet skal
+      status kontrolleres direkte i SmartPark.
     </p>
     <p>
       Diagnostikk sendes ikke automatisk. Brukeren må selv velge å dele den
@@ -406,7 +414,7 @@
     </nav>
 
     <footer>
-      Sist oppdatert: 2. oktober 2026
+      Sist oppdatert: 3. oktober 2026
     </footer>
 
   </div>
