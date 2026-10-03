@@ -25,12 +25,21 @@
       create a “P40 Frigi” shortcut.
     </div>
 
+    <div class="notice">
+      <strong>Start time in Build 60:</strong>
+      The time selected in P40 is a hard lower boundary. <strong>P40 Start is
+      never accepted before that time.</strong> If iOS delays the Time of Day
+      automation, it may still run later on the same selected weekday.
+      Manual <strong>Activate P40</strong> is separate and can never arm the
+      automatic two-hour safety release.
+    </div>
+
     <h2>What does P40 do, and what do you do yourself?</h2>
     <div class="split-grid">
       <section class="panel good-panel">
         <h3>P40 handles automatically</h3>
         <ul>
-          <li>provides the <strong>Activate P40</strong> action to Shortcuts for P40 Start and optional P40 Ankomststart</li>
+          <li>provides dedicated Shortcuts actions: <strong>Start Automatic P40</strong> for P40 Start and <strong>P40 Arrival Start</strong> for the optional arrival automation</li>
           <li>stores the start time and weekdays selected in P40</li>
           <li>creates a safety candidate only when a scheduled run actually creates a new P40 parking session</li>
           <li>monitors arrival within a fixed <strong>1 km zone</strong> around Sluppenvegen 17A when Automatic P40 is enabled and Always location access is granted</li>
@@ -44,7 +53,7 @@
         <h3>You configure in Shortcuts</h3>
         <ul>
           <li>the time automation that starts P40</li>
-          <li>optionally/recommended, <strong>P40 Ankomststart</strong> using an Arrive trigger at 1 km and the <strong>Activate P40</strong> action</li>
+          <li>optionally, <strong>P40 Arrival Start</strong> using an Arrive trigger at 1 km and the <strong>P40 Arrival Start</strong> action</li>
           <li>you do not create a release automation; P40 handles the two-hour safety check</li>
           <li>the same time and weekdays shown by P40</li>
           <li>permission for the shortcuts to run while the phone is locked</li>
@@ -67,7 +76,7 @@
       <ol>
         <li>First choose <strong>Automation vehicle</strong> in P40. This vehicle is pinned to the time automation and does not change merely because you select another vehicle on the Home screen.</li>
         <li>In the P40 setup guide, tap <strong>Create in Shortcuts</strong> for Start P40.</li>
-        <li>Find the P40 action <strong>Activate P40</strong> and use it in a new shortcut.</li>
+        <li>Find the P40 action <strong>Start Automatic P40</strong> and use it in the <strong>P40 Start</strong> shortcut.</li>
         <li>Name the shortcut <strong>P40 Start</strong>.</li>
         <li>In Shortcuts choose <strong>Edit → Automation</strong> and add <strong>Time of Day</strong>.</li>
         <li><strong>Check:</strong> once the trigger is saved, <strong>P40 Start</strong> should appear under the <strong>Automation</strong> tab in Shortcuts. If it only appears under Shortcuts, the automation trigger is missing.</li>
@@ -81,7 +90,7 @@
     <div class="step">
       <p><strong>Purpose:</strong> extra booking coverage when you actually arrive at Sluppen, for example evenings, weekends or days you arrive later than usual.</p>
       <ol>
-        <li>Create a new shortcut with the P40 action <strong>Activate P40</strong>.</li>
+        <li>Create a new shortcut with the P40 action <strong>P40 Arrival Start</strong>.</li>
         <li>Name it <strong>P40 Ankomststart</strong>.</li>
         <li>Choose <strong>Edit → Automation → Arrive</strong>.</li>
         <li>Use <strong>Sluppenvegen 17A</strong> with a <strong>1.0 km</strong> radius.</li>
@@ -90,11 +99,10 @@
         <li>Return to P40 and confirm the setup.</li>
       </ol>
       <p>
-        This Shortcuts geofence is an extra booking trigger. When it runs outside
-        the normal time window, P40 also performs a fresh local location check and
+        This Shortcuts geofence is an extra booking trigger. When it runs through the Arrive trigger, P40 performs a fresh local location check and
         requires the phone to be actually inside 1 km before a booking can be sent.
         Use it only when entering the area normally means you intend to park at P40.
-        “Activate P40” also checks for an existing active parking session before
+        “P40 Arrival Start” also checks for an existing active parking session before
         attempting a new one, so time start and arrival start can coexist without
         blindly creating duplicates.
       </p>
@@ -137,7 +145,7 @@
       </p>
       <p>
         If you still have an old “P40 Frigi” shortcut or automation from an
-        earlier test build, you can delete it. Build 58 does not use it.
+        earlier test build, you can delete it. Build 60 does not use it.
       </p>
     </div>
 
@@ -166,7 +174,7 @@
       The older <strong>P40 Ankomst</strong> action recorded arrival and remains
       only for backward compatibility. Do not use it for a new setup. The new
       recommended <strong>P40 Ankomststart</strong> is different: it uses Apple's
-      <strong>Arrive</strong> trigger and runs the normal <strong>Activate P40</strong>
+      <strong>Arrive</strong> trigger and runs the dedicated <strong>P40 Arrival Start</strong>
       action so it can start booking.
     </p>
 
@@ -203,9 +211,11 @@
 
     <h2>Privacy</h2>
     <p>
-      Location is processed locally on the device to calculate distance to
-      Sluppenvegen 17A. The GPS coordinate is not sent to the parking service or
-      the developer by this feature and is not stored as parking history. P40
+      Location is processed locally on the device in two situations: the optional
+      <strong>P40 Arrival Start</strong> performs a fresh check before any booking,
+      and after a scheduled automatic booking location is used for arrival and
+      safety checks around Sluppenvegen 17A. GPS coordinates are not sent to the
+      parking service or the developer and are not stored as parking history. P40
       stores limited local automation state, including the selected automation vehicle, booking time, vehicle
       registration number, the technical SmartPark identifier that binds the safety
       check to the correct parking session, arrival-monitoring continuity status,
