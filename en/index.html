@@ -80,7 +80,9 @@
       can run no earlier than two hours after booking. The task uses the
       local automation state already stored by the app and does not introduce
       any new sharing of location or parking data. iOS decides when the
-      background task actually runs.
+      background task actually runs. If execution is delayed, P40 may show
+      a local notification with relevant timing information. The notification
+      is created on the device and introduces no new data transfer.
     </p>
 
       <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. To measure keep-alive effectiveness, the app may also store locally the time a sign-in session was created or first observed, the last authenticated verification, last keep-alive, number of successful keep-alive runs, and confirmed session end time/reason. The token, phone number and SMS code are not stored in this session measurement. The app may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
