@@ -97,6 +97,7 @@
         <li>Bruk kontrolltidspunktet P40 viser. Det er minst to timer etter valgt starttid.</li>
         <li>Bruk ukedagene P40 viser. Hvis kontrolltidspunktet passerer midnatt, viser P40 dagene kontrollen faktisk skal kjøre.</li>
         <li>Aktiver <strong>Allow Running When Locked</strong>, lagre og bekreft oppsettet i P40.</li>
+        <li><strong>P40 Frigi er ment for denne tidsautomasjonen.</strong> Den publiseres ikke som en anbefalt Siri-stemmehandling, fordi den kan avslutte en parkering.</li>
       </ol>
     </div>
 
@@ -105,7 +106,9 @@
       <div class="flow-item"><strong>Ankomst allerede registrert:</strong> parkeringen beholdes.</div>
       <div class="flow-item"><strong>Telefonen er nå innenfor 1 km:</strong> ankomst registreres og parkeringen beholdes.</div>
       <div class="flow-item"><strong>iOS har allerede meldt at telefonen kom inn i 1 km-sonen:</strong> P40 beholder parkeringen, også dersom en nøyaktig GPS-verifisering akkurat ved ankomst ikke var tilgjengelig.</div>
-      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 kan bare gå videre dersom appen også kan bekrefte at 1 km ankomstkontrollen faktisk ble armert etter bookingen. Deretter kontrolleres at samme bil fortsatt har den aktive P40-parkeringen før eventuell frigivelse.</div>
+      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 krever en fersk posisjon og tar hensyn til GPS-nøyaktigheten. Automatisk frigivelse kan bare fortsette dersom selv den nærmeste plausible posisjonen er utenfor 1 km-sonen.</div>
+      <div class="flow-item"><strong>Ankomstkontrollen har hatt et avbrudd:</strong> P40 frigir ikke automatisk. Monitoreringen må ha blitt aktivert kort tid etter bookingen og ha vært pålitelig gjennom hele perioden.</div>
+      <div class="flow-item"><strong>Riktig parkering:</strong> P40 kontrollerer ikke bare bilen, men også den eksakte SmartPark-parkeringen som automatikken opprettet. En nyere parkering på samme bil kan derfor ikke avsluttes av en gammel sikkerhetskontroll.</div>
       <div class="flow-item"><strong>1 km ankomstkontrollen ble ikke bekreftet aktiv:</strong> P40 frigir ikke. Du får et varsel med bookingtid og kontrolltid og kan avslutte manuelt dersom plassen ikke brukes.</div>
       <div class="flow-item"><strong>Posisjon «Alltid» mangler:</strong> P40 frigir ikke. Du får et varsel med tidspunktet parkeringen ble bestilt og tidspunktet sikkerhetskontrollen kjørte.</div>
       <div class="flow-item"><strong>GPS, nettverk, innlogging eller parkeringsstatus er usikker:</strong> P40 frigir ikke.</div>
@@ -161,8 +164,10 @@
       Posisjonen brukes lokalt på enheten for å beregne avstand til Sluppenvegen 17A.
       GPS-koordinaten sendes ikke til parkeringstjenesten eller utvikleren av denne
       funksjonen og lagres ikke som parkeringshistorikk. P40 lagrer begrenset lokal
-      automasjonsstatus, blant annet bookingtid, registreringsnummer, eventuell
-      verifisert ankomsttid og siste sikkerhetskontroll.
+      automasjonsstatus, blant annet bookingtid, registreringsnummer, den tekniske
+      SmartPark-ID-en som binder sikkerhetskontrollen til riktig parkering, status
+      for kontinuerlig ankomstovervåking, eventuell verifisert ankomsttid og siste
+      sikkerhetskontroll.
     </p>
 
     <h2>Apple Snarveier – offisiell dokumentasjon</h2>
