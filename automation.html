@@ -113,36 +113,29 @@
       </p>
     </div>
 
-    <h2>Steg 4 – opprett «P40 Frigi»</h2>
-
-    <p>
-      På iOS 27 ligger automasjonen inne i selve snarveien. «P40 Frigi» skal
-      derfor være en vanlig snarvei med handlingen
-      <strong>Frigi P40 hvis ikke ankommet</strong>, og denne snarveien får
-      deretter en <strong>Time of Day</strong>-automasjon via
-      <strong>Edit → Automation</strong>.
-    </p>
-
-    <p>
-      <strong>Viktig:</strong> Frigivelseshandlingen vises med vilje ikke som en
-      egen App Shortcut/Siri-flis på P40-siden i Snarveier, fordi handlingen kan
-      avslutte parkering. Når du lager «P40 Frigi», velger du
-      <strong>Add Action / Legg til handling</strong>, søker etter
-      <strong>Parkeringsassistent P40</strong> og velger
-      <strong>Frigi P40 hvis ikke ankommet</strong>.
-    </p>
+    <h2>Steg 4 – innebygd 2-timers sikkerhetskontroll</h2>
     <div class="step">
-      <p><strong>Formål:</strong> kontrollerer om en automatisk bestilt plass fortsatt er ubrukt.</p>
-      <ol>
-        <li>I P40-veiviseren trykker du <strong>Opprett i Snarveier</strong> for Frigi ubrukt plass.</li>
-        <li>Finn P40-handlingen <strong>Frigi P40 hvis ikke ankommet</strong>.</li>
-        <li>Gi snarveien navnet <strong>P40 Frigi</strong>.</li>
-        <li>Velg <strong>Edit → Automation → Time of Day</strong>.</li>
-        <li>Bruk kontrolltidspunktet P40 viser. Normalt er dette <strong>2 timer og 10 minutter etter planlagt start</strong>. Selve sikkerhetsregelen krever fortsatt minst 2 timer fra den faktiske bekreftede bookingen.</li>
-        <li>Bruk ukedagene P40 viser. Hvis kontrolltidspunktet passerer midnatt, viser P40 dagene kontrollen faktisk skal kjøre.</li>
-        <li>Aktiver <strong>Allow Running When Locked</strong>, lagre og bekreft oppsettet i P40.</li>
-        <li><strong>P40 Frigi er ment for denne tidsautomasjonen.</strong> Den publiseres ikke som en anbefalt Siri-stemmehandling, fordi den kan avslutte en parkering.</li>
-      </ol>
+      <p>
+        Du skal <strong>ikke</strong> opprette «P40 Frigi». Etter en bekreftet
+        tidsstyrt forhåndsbestilling håndterer P40 sikkerhetskontrollen selv.
+      </p>
+      <p>
+        P40 ber iOS om en bakgrunnskontroll <strong>tidligst 2 timer etter den
+        faktiske bekreftede bookingen</strong>. iOS bestemmer det faktiske
+        tidspunktet for bakgrunnskjøring og garanterer ikke kjøring på nøyaktig
+        klokkeslett. Hvis kontrollen blir forsinket, prøver P40 også gjennom
+        ordinær bakgrunnsoppdatering og straks appen blir aktiv igjen.
+      </p>
+      <p>
+        P40 avslutter aldri parkeringen før 2 timer har gått. Alle eksisterende
+        sikkerhetsregler gjelder fortsatt: native 1 km ankomstkontroll, fersk GPS,
+        GPS-nøyaktighet, kontinuerlig monitorering, riktig bil, eksakt
+        SmartPark-parkering og sikker innlogging/status.
+      </p>
+      <p>
+        Har du en eldre «P40 Frigi»-snarvei eller automasjon fra en tidligere
+        testversjon, kan den slettes. Build 58 bruker den ikke.
+      </p>
     </div>
 
     <h2>Hva skjer ved 2-timerskontrollen?</h2>
@@ -178,7 +171,7 @@
     <div class="step">
       <ol>
         <li>Endre verdien i P40.</li>
-        <li>P40 markerer hvilke tidsstyrte Snarveier som må oppdateres. «P40 Ankomststart» bruker fast 1 km og påvirkes normalt ikke av tidsendringer.</li>
+        <li>P40 markerer om <strong>P40 Start</strong> må oppdateres. «P40 Ankomststart» bruker fast 1 km og påvirkes normalt ikke av tidsendringer. Det finnes ingen P40 Frigi-snarvei i nytt oppsett.</li>
         <li>Trykk <strong>Endre / kontroller i Snarveier</strong>. P40 åpner den navngitte snarveien så langt Apples støttede URL-integrasjon tillater.</li>
         <li>Velg <strong>Edit → Automation</strong> i Snarveier og endre tids-triggeren til verdiene P40 viser.</li>
         <li>Gå tilbake til P40 og bekreft oppsettet på nytt.</li>
