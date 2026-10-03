@@ -20,7 +20,7 @@
       <strong>In short:</strong>
       You create <strong>P40 Start</strong> with a time automation. You may
       also use <strong>P40 Ankomststart</strong> with an <strong>Arrive</strong>
-      trigger at 1 km around Sluppenvegen 17A for extra booking coverage.
+      trigger at 1.5 km around Sluppenvegen 17A for extra booking coverage.
       P40 handles the <strong>two-hour safety release itself</strong>; do not
       create a “P40 Frigi” shortcut.
     </div>
@@ -53,7 +53,7 @@
         <h3>You configure in Shortcuts</h3>
         <ul>
           <li>the time automation that starts P40</li>
-          <li>optionally, <strong>P40 Arrival Start</strong> using an Arrive trigger at 1 km and the <strong>P40 Arrival Start</strong> action</li>
+          <li>optionally, <strong>P40 Arrival Start</strong> using an Arrive trigger at the recommended 1.5 km radius and the <strong>P40 Arrival Start</strong> action</li>
           <li>you do not create a release automation; P40 handles the two-hour safety check</li>
           <li>the same time and weekdays shown by P40</li>
           <li>permission for the shortcuts to run while the phone is locked</li>
@@ -93,15 +93,13 @@
         <li>Create a new shortcut with the P40 action <strong>P40 Arrival Start</strong>.</li>
         <li>Name it <strong>P40 Ankomststart</strong>.</li>
         <li>Choose <strong>Edit → Automation → Arrive</strong>.</li>
-        <li>Use <strong>Sluppenvegen 17A</strong> with a <strong>1.0 km</strong> radius.</li>
-        <li>If you often pass through the area without parking, use the Arrive trigger's <strong>Time Range</strong> to limit when arrival start can run, or omit this optional Shortcut.</li>
+        <li>Use <strong>Sluppenvegen 17A</strong> with a <strong>1.5 km</strong> radius.</li>
+        <li>Turn <strong>Automation = on</strong>, turn <strong>Ask Before Running = off</strong>, and use the Arrive trigger's <strong>Time Range</strong> if you want to limit when arrival start can run. If you often pass through the area without parking, you can also omit this optional Shortcut.</li>
         <li>Enable <strong>Allow Running When Locked</strong>.</li>
         <li>Return to P40 and confirm the setup.</li>
       </ol>
       <p>
-        This Shortcuts geofence is an extra booking trigger. When it runs through the Arrive trigger, P40 performs a fresh local location check and
-        requires the phone to be actually inside 1 km before a booking can be sent.
-        Use it only when entering the area normally means you intend to park at P40.
+        This Shortcuts geofence is an extra booking trigger. When iOS fires the Arrive trigger, P40 runs the dedicated <strong>P40 Arrival Start</strong> action and performs the normal status/duplicate checks without an additional 1 km GPS gate. P40's separate native 1 km zone is used only after a scheduled booking as safety evidence for the two-hour release flow. Use Arrival Start only when entering the area normally means you intend to park at P40.
         “P40 Arrival Start” also checks for an existing active parking session before
         attempting a new one, so time start and arrival start can coexist without
         blindly creating duplicates.
@@ -182,7 +180,7 @@
     <div class="step">
       <ol>
         <li>Change the value in P40.</li>
-        <li>P40 marks whether <strong>P40 Start</strong> needs to be updated. “P40 Ankomststart” uses a fixed 1 km radius and normally does not change when times change. There is no P40 Frigi shortcut in the new setup.</li>
+        <li>P40 marks whether <strong>P40 Start</strong> needs to be updated. “P40 Ankomststart” uses the recommended 1.5 km Arrive radius and normally does not change when times change. There is no P40 Frigi shortcut in the new setup.</li>
         <li>Tap <strong>Edit / verify in Shortcuts</strong>. P40 opens the named shortcut as far as Apple's supported URL integration allows.</li>
         <li>Choose <strong>Edit → Automation</strong> in Shortcuts and update the time trigger to the values shown by P40.</li>
         <li>Return to P40 and confirm the setup again.</li>
@@ -211,9 +209,7 @@
 
     <h2>Privacy</h2>
     <p>
-      Location is processed locally on the device in two situations: the optional
-      <strong>P40 Arrival Start</strong> performs a fresh check before any booking,
-      and after a scheduled automatic booking location is used for arrival and
+      Location is processed locally on the device after a scheduled automatic booking for arrival and
       safety checks around Sluppenvegen 17A. GPS coordinates are not sent to the
       parking service or the developer and are not stored as parking history. P40
       stores limited local automation state, including the selected/default vehicle, booking time, vehicle
