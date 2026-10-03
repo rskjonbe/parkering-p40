@@ -393,60 +393,49 @@
     <h2>Veiviser for Automatisk P40</h2>
 
     <p>
-      Parkeringsassistent P40 viser en tydelig status for automatikkoppsettet på
-      hjemskjermen. Der kan både nye og eksisterende brukere åpne en veiviser
-      for å kontrollere innlogging, valgt bil, posisjon, varsler og de tre
-      personlige automasjonene som brukes sammen med Apple Snarveier.
+      Hjemskjermen viser om automatikkoppsettet er klart. Veiviseren kontrollerer
+      innlogging, valgt bil, posisjon «Alltid», varsler og de to nødvendige
+      tidsautomasjonene i Apple Snarveier.
     </p>
 
     <p>
-      iOS lar ikke Parkeringsassistent P40 lese listen over brukerens personlige
-      automasjoner i Snarveier. Derfor må brukeren selv bekrefte i veiviseren
-      at hver av de tre automasjonene er satt opp. Appen kan i tillegg vise når
-      den aktuelle P40-handlingen sist ble observert kjørt, men dette brukes
-      bare som diagnostikk og er ikke bevis på at riktig trigger er konfigurert.
+      Apple gir ikke P40 tilgang til å lese eller endre brukerens personlige
+      automasjonstriggere direkte. P40 kan derfor vise nøyaktige verdier,
+      åpne den navngitte snarveien og registrere brukerens bekreftelse, men
+      brukeren må selv opprette eller endre tids-triggeren i Snarveier.
     </p>
 
     <p>
-      De tre handlingene er <strong>Aktiver P40</strong>,
-      <strong>Registrer P40-ankomst</strong> og
-      <strong>Frigi P40 hvis ikke ankommet</strong>. Selve personlige triggeren
-      opprettes og bekreftes av brukeren i Apples Snarveier.
+      De to navngitte snarveiene er <strong>P40 Start</strong> med handlingen
+      <strong>Aktiver P40</strong>, og <strong>P40 Frigi</strong> med handlingen
+      <strong>Frigi P40 hvis ikke ankommet</strong>. P40s native 1 km
+      ankomstkontroll erstatter behovet for en tredje ankomst-Snarvei.
     </p>
 
     <p>
-      Ankomsttriggeren i Snarveier skal bruke en fast radius på
-      <strong>0,5 km</strong> rundt Sluppenvegen 17A. Radiusen som kan endres i
-      Parkeringsassistent P40 er en separat lokal GPS-kontroll. Endring av
-      P40-radiusen krever derfor ikke at Snarveier-automatiseringen endres.
+      På iOS 27 følger veiviseren Apples gjeldende modell:
+      åpne snarveien, velg <strong>Edit → Automation</strong>, bruk
+      <strong>Time of Day</strong>, og aktiver
+      <strong>Info → Privacy → Allow Running When Locked</strong>.
     </p>
 
     <p>
-      Automasjonene opprettes og lagres i <strong>Apples Snarveier-app</strong>.
-      P40 gjør sine handlinger tilgjengelige som App Shortcuts og åpner
-      Snarveier med Apples native integrasjon. Veiviseren viser nøyaktig hvilken
-      P40-handling, trigger, klokkeslett, ukedager og radius som skal brukes.
-      I Snarveier åpner brukeren den aktuelle P40-handlingen, velger
-      <strong>Use in New Shortcut / Bruk i ny snarvei</strong>, gir snarveien
-      navnet <strong>P40 Start</strong>, <strong>P40 Ankomst</strong> eller
-      <strong>P40 Frigi</strong>, og velger deretter
-      <strong>Edit → Automation</strong> for å legge til eller endre triggeren.
+      Hvis starttid eller ukedager endres i P40, markeres den relevante
+      snarveien som utdatert. P40 åpner <strong>P40 Start</strong> eller
+      <strong>P40 Frigi</strong> for endring, viser verdiene som skal brukes,
+      og ber brukeren bekrefte oppsettet på nytt. Hvis kontrolltidspunktet
+      passerer midnatt, viser P40 automatisk de ukedagene kontrollen faktisk
+      skal kjøre.
     </p>
 
     <p>
-      Apple gir ikke P40 tilgang til å lese eller endre selve personlige
-      automasjonstriggeren. Når du endrer for eksempel starttid eller ukedager i
-      P40, blir den relevante bekreftelsen derfor markert som utdatert, og
-      veiviseren åpner den navngitte snarveien slik at du kan oppdatere triggeren
-      i Snarveier og deretter bekrefte oppsettet på nytt.
+      Under <strong>Snarveier og status</strong> vises P40s lokale status:
+      siste bekreftede oppsett, siste observerte kjøring og siste registrerte
+      resultat. Dette er ikke en direkte avlesning av Apples automasjonsliste.
     </p>
 
     <p>
-      Under <strong>Snarveier og status</strong> i menyen vises P40s registrerte
-      oppsett, tidspunktet det sist ble bekreftet, siste observerte kjøring og
-      siste registrerte resultat for hver automasjon. Dette er P40s lokale
-      status og ikke en direkte avlesning av Apples liste over personlige
-      automasjoner.
+      <a href="automation.html"><strong>Detaljert steg-for-steg-veiledning</strong></a>
     </p>
 
     <h2>Personvern</h2>
