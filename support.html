@@ -189,19 +189,23 @@
     </p>
 
     <p>
-      Ved første oppstart brukes norsk når iPhone-språket er norsk, engelsk
-      når iPhone-språket er engelsk, og ellers engelsk. Eksisterende brukere
+      Ved første oppstart brukes norsk når iPhone-språket er norsk og engelsk
+      når iPhone-språket er engelsk. Har telefonen et annet språk, starter P40
+      på engelsk. Dersom både Apples innebygde Foundation Model og Apple
+      Translation støtter telefonens språk på akkurat denne enheten, får en ny
+      bruker et tydelig tilbud om å bytte til dette språket. Hvis språket eller
+      enheten ikke støttes, fortsetter appen på engelsk. Eksisterende brukere
       uten tidligere språkvalg beholdes på norsk.
     </p>
 
     <p>
-      På enheter der Apple Intelligence er tilgjengelig og aktivert kan appen
-      tilby tilleggsspråk gjennom Apples lokale oversettelsesteknologi.
-      Språkmenyen kontrollerer støtte på den aktuelle iPhone-en og viser bare
-      språkpar som Apples Translation-rammeverk rapporterer som støttet eller
-      installert. På eldre eller ikke-støttede enheter vises bare norsk og
-      engelsk. Dersom et tidligere valgt tilleggsspråk ikke støttes på enheten,
-      brukes engelsk som fallback.
+      Tilleggsspråk vises bare når P40 kan bekrefte støtte på den aktuelle
+      iPhone-en både fra Apple Foundation Models og Apple Translation.
+      Selve grensesnittoversettelsen bruker <strong>Apple Translation –
+      on-device translation model</strong>; den er ikke den samme modellen som
+      P40s generative AI-funksjon. På eldre eller ikke-støttede enheter vises
+      bare norsk og engelsk. Dersom et tidligere valgt tilleggsspråk ikke lenger
+      støttes på enheten, brukes engelsk som fallback.
     </p>
 
     <p>
@@ -214,9 +218,12 @@
 
     <p>
       Åpne <strong>… → Sett opp / endre automatikk</strong> for den anbefalte
-      opplevelsen. Brukeren velger <strong>Bil for automatikk</strong>, starttid og ukedager i P40 og oppretter to
-      tidsautomasjoner i Apples Snarveier: <strong>P40 Start</strong> og
-      <strong>P40 Frigi</strong>.
+      opplevelsen. Brukeren velger <strong>Bil for automatikk</strong>, starttid
+      og ukedager i P40. To tidsautomasjoner er kjerneoppsettet:
+      <strong>P40 Start</strong> og <strong>P40 Frigi</strong>. I tillegg anbefales
+      <strong>P40 Ankomststart</strong>, en Apple Snarveier-automatisering med
+      <strong>Arrive</strong> ved 1 km rundt Sluppenvegen 17A som også kjører
+      <strong>Aktiver P40</strong>.
     </p>
 
     <p>
@@ -372,8 +379,10 @@
     </p>
 
     <p>
-      På støttede Apple Intelligence-enheter kan du velge
-      <strong>«Forklar diagnostikken med AI»</strong>. Appen lager da en lokal,
+      På støttede enheter kan du velge
+      <strong>«Forklar diagnostikken med AI»</strong>. Appen bruker
+      <strong>Apple Foundation Models – SystemLanguageModel.default (on-device)</strong>
+      og lager en lokal,
       personvernfiltrert forklaring av hva som ser ut til å ha skjedd, skrevet
       for brukere uten teknisk bakgrunn.
     </p>
@@ -428,7 +437,9 @@
       De to navngitte snarveiene er <strong>P40 Start</strong> med handlingen
       <strong>Aktiver P40</strong>, og <strong>P40 Frigi</strong> med handlingen
       <strong>Frigi P40 hvis ikke ankommet</strong>. P40s native 1 km
-      ankomstkontroll erstatter behovet for en tredje ankomst-Snarvei.
+      native ankomstkontroll er separat fra den anbefalte
+      <strong>P40 Ankomststart</strong>-Snarveien. Ankomststart kan starte booking;
+      den native kontrollen kan aldri starte booking.
     </p>
 
     <p>
