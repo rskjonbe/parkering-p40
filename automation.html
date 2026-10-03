@@ -20,7 +20,7 @@
       <strong>Kort forklart:</strong>
       Du lager <strong>P40 Start</strong> med tidsautomasjon. I tillegg kan du
       bruke <strong>P40 Ankomststart</strong> med <strong>Arrive</strong> ved
-      1 km rundt Sluppenvegen 17A som ekstra bookingdekning. P40 håndterer
+      1,5 km rundt Sluppenvegen 17A som ekstra bookingdekning. P40 håndterer
       <strong>2-timers sikkerhetsfrigivelsen selv</strong>; det skal ikke lages
       noen «P40 Frigi»-snarvei.
     </div>
@@ -53,7 +53,7 @@
         <h3>Du gjør i Snarveier</h3>
         <ul>
           <li>oppretter tidsautomasjonen som starter P40</li>
-          <li>kan opprette den valgfrie ankomstautomasjonen <strong>P40 Ankomststart</strong> med Arrive-trigger ved 1 km og handlingen <strong>P40 Ankomststart</strong></li>
+          <li>kan opprette den valgfrie ankomstautomasjonen <strong>P40 Ankomststart</strong> med Arrive-trigger ved anbefalt 1,5 km og handlingen <strong>P40 Ankomststart</strong></li>
           <li>du oppretter ingen frigivelsesautomasjon; 2-timers sikkerhetskontrollen håndteres av P40</li>
           <li>velger samme klokkeslett og ukedager som P40 viser</li>
           <li>tillater at snarveiene kan kjøre når telefonen er låst</li>
@@ -93,17 +93,19 @@
         <li>Opprett en ny snarvei med P40-handlingen <strong>P40 Ankomststart</strong>.</li>
         <li>Gi snarveien navnet <strong>P40 Ankomststart</strong>.</li>
         <li>Velg <strong>Edit → Automation → Arrive</strong>.</li>
-        <li>Bruk <strong>Sluppenvegen 17A</strong> og radius <strong>1,0 km</strong>.</li>
-        <li>Hvis du ofte passerer området uten å parkere, bruk Arrive-triggerens <strong>Time Range</strong> for å begrense når ankomststart kan kjøre, eller utelat denne valgfrie Snarveien.</li>
+        <li>Bruk <strong>Sluppenvegen 17A</strong> og radius <strong>1,5 km</strong>.</li>
+        <li>Slå <strong>Automatisering = på</strong>, slå <strong>Bekreft før utførelse = av</strong>, og bruk Arrive-triggerens <strong>Time Range</strong> hvis du vil begrense når ankomststart kan kjøre. Hvis du ofte passerer området uten å parkere, kan du også utelate denne valgfrie Snarveien.</li>
         <li>Aktiver <strong>Allow Running When Locked</strong>.</li>
         <li>Gå tilbake til P40 og bekreft oppsettet.</li>
       </ol>
       <p>
-        Denne Snarveier-geofencen er en ekstra bookingtrigger. Når den kjører
-        gjennom Arrive-triggeren, gjør P40 alltid en fersk lokal
-        posisjonskontroll og krever at telefonen faktisk er innenfor 1 km før
-        booking kan sendes. Bruk den likevel bare dersom ankomst til området
-        normalt betyr at du skal parkere på P40. «P40 Ankomststart» sjekker også om
+        Denne Snarveier-geofencen er en ekstra bookingtrigger. Når iOS fyrer
+        Arrive-triggeren, kjører P40 den dedikerte <strong>P40 Ankomststart</strong>-handlingen
+        og gjør vanlig status-/duplikatkontroll uten en ekstra 1 km GPS-sperre.
+        P40s separate native 1 km-sone brukes først etter en tidsstyrt booking som
+        sikkerhetsgrunnlag for eventuell 2-timers frigivelse. Bruk ankomststart bare
+        dersom ankomst til området normalt betyr at du skal parkere på P40.
+        «P40 Ankomststart» sjekker også om
         parkering allerede er aktiv før en ny bestilling forsøkes, så tidsstart
         og ankomststart kan eksistere parallelt uten blind dobbeltbooking.
       </p>
@@ -183,7 +185,7 @@
     <div class="step">
       <ol>
         <li>Endre verdien i P40.</li>
-        <li>P40 markerer om <strong>P40 Start</strong> må oppdateres. «P40 Ankomststart» bruker fast 1 km og påvirkes normalt ikke av tidsendringer. Det finnes ingen P40 Frigi-snarvei i nytt oppsett.</li>
+        <li>P40 markerer om <strong>P40 Start</strong> må oppdateres. «P40 Ankomststart» bruker anbefalt 1,5 km Arrive-radius og påvirkes normalt ikke av tidsendringer. Det finnes ingen P40 Frigi-snarvei i nytt oppsett.</li>
         <li>Trykk <strong>Endre / kontroller i Snarveier</strong>. P40 åpner den navngitte snarveien så langt Apples støttede URL-integrasjon tillater.</li>
         <li>Velg <strong>Edit → Automation</strong> i Snarveier og endre tids-triggeren til verdiene P40 viser.</li>
         <li>Gå tilbake til P40 og bekreft oppsettet på nytt.</li>
@@ -212,9 +214,8 @@
 
     <h2>Personvern</h2>
     <p>
-      Posisjonen brukes lokalt på enheten i to situasjoner: valgfri
-      <strong>P40 Ankomststart</strong> gjør en fersk kontroll før eventuell booking,
-      og etter en tidsstyrt automatisk booking brukes posisjon til ankomst- og
+      Posisjonen brukes lokalt på enheten etter en tidsstyrt automatisk booking
+      til ankomst- og
       sikkerhetskontrollen rundt Sluppenvegen 17A. GPS-koordinaten sendes ikke til
       parkeringstjenesten eller utvikleren og lagres ikke som parkeringshistorikk. P40 lagrer begrenset lokal
       automasjonsstatus, blant annet valgt automatikksbil, bookingtid, registreringsnummer, den tekniske
