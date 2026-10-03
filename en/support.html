@@ -33,7 +33,8 @@
     <p>
       P40 includes a small status widget optimized for CarPlay and StandBy.
       It shows active P40 parking, vehicle/registration number, remaining time
-      and the latest verified status. The widget is designed for glanceable
+      and the latest verified status. P40 includes an option to hide the
+      registration number on Lock Screen and status surfaces. The widget is designed for glanceable
       information and does not itself make SmartPark network requests or change parking.
     </p>
 
@@ -51,6 +52,12 @@
     </p>
 
 <h2>Privacy and security</h2>
+    <p>
+      Location is processed locally both by the optional <strong>P40 Arrival
+      Start</strong> before any booking and by the post-booking safety flow after
+      a scheduled automatic booking. GPS coordinates are not sent to SmartPark
+      or the developer and are not stored as parking history.
+    </p>
     <p>
       Parkeringsassistent P40 is designed to minimize data sharing. The SmartPark
       session is stored in Apple Keychain, vehicle photos remain local, and Apple
@@ -105,8 +112,9 @@
 
     <h2>Apple Watch app and complication</h2>
     <p>
-      The Apple Watch companion app shows P40 status, remaining time,
-      registration number, vehicle and last verification time.
+      The Apple Watch companion app shows P40 status, remaining time, vehicle and
+      last verification time. The registration number can be hidden using P40's
+      privacy setting.
     </p>
     <p>
       When the iPhone is reachable you can use <strong>Activate P40</strong> or
@@ -155,14 +163,15 @@
       and weekdays in P40. <strong>P40 Start</strong> is the only required
       user-created time automation. An optional <strong>P40 Ankomststart</strong>
       can also use an <strong>Arrive</strong> trigger at 1 km around Sluppenvegen 17A
-      to run <strong>Activate P40</strong> as extra booking coverage. Outside
-      the normal time-start window, P40 additionally requires a fresh local
-      location check inside 1 km before this trigger can send a booking.
+      to run the dedicated <strong>P40 Arrival Start</strong> action as extra booking
+      coverage. The action always requires a fresh local location check inside
+      1 km before any booking can be sent.
     </p>
     <p>
-      <strong>P40 Start</strong> runs <strong>Activate P40</strong>. P40 creates
-      a safety candidate only when that run actually creates a new P40 parking
-      session near the configured start time on an enabled day. An already
+      <strong>P40 Start</strong> runs <strong>Start Automatic P40</strong>. The selected
+      start time is a hard lower boundary: the action is never accepted before
+      that time. P40 creates a safety candidate only when that dedicated run
+      actually creates a new P40 parking session on an enabled day. An already
       active parking session does not arm automatic release.
     </p>
     <p>
@@ -310,9 +319,10 @@
     </p>
 
     <p>
-      <strong>P40 Start</strong> uses <strong>Activate P40</strong>.
-      <strong>P40 Ankomststart</strong> is optional and uses the same action
-      with an Arrive trigger. P40's native 1 km arrival monitor is separate and
+      <strong>P40 Start</strong> uses <strong>Start Automatic P40</strong>.
+      <strong>P40 Arrival Start</strong> is optional and uses its dedicated action
+      with an Arrive trigger. Manual <strong>Activate P40</strong> is separate and
+      can never arm automatic release. P40's native 1 km arrival monitor is separate and
       never starts parking. The two-hour safety release is handled by P40 and
       requires no separate shortcut.
     </p>
