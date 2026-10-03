@@ -22,8 +22,10 @@
     <h2>1. About the app</h2>
     <p>
       Parkeringsassistent P40 is designed to make it easier to check and request
-      parking for P40. The app communicates with the underlying parking service
-      to check parking status and perform actions requested by the user.
+      parking for P40. By using the app, the user accepts these terms. These
+      terms do not limit rights that cannot lawfully be waived. The app
+      communicates with the underlying parking service to check parking status
+      and perform actions requested by the user.
     </p>
     <p>
       The app may also retrieve technical vehicle information to make it easier
@@ -78,6 +80,12 @@
       which may require app updates or cause some functions to stop working
       temporarily.
     </p>
+    <p>
+      The app does not grant the user any independent right to SmartPark, P40
+      or other third-party services. The user must have valid access to the
+      relevant parking scheme and comply with the terms applicable to the
+      underlying service.
+    </p>
 
     <h2>5. Parking requests</h2>
     <p>
@@ -102,12 +110,16 @@
     </p>
     <p>
       If the user enables <strong>Automatic P40</strong>, booking may be started
-      by a time-based Shortcut and, if configured by the user, the recommended
-      <strong>P40 Ankomststart</strong> Shortcut using Apple's
-      <strong>Arrive</strong> trigger. Both run the same
-      <strong>Activate P40</strong> action. After a relevant booking, P40 may
-      monitor its own native fixed 1 km safety zone around Sluppenvegen 17A to
-      record arrival evidence. This native zone never books parking. The app
+      by the time automation <strong>P40 Start</strong>, which uses the
+      dedicated <strong>Start Automatic P40</strong> action, and optionally by
+      <strong>P40 Arrival Start</strong> using Apple's <strong>Arrive</strong>
+      trigger. P40 Arrival Start uses its own dedicated action and requires a
+      fresh on-device location check within 1 km before any booking. Manual
+      <strong>Activate P40</strong> is separate and can never arm automatic
+      release. The selected start time is a hard lower boundary; P40 Start is
+      never accepted before that time. After a relevant scheduled booking, P40
+      may monitor its own native fixed 1 km safety zone around Sluppenvegen 17A
+      to record arrival evidence. This native zone never books parking. The app
       handles the automatic-release safety check itself; no separate “P40 Frigi”
       shortcut is required. P40 asks iOS for background execution no earlier
       than two hours after a new booking actually created by the time-based
@@ -223,17 +235,32 @@
     </ul>
 
     <h2>10. Limitation of liability</h2>
-    <p>Use of Parkeringsassistent P40 is at the user's own risk.</p>
     <p>
-      The developer cannot guarantee that use of the app prevents parking
-      charges, penalties, control fees or other costs, or that parking status,
-      vehicle information, start time, end time or remaining time is always
-      correct or current.
+      Parkeringsassistent P40 is an independent utility that depends on
+      third-party services, network access and operating-system functionality
+      outside the developer's control. The user should therefore verify actual
+      parking status in SmartPark whenever status is uncertain or differs.
     </p>
     <p>
-      The developer is not responsible for loss or costs caused by incorrect
-      information, lack of network access, technical errors, third-party
-      failures or changes to services on which the app depends.
+      To the extent permitted by applicable law, no warranty is given that the
+      app will always be available, error-free or current, or that use of the
+      app will prevent parking charges, control fees, penalties or other costs.
+    </p>
+    <p>
+      To the extent permitted by applicable law, the developer is not liable
+      for indirect loss or costs caused solely by incorrect user information,
+      lack of network access, changes or failures in third-party services, or
+      other circumstances outside the developer's reasonable control.
+    </p>
+    <p>
+      Nothing in these terms limits liability or rights that cannot lawfully be
+      excluded or waived. The limitation also does not apply to the extent
+      liability follows from intentional misconduct, gross negligence or other
+      liability that applicable law does not permit to be limited.
+    </p>
+    <p>
+      These terms are governed by Norwegian law, without limiting any mandatory
+      venue, consumer or other protections that apply under applicable law.
     </p>
 
     <h2>11. Privacy</h2>
