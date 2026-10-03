@@ -62,6 +62,7 @@
     <div class="step">
       <p><strong>Purpose:</strong> starts the parking request at your selected time.</p>
       <ol>
+        <li>First choose <strong>Automation vehicle</strong> in P40. This vehicle is pinned to the time automation and does not change merely because you select another vehicle on the Home screen.</li>
         <li>In the P40 setup guide, tap <strong>Create in Shortcuts</strong> for Start P40.</li>
         <li>Find the P40 action <strong>Activate P40</strong> and use it in a new shortcut.</li>
         <li>Name the shortcut <strong>P40 Start</strong>.</li>
@@ -94,7 +95,7 @@
         <li>Find <strong>Release P40 if not arrived</strong>.</li>
         <li>Name the shortcut <strong>P40 Frigi</strong>.</li>
         <li>Choose <strong>Edit → Automation → Time of Day</strong>.</li>
-        <li>Use the control time shown by P40. It is at least two hours after the selected start time.</li>
+        <li>Use the control time shown by P40. Normally this is <strong>2 hours and 10 minutes after the planned start</strong>. The safety rule still requires at least 2 hours from the actual confirmed booking.</li>
         <li>Use the weekdays shown by P40. If the control time crosses midnight, P40 shows the days on which the control actually needs to run.</li>
         <li>Enable <strong>Allow Running When Locked</strong>, save and confirm the setup in P40.</li>
         <li><strong>P40 Frigi is intended for this time automation.</strong> It is not promoted as a Siri voice action because it can stop a parking session.</li>
@@ -110,6 +111,7 @@
       <div class="flow-item"><strong>Arrival monitoring was interrupted:</strong> P40 does not release automatically. Monitoring must have been armed shortly after booking and remained trustworthy for the full interval.</div>
       <div class="flow-item"><strong>The correct parking session:</strong> P40 verifies not only the vehicle but also the exact SmartPark parking session created by the automation. A newer parking session for the same vehicle cannot therefore be stopped by an older safety check.</div>
       <div class="flow-item"><strong>The 1 km arrival monitor was not confirmed active:</strong> P40 does not release. You receive a notification with booking time and control time and can stop manually if the space is not being used.</div>
+      <div class="flow-item"><strong>The control ran too early:</strong> if P40 Start was delayed and 2 actual hours have not yet passed since booking, parking is kept. The notification shows booking time, control time and the earliest time a new safe check may run.</div>
       <div class="flow-item"><strong>Always location access is missing:</strong> P40 does not release. You receive a notification containing both the booking time and the time the safety check ran.</div>
       <div class="flow-item"><strong>GPS, network, sign-in or parking status is uncertain:</strong> P40 does not release.</div>
     </div>
@@ -164,7 +166,7 @@
       Location is processed locally on the device to calculate distance to
       Sluppenvegen 17A. The GPS coordinate is not sent to the parking service or
       the developer by this feature and is not stored as parking history. P40
-      stores limited local automation state, including booking time, vehicle
+      stores limited local automation state, including the selected automation vehicle, booking time, vehicle
       registration number, the technical SmartPark identifier that binds the safety
       check to the correct parking session, arrival-monitoring continuity status,
       optional verified arrival time and the latest safety check.
