@@ -46,7 +46,7 @@
       <li><strong>Vehicle registration number</strong> – used to identify the vehicle a parking permit applies to and may be used to retrieve technical vehicle information.</li>
       <li><strong>Vehicle information</strong> – make, model and colour may be retrieved from the Norwegian Public Roads Administration API for technical vehicle information.</li>
       <li><strong>Optional vehicle photo</strong> – a photo selected by the user for easier visual identification. The photo is processed locally on the user's device.</li>
-      <li><strong>Precise location (optional for automation)</strong> – may be used locally on the iPhone after P40 has actually created an automatic booking. The app may then monitor a fixed 1 km safety zone around Sluppenvegen 17A, record a verified arrival and perform a new location check before any automatic release. GPS coordinates are not sent to the parking service, the developer or other third-party services.</li>
+      <li><strong>Precise location (optional for automation)</strong> – is processed locally in two situations. If the user configures optional <strong>P40 Arrival Start</strong>, the app performs a fresh location check before any booking and requires the phone to be within 1 km of Sluppenvegen 17A. After a scheduled automatic booking, the app may monitor the fixed 1 km safety zone, record arrival evidence and perform another location check before any automatic release. GPS coordinates are not sent to the parking service, the developer or other third-party services and are not stored as parking history.</li>
     </ul>
 
     <h2>3. Purpose of processing</h2>
@@ -63,6 +63,58 @@
       <li>display relevant information through Live Activities, the Lock Screen, Dynamic Island and a compatible paired Apple Watch when supported by the operating system</li>
     </ul>
     <p>The information is not used for advertising, marketing or cross-app or cross-site tracking.</p>
+
+    <h3>Controller and legal bases</h3>
+    <p>
+      For processing where Parkeringsassistent P40 determines the purpose and
+      means, <strong>Roar Skjønberg</strong> is the data controller. Contact
+      details are provided at the end of this page.
+    </p>
+    <ul>
+      <li>
+        <strong>Core functions requested by the user</strong>, including local
+        storage of the selected vehicle and processing necessary to check or
+        request P40 parking, are processed to the extent necessary to provide
+        the service requested by the user under Article 6(1)(b) GDPR.
+      </li>
+      <li>
+        <strong>Optional location-based automation</strong> is based on consent
+        under Article 6(1)(a) GDPR. Consent is expressed by actively enabling
+        the feature and granting the required iOS location permission. It may
+        be withdrawn by disabling the automation or revoking location access.
+      </li>
+      <li>
+        <strong>Local technical diagnostics and security data</strong> are
+        processed for P40's legitimate interest in providing a secure, stable
+        and troubleshootable app under Article 6(1)(f) GDPR. Processing is
+        limited and mainly local and excludes the SmartPark token, phone number
+        and SMS code from the diagnostic event timeline.
+      </li>
+      <li>
+        <strong>Optional vehicle photos and voluntary diagnostic sharing</strong>
+        occur only after an active user choice. Diagnostic sharing with the
+        developer is based on consent and never happens automatically.
+      </li>
+    </ul>
+    <p>
+      Withdrawing consent does not affect the lawfulness of processing that
+      took place before withdrawal. Some optional features may then be
+      unavailable, such as automatic safety release without the required
+      location access.
+    </p>
+    <p>
+      SmartPark/Giant Leap, the parking operator, Cloudflare and the Norwegian
+      Public Roads Administration may have their own roles and purposes for
+      information they receive through their services. Their processing is also
+      governed by their own terms and privacy notices.
+    </p>
+    <p>
+      Parkeringsassistent P40 does not make solely automated individual
+      decisions that produce legal effects or similarly significantly affect
+      the user within the meaning of Article 22 GDPR. The built-in two-hour
+      feature is user-enabled technical automation and is fail-safe: parking is
+      kept whenever the safety requirements cannot be verified.
+    </p>
 
     <h2>4. What is stored locally?</h2>
     <p>Parkeringsassistent P40 does not maintain its own server database of users' personal data.</p>
@@ -117,7 +169,9 @@
       Parkeringsassistent P40 on a paired Apple Watch, the iPhone may send
       required status information through Apple's WatchConnectivity framework.
       This may include P40 state, registration number, vehicle description,
-      expiry time, last verification time and the selected app language.
+      expiry time, last verification time and the selected app language. If the
+      user has enabled the option to hide the registration number on Lock
+      Screen and status surfaces, the masked display value is sent to Apple Watch.
       When an additional translated language is used, the local UI translation
       cache may also be synchronized to the Watch.
     </p>
@@ -224,6 +278,13 @@
       process technical information required to deliver and secure their
       services under their own terms and privacy policies.
     </p>
+    <p>
+      Cloudflare states that its services may involve processing outside the
+      EEA. Where a transfer requires additional safeguards, Cloudflare's
+      current Data Processing Addendum describes the use of mechanisms
+      including the EU Standard Contractual Clauses (SCCs) and other applicable
+      transfer safeguards.
+    </p>
 
     <h2>7. Data the app does not collect for its own purposes</h2>
     <ul>
@@ -268,26 +329,43 @@
       the underlying parking service has not confirmed the registration.
     </p>
 
-    <h2>10. Access and deletion</h2>
+    <h2>10. Rights, access and deletion</h2>
     <p>
-      The user may contact the developer with questions about how
-      Parkeringsassistent P40 processes personal data.
+      Where the conditions for the relevant right are met, the user may have
+      rights to access, rectification, erasure, restriction of processing,
+      data portability and to object to processing based on legitimate
+      interests. Consent may be withdrawn at any time.
     </p>
     <p>
-      Signing out removes the SmartPark session from Apple Keychain, but saved
-      vehicles, vehicle details, optional vehicle photos and local settings are
-      retained so they are not lost during a normal sign-out. Vehicles and
-      vehicle photos can be removed in the app. Uninstalling the app removes
+      Much of the information processed by P40 exists only locally on the
+      user's device and is therefore not available to the developer. Signing
+      out removes the SmartPark session from Apple Keychain. Vehicles and
+      vehicle photos can be deleted in the app. Uninstalling the app removes
       data stored in the app's local container.
     </p>
     <p>
-      A saved vehicle photo can be removed directly using “Remove vehicle
-      photo” and is also deleted if the vehicle is removed from the app.
+      Local automation state expires no later than 24 hours after the relevant
+      booking. The local diagnostic event timeline contains at most 30 events
+      and is retained for up to 7 days. Session-lifetime and preference data
+      remain local until replaced by newer data, deleted through a relevant app
+      function, or removed with the app's local data.
     </p>
     <p>
-      Information already stored by SmartPark, the parking operator or other
-      third-party services must be managed through those services' own privacy
+      If the user has voluntarily sent privacy-filtered diagnostics to the
+      developer, the user may contact the developer to request access,
+      correction or deletion of material the developer has actually received
+      and still retains.
+    </p>
+    <p>
+      Information already processed by SmartPark, the parking operator,
+      Cloudflare, the Norwegian Public Roads Administration or other third
+      parties must also be handled through the relevant service's privacy
       procedures.
+    </p>
+    <p>
+      Users have the right to lodge a complaint about personal-data processing
+      with the Norwegian Data Protection Authority,
+      <a href="https://www.datatilsynet.no/en/">Datatilsynet</a>.
     </p>
 
     <h2>11. Changes to this privacy policy</h2>
@@ -313,15 +391,15 @@
     </nav>
 
     <footer>Parkeringsassistent P40 – Privacy Policy</footer>
-  </div>
-
     <p>
       <strong>CarPlay/StandBy widget:</strong> The widget presents local P40
-      status from the device App Group, including parking state, registration
-      number, vehicle description, expiry and latest verified time. It does not
-      receive the SmartPark token, SMS code, phone number or GPS coordinates and
-      does not make SmartPark network requests itself.
+      status from the device App Group, including parking state, vehicle
+      description, expiry and latest verified time. Depending on the user's
+      privacy setting, the registration number is either shown or masked. The
+      widget does not receive the SmartPark token, SMS code, phone number or GPS
+      coordinates and does not make SmartPark network requests itself.
     </p>
+  </div>
 </main>
 </body>
 </html>
