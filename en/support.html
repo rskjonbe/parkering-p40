@@ -294,7 +294,7 @@
     <p>
       The Home screen shows whether automation setup is ready. The guide checks
       sign-in, selected vehicle, Always location access, notifications and the
-      two required time automations in Apple Shortcuts.
+      required <strong>P40 Start</strong> automation in Shortcuts. P40 Ankomststart is optional.
     </p>
 
     <p>
@@ -305,13 +305,11 @@
     </p>
 
     <p>
-      The two core named shortcuts are <strong>P40 Start</strong> using
-      <strong>Activate P40</strong>, and <strong>P40 Frigi</strong> using
-      <strong>Release P40 if not arrived</strong>. In addition,
-      <strong>P40 Ankomststart</strong> is recommended as an optional
-      <strong>Arrive</strong>-trigger booking fallback and also runs
-      <strong>Activate P40</strong>. P40's native 1 km arrival monitor is a
-      separate post-booking safety mechanism and never starts parking.
+      <strong>P40 Start</strong> uses <strong>Activate P40</strong>.
+      <strong>P40 Ankomststart</strong> is optional and uses the same action
+      with an Arrive trigger. P40's native 1 km arrival monitor is separate and
+      never starts parking. The two-hour safety release is handled by P40 and
+      requires no separate shortcut.
     </p>
 
     <p>
@@ -321,15 +319,14 @@
     </p>
 
     <p>
-      If the start time or weekdays are changed in P40, the relevant shortcut
-      is marked as stale. P40 opens <strong>P40 Start</strong> or
-      <strong>P40 Frigi</strong> for editing, shows the values to use, and asks
-      the user to confirm the setup again. If the control time crosses midnight,
-      P40 automatically shows the weekdays on which the control must actually run.
+      If the start time or weekdays are changed in P40,
+      <strong>P40 Start</strong> is marked as stale. P40 opens it for editing,
+      shows the values to use and asks the user to confirm the setup again.
+      The built-in two-hour safety check requires no corresponding Shortcuts update.
     </p>
 
     <p>
-      <strong>Shortcuts and status</strong> shows P40's local status: the last
+      <strong>Automation and status</strong> shows P40's local status: the last
       confirmed setup, last observed run and last recorded result. This is not
       a direct reading of Apple's Personal Automations list.
     </p>
