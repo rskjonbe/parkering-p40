@@ -257,10 +257,12 @@
     <h3>AI-basert forklaring av diagnostikk</h3>
 
     <p>
-      På støttede enheter kan Parkeringsassistent P40 bruke Apples lokale
-      Foundation Models / Apple Intelligence til å forklare teknisk diagnostikk
-      på et mer forståelig språk. AI-funksjonen er valgfri og startes av brukeren
-      fra <strong>… → Diagnostikk</strong>.
+      På støttede enheter kan Parkeringsassistent P40 bruke
+      <strong>Apple Foundation Models – SystemLanguageModel.default (on-device)</strong>
+      til å forklare teknisk diagnostikk på et mer forståelig språk.
+      AI-funksjonen er valgfri og startes av brukeren fra
+      <strong>… → Diagnostikk</strong>. Den eksakte systemmodellversjonen velges
+      av iOS og oppgis derfor ikke som et mer spesifikt modellnavn i appen.
     </p>
 
     <p>
@@ -272,7 +274,9 @@
     </p>
 
     <p>
-      AI-resultatet vises tydelig som <strong>AI-generert forklaring</strong>.
+      AI-resultatet vises tydelig som <strong>AI-generert forklaring</strong>,
+      og appen viser hvilken modell/API som brukes:
+      <strong>Apple Foundation Models – SystemLanguageModel.default (on-device)</strong>.
       Appen kan også bruke den personvernfiltrerte Health Check-oppsummeringen
       og den lokale hendelseslinjen når brukeren velger «Hva skjedde? Forklar
       med AI». Anbefalingen om diagnostikk bør deles er separat,
@@ -292,9 +296,13 @@
 
     <p>
       Norsk og engelsk er innebygde og kvalitetssikrede språk i appen.
-      På enheter der Apple Intelligence er tilgjengelig og aktivert, kan appen
-      i tillegg tilby flere språk. Disse oversettes ved hjelp av Apples
-      Translation-rammeverk og lagres lokalt som en cache på enheten.
+      Nye brukere starter direkte på norsk eller engelsk når dette er
+      iPhone-språket. Ved et annet iPhone-språk starter appen på engelsk.
+      Dersom både Apple Foundation Models og Apple Translation rapporterer støtte
+      for telefonens språk på den aktuelle enheten, tilbys brukeren å bytte til
+      dette språket. Selve grensesnittoversettelsen bruker
+      <strong>Apple Translation – on-device translation model</strong> og lagres
+      lokalt som en cache på enheten.
     </p>
 
     <p>
