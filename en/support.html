@@ -127,29 +127,44 @@
 
     <h2>Automation</h2>
     <p>
-      Open <strong>… → Automation</strong> to enable or disable Automatic P40
-      and choose the start time, weekdays and Sluppen verification radius.
-      The page also shows location-permission and notification status.
+      Open <strong>… → Set up / change automation</strong> for the recommended
+      flow. The user selects the start time and weekdays in P40 and creates two
+      time automations in Apple Shortcuts: <strong>P40 Start</strong> and
+      <strong>P40 Frigi</strong>.
     </p>
     <p>
-      iOS still requires the personal triggers to be created in Apple
-      Shortcuts. The app shows which actions to use for
-      <strong>Activate P40</strong>, <strong>Register P40 arrival</strong> and
-      <strong>Release P40 if not arrived</strong>.
+      <strong>P40 Start</strong> runs <strong>Activate P40</strong>. P40 creates
+      a safety candidate only when that run actually creates a new P40 parking
+      session near the configured start time on an enabled day. An already
+      active parking session does not arm automatic release.
     </p>
     <p>
-      When automation is enabled, Parkeringsassistent P40 may process a fresh
-      GPS location locally on the device to verify whether it is within the
-      selected Sluppen radius. The location is not sent to SmartPark, the
-      developer or the vehicle-lookup service, and the GPS coordinate is not
-      stored as parking history.
+      After such a booking, P40 handles arrival itself using a local, fixed
+      <strong>1 km safety zone</strong> around Sluppenvegen 17A. A separate
+      arrival automation in Shortcuts is not required. The geofence is only a
+      safety check and never books parking when there is no current automatic
+      booking.
     </p>
     <p>
-      Automatic release is considered no earlier than two hours after a new
-      booking that the automation actually created. Immediately before any
-      stop, the app verifies location and SmartPark status again. If location,
-      network, sign-in or SmartPark status is uncertain, the parking session is
-      kept.
+      <strong>P40 Frigi</strong> runs <strong>Release P40 if not arrived</strong>
+      no earlier than two hours after the actual booking. Before any automatic
+      stop, P40 obtains a new, fresh location and verifies that the same vehicle
+      still has the relevant active parking session. If GPS, network, sign-in
+      or parking status is uncertain, parking is kept.
+    </p>
+    <p>
+      If Always location access has not been granted, P40 never stops parking
+      automatically. The user receives a notification containing the booking
+      time and the time the safety check ran, and is told to stop the session
+      manually if the vehicle is not parked at P40.
+    </p>
+    <p>
+      Location is processed locally on the device. GPS coordinates are not sent
+      to the parking service, the developer or the vehicle-lookup service and
+      are not stored as parking history.
+    </p>
+    <p>
+      <a href="automation.html"><strong>Open the complete step-by-step Automatic P40 guide</strong></a>
     </p>
 
     <h2>Live Activity and Lock Screen</h2>
