@@ -70,7 +70,7 @@
 <h2>Personvern og sikkerhet</h2>
 
     <p>
-      Posisjon brukes lokalt både ved valgfri <strong>P40 Ankomststart</strong>
+      Posisjon brukes lokalt etter tidsstyrt automatisk booking
       før eventuell booking og i sikkerhetskontrollen etter en tidsstyrt
       automatisk booking. GPS-koordinaten sendes ikke til SmartPark eller
       utvikleren og lagres ikke som parkeringshistorikk.
@@ -253,9 +253,9 @@
       og ukedager i P40. <strong>P40 Start</strong> er den eneste nødvendige
       brukeropprettede tidsautomasjonen. I tillegg kan brukeren velge
       <strong>P40 Ankomststart</strong>, en valgfri Snarveier-automatisering med
-      <strong>Arrive</strong> ved 1 km rundt Sluppenvegen 17A som kjører den
-      dedikerte handlingen <strong>P40 Ankomststart</strong>. Handlingen krever
-      alltid en fersk lokal posisjonskontroll innenfor 1 km før eventuell booking.
+      <strong>Arrive</strong> ved anbefalt 1,5 km rundt Sluppenvegen 17A som kjører den
+      dedikerte handlingen <strong>P40 Ankomststart</strong>. Når iOS fyrer triggeren,
+      gjør P40 vanlig status- og duplikatkontroll uten en ekstra 1 km GPS-sperre før booking.
     </p>
 
     <p>
@@ -460,7 +460,7 @@
       innlogging, valgt bil, posisjon «Alltid», varsler og den nødvendige
       <strong>P40 Start</strong>-automasjonen i Snarveier. P40 Ankomststart er valgfri.
       Når Time of Day-triggeren er lagret, skal «P40 Start» vises under fanen
-      <strong>Automatisering</strong>. Hvis «P40 Start» bare vises under
+      <strong>Automatisering</strong>. Kontroller i stedet selve snarveien direkte: riktig trigger, Automatisering = på og Bekreft før utførelse = av. Hvis «P40 Start» bare vises under
       Snarveier, finnes snarveien, men automasjonstriggeren mangler.
     </p>
 
