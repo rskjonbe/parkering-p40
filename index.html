@@ -87,9 +87,12 @@
 
       <li>
         <strong>Presis posisjon (valgfritt for automatisering)</strong> – kan
-        brukes lokalt på iPhone for å kontrollere om brukeren befinner seg i
-        Sluppen-området før en automatisk P40-frigivelse. GPS-koordinaten
-        sendes ikke til SmartPark, utvikleren eller andre tredjepartstjenester.
+        brukes lokalt på iPhone etter at P40 faktisk har opprettet en automatisk
+        booking. Appen kan da overvåke en fast 1 km sikkerhetssone rundt
+        Sluppenvegen 17A, registrere verifisert ankomst og gjøre en ny
+        posisjonskontroll før eventuell automatisk frigivelse. GPS-koordinaten
+        sendes ikke til parkeringstjenesten, utvikleren eller andre
+        tredjepartstjenester.
       </li>
     </ul>
 
@@ -109,8 +112,8 @@
       <li>kontrollere relevant parkeringstillatelse</li>
       <li>vise parkeringsstatus og eventuell gjenstående tid</li>
       <li>
-        verifisere lokalt om iPhone er i Sluppen-området ved
-        ankomst- og frigivelsesautomatisering
+        verifisere lokalt om iPhone er innenfor den faste 1 km-sonen ved
+        automatisk ankomstregistrering og før eventuell frigivelse
       </li>
       <li>
         vise relevant informasjon gjennom Live Activities når funksjonen brukes,
@@ -170,10 +173,12 @@
 
       <li>
         <strong>Lokal automasjonsstatus</strong> – tidspunktet da en ny
-        P40-booking faktisk ble opprettet, registreringsnummeret den gjelder
-        og eventuelt tidspunkt for GPS-verifisert ankomst til Sluppen kan
-        lagres lokalt samme dag. Selve GPS-koordinaten lagres ikke som
-        parkeringshistorikk.
+        P40-booking faktisk ble opprettet, registreringsnummeret den gjelder,
+        eventuelt tidspunkt for GPS-verifisert ankomst til Sluppen, samt
+        tidspunkt og begrenset resultatstatus for siste sikkerhetskontroll kan
+        lagres lokalt. Tilstanden beholdes bare så lenge den er relevant for
+        den aktuelle automasjonsflyten og utløper senest etter 24 timer.
+        Selve GPS-koordinaten lagres ikke som parkeringshistorikk.
       </li>
 
       <li>
