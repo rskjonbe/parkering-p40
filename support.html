@@ -49,7 +49,8 @@
     <p>
       P40 har en liten status-widget som er optimalisert for CarPlay og StandBy.
       Den viser aktiv P40-parkering, bil/registreringsnummer, gjenstående tid og
-      sist verifiserte status. Widgeten er laget for rask avlesning og utfører
+      sist verifiserte status. I P40 kan du velge å skjule registreringsnummeret
+      på låseskjerm og statusflater. Widgeten er laget for rask avlesning og utfører
       ikke SmartPark-nettverkskall eller parkeringsendringer selv.
     </p>
 
@@ -67,6 +68,13 @@
     </p>
 
 <h2>Personvern og sikkerhet</h2>
+
+    <p>
+      Posisjon brukes lokalt både ved valgfri <strong>P40 Ankomststart</strong>
+      før eventuell booking og i sikkerhetskontrollen etter en tidsstyrt
+      automatisk booking. GPS-koordinaten sendes ikke til SmartPark eller
+      utvikleren og lagres ikke som parkeringshistorikk.
+    </p>
 
     <p>
       Parkeringsassistent P40 er laget med minst mulig datadeling som prinsipp.
@@ -166,8 +174,8 @@
 
     <p>
       Parkeringsassistent P40 har en companion-app for Apple Watch. Klokken
-      viser P40-status, gjenstående tid, registreringsnummer, kjøretøy og
-      tidspunkt for siste verifisering.
+      viser P40-status, gjenstående tid, kjøretøy og tidspunkt for siste
+      verifisering. Registreringsnummeret kan skjules via personvernvalget i P40.
     </p>
 
     <p>
@@ -244,17 +252,17 @@
       opplevelsen. Brukeren velger <strong>Bil for automatikk</strong>, starttid
       og ukedager i P40. <strong>P40 Start</strong> er den eneste nødvendige
       brukeropprettede tidsautomasjonen. I tillegg kan brukeren velge
-      <strong>P40 Ankomststart</strong>, en Snarveier-automatisering med
-      <strong>Arrive</strong> ved 1 km rundt Sluppenvegen 17A som også kjører
-      <strong>Aktiver P40</strong>. Utenfor vanlig tidsstart krever P40 i tillegg
-      en fersk lokal posisjonskontroll innenfor 1 km før denne triggeren får
-      sende en booking.
+      <strong>P40 Ankomststart</strong>, en valgfri Snarveier-automatisering med
+      <strong>Arrive</strong> ved 1 km rundt Sluppenvegen 17A som kjører den
+      dedikerte handlingen <strong>P40 Ankomststart</strong>. Handlingen krever
+      alltid en fersk lokal posisjonskontroll innenfor 1 km før eventuell booking.
     </p>
 
     <p>
-      <strong>P40 Start</strong> kjører handlingen <strong>Aktiver P40</strong>.
-      P40 oppretter bare en sikkerhetskandidat dersom denne kjøringen faktisk
-      oppretter en ny P40-parkering nær konfigurert starttid på en valgt dag.
+      <strong>P40 Start</strong> kjører handlingen <strong>Start automatisk P40</strong>.
+      Valgt starttid er en hard nedre grense: handlingen godtas aldri før dette
+      klokkeslettet. P40 oppretter bare en sikkerhetskandidat dersom denne
+      dedikerte kjøringen faktisk oppretter en ny P40-parkering på en valgt dag.
       En allerede aktiv parkering armerer ikke automatisk frigivelse.
     </p>
 
@@ -464,9 +472,10 @@
     </p>
 
     <p>
-      <strong>P40 Start</strong> bruker handlingen <strong>Aktiver P40</strong>.
-      <strong>P40 Ankomststart</strong> er valgfri og bruker samme handling med
-      Arrive-trigger. P40s native 1 km ankomstkontroll er separat: den kan aldri
+      <strong>P40 Start</strong> bruker handlingen <strong>Start automatisk P40</strong>.
+      <strong>P40 Ankomststart</strong> er valgfri og bruker den dedikerte handlingen
+      <strong>P40 Ankomststart</strong> med Arrive-trigger. Manuell <strong>Aktiver P40</strong>
+      er separat og kan aldri armere automatisk frigivelse. P40s native 1 km ankomstkontroll er separat: den kan aldri
       starte booking. 2-timers sikkerhetsfrigivelse håndteres av P40 og krever
       ingen egen snarvei.
     </p>
