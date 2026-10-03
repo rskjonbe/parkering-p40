@@ -152,10 +152,9 @@
     <p>
       Open <strong>… → Set up / change automation</strong> for the recommended
       flow. The user selects the <strong>Automation vehicle</strong>, start time
-      and weekdays in P40 and creates two core time automations in Apple
-      Shortcuts: <strong>P40 Start</strong> and <strong>P40 Frigi</strong>.
-      An optional/recommended <strong>P40 Ankomststart</strong> can also use
-      Apple's <strong>Arrive</strong> trigger at 1 km around Sluppenvegen 17A
+      and weekdays in P40. <strong>P40 Start</strong> is the only required
+      user-created time automation. An optional <strong>P40 Ankomststart</strong>
+      can also use an <strong>Arrive</strong> trigger at 1 km around Sluppenvegen 17A
       to run <strong>Activate P40</strong> as extra booking coverage. Outside
       the normal time-start window, P40 additionally requires a fresh local
       location check inside 1 km before this trigger can send a booking.
@@ -176,19 +175,12 @@
       never books parking by itself.
     </p>
     <p>
-      <strong>P40 Frigi</strong> is a normal shortcut the user creates with
-      the <strong>Release P40 if not arrived</strong> action. On iOS 27, the
-      Time of Day automation is attached to that shortcut through
-      <strong>Edit → Automation</strong>. The release action is not shown as a
-      separate App Shortcut/Siri tile; it is available under
-      <strong>Add Action</strong> when building “P40 Frigi”.
-      P40 Frigi runs the safety control
-      no earlier than two hours after the actual booking. Before any automatic
-      stop, P40 obtains a new, fresh location. GPS accuracy must also prove that
-      the phone is safely outside the 1 km zone. Arrival monitoring must have
-      remained trustworthy since booking, and the exact SmartPark parking session
-      created by the automation must still be active. If GPS, arrival-monitoring
-      continuity, network, sign-in or parking status is uncertain, parking is kept.
+      <strong>The two-hour safety release is built into P40.</strong>
+      After a confirmed time-based pre-booking, the app schedules its own
+      background check no earlier than two hours after the actual booking.
+      iOS controls when the background task actually runs. If delayed, P40
+      retries at the next background opportunity or when the app becomes
+      active. No “P40 Frigi” shortcut is required.
     </p>
     <p>
       If Always location access has not been granted, P40 never stops parking
