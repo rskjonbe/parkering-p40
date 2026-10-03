@@ -90,11 +90,13 @@
         <li>Return to P40 and confirm the setup.</li>
       </ol>
       <p>
-        This Shortcuts geofence can start a P40 booking. Use it only when entering
-        the area normally means you actually intend to park at P40. “Activate P40”
-        always checks for an existing active parking session before attempting a
-        new one, so time start and arrival start can coexist without blindly
-        creating duplicates.
+        This Shortcuts geofence is an extra booking trigger. When it runs outside
+        the normal time window, P40 also performs a fresh local location check and
+        requires the phone to be actually inside 1 km before a booking can be sent.
+        Use it only when entering the area normally means you intend to park at P40.
+        “Activate P40” also checks for an existing active parking session before
+        attempting a new one, so time start and arrival start can coexist without
+        blindly creating duplicates.
       </p>
     </div>
 
