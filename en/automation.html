@@ -123,7 +123,10 @@
         after the actual confirmed booking</strong>. iOS decides the actual
         background execution time and does not guarantee an exact start time.
         If delayed, P40 also retries through normal background status refresh
-        and as soon as the app becomes active again.
+        and as soon as the app becomes active again. If iOS still hasn't
+        provided a background opportunity shortly after the check becomes
+        eligible, P40 shows a local time-sensitive reminder. Opening P40 then
+        runs the same fail-safe check immediately.
       </p>
       <p>
         P40 never stops parking before 2 hours have elapsed. All existing
