@@ -107,9 +107,13 @@
       <strong>Arrive</strong> trigger. Both run the same
       <strong>Activate P40</strong> action. After a relevant booking, P40 may
       monitor its own native fixed 1 km safety zone around Sluppenvegen 17A to
-      record arrival evidence. This native zone never books parking. The app may
-      consider automatic release no earlier than two hours after a new booking
-      actually created by the time-based automation.
+      record arrival evidence. This native zone never books parking. The app
+      handles the automatic-release safety check itself; no separate “P40 Frigi”
+      shortcut is required. P40 asks iOS for background execution no earlier
+      than two hours after a new booking actually created by the time-based
+      automation. iOS determines the actual background execution time, so the
+      check may occur later than the two-hour threshold. P40 never stops parking
+      before at least two hours have elapsed.
     </p>
     <p>
       Immediately before any automatic stop, a fresh GPS location is processed
