@@ -196,11 +196,15 @@
     </p>
 
     <p>
-      Dersom brukeren aktiverer <strong>Automatisk P40</strong>, kan appen også
-      vurdere automatisk frigivelse tidligst to timer etter en ny booking som
-      automasjonen faktisk opprettet. Etter en slik booking kan P40 overvåke en
-      fast 1 km sikkerhetssone rundt Sluppenvegen 17A for å registrere ankomst.
-      Geofencen bestiller ikke parkering alene.
+      Dersom brukeren aktiverer <strong>Automatisk P40</strong>, kan booking
+      startes av en tidsstyrt Snarvei og, dersom brukeren konfigurerer det,
+      en anbefalt <strong>P40 Ankomststart</strong>-Snarvei med Apples
+      <strong>Arrive</strong>-trigger. Begge kjører den samme handlingen
+      <strong>Aktiver P40</strong>. Etter en relevant booking kan P40 overvåke
+      sin egen native, faste 1 km sikkerhetssone rundt Sluppenvegen 17A for å
+      registrere ankomstbevis. Denne native sonen bestiller aldri parkering.
+      Appen kan vurdere automatisk frigivelse tidligst to timer etter en ny
+      booking som den tidsstyrte automatikken faktisk opprettet.
     </p>
 
     <p>
@@ -306,10 +310,12 @@
     <h2>7. Språk</h2>
 
     <p>
-      Norsk og engelsk er faste språk i appen. På støttede enheter kan
-      tilleggsspråk tilbys ved lokal oversettelse med Apples
-      oversettelsesteknologi. Slike oversettelser kan avvike språklig fra den
-      kvalitetssikrede norske og engelske teksten.
+      Norsk og engelsk er faste språk i appen. Nye brukere med andre
+      iPhone-språk starter på engelsk og tilbys bare et tilleggsspråk når
+      enheten rapporterer støtte både fra Apple Foundation Models og Apple
+      Translation. Selve oversettelsen bruker <strong>Apple Translation –
+      on-device translation model</strong>. Slike oversettelser kan avvike
+      språklig fra den kvalitetssikrede norske og engelske teksten.
     </p>
 
     <p>
@@ -327,7 +333,9 @@
       diagnostikkhendelser.
     </p>
     <p>
-      Forklaringen er tydelig merket som AI-generert, kan inneholde feil og skal
+      Forklaringen er tydelig merket som AI-generert og viser modellen som
+      <strong>Apple Foundation Models – SystemLanguageModel.default (on-device)</strong>.
+      Den kan inneholde feil og skal
       ikke behandles som bekreftelse på at parkering er registrert eller gyldig.
       Anbefalingen om diagnostikk bør deles med utvikleren er separat,
       deterministisk P40-logikk og genereres ikke av AI. Ved usikkerhet skal
