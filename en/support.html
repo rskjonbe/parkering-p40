@@ -194,6 +194,22 @@
       check. It does not start parking or change an existing parking session.
     </p>
 
+    <h3>Session keep-alive and lifetime</h3>
+    <p>
+      Diagnostics shows when the current sign-in session was created. If the
+      session already existed when this measurement feature was introduced,
+      P40 instead shows when it first observed that session. The app also shows
+      the last authenticated verification, last keep-alive, number of
+      successful keep-alive runs and the live session lifetime.
+    </p>
+    <p>
+      When the parking service confirms that sign-in has expired, the end time
+      and measured lifetime are frozen so keep-alive effectiveness can be
+      evaluated. Manual sign-out is recorded separately and is not labelled as
+      session expiry. The token, phone number and SMS code are not part of this
+      measurement.
+    </p>
+
     <h3>Recent events</h3>
     <p>
       The app can show a local timeline of recent diagnostic events. At most
