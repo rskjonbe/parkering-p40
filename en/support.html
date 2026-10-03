@@ -242,59 +242,47 @@
     <h2>Automatic P40 setup guide</h2>
 
     <p>
-      Parkeringsassistent P40 shows a clear automation-setup status on the Home
-      screen. New and existing users can open a guide that checks sign-in,
-      selected vehicle, location, notifications and the three Personal
-      Automations used with Apple Shortcuts.
+      The Home screen shows whether automation setup is ready. The guide checks
+      sign-in, selected vehicle, Always location access, notifications and the
+      two required time automations in Apple Shortcuts.
     </p>
 
     <p>
-      iOS does not let Parkeringsassistent P40 read the user's list of Personal
-      Automations in Shortcuts. The user therefore confirms each of the three
-      automations in the guide. The app may also show when the relevant P40
-      action was last observed running, but this is diagnostics only and is not
-      proof that the correct trigger is configured.
+      Apple does not give P40 access to read or modify the user's Personal
+      Automation triggers directly. P40 can therefore show the exact values,
+      open the named shortcut and record the user's confirmation, but the user
+      must create or change the time trigger in Shortcuts.
     </p>
 
     <p>
-      The three actions are <strong>Activate P40</strong>,
-      <strong>Register P40 arrival</strong> and
-      <strong>Release P40 if not arrived</strong>. The Personal Automation
-      trigger itself is created and confirmed by the user in Apple Shortcuts.
+      The two named shortcuts are <strong>P40 Start</strong> using
+      <strong>Activate P40</strong>, and <strong>P40 Frigi</strong> using
+      <strong>Release P40 if not arrived</strong>. P40's native 1 km arrival
+      check removes the need for a third arrival Shortcut.
     </p>
 
     <p>
-      The Shortcuts arrival trigger should use a fixed
-      <strong>0.5 km</strong> radius around Sluppenvegen 17A. The radius that
-      can be changed inside Parkeringsassistent P40 is a separate local GPS
-      verification threshold, so changing the P40 radius does not require
-      editing the Shortcuts automation.
+      On iOS 27 the guide follows Apple's current model: open the shortcut,
+      choose <strong>Edit → Automation</strong>, use <strong>Time of Day</strong>,
+      and enable <strong>Info → Privacy → Allow Running When Locked</strong>.
     </p>
 
     <p>
-      The automations are created and stored in <strong>Apple Shortcuts</strong>.
-      P40 exposes its actions as App Shortcuts and opens Shortcuts using Apple's
-      native integration. The guide shows the exact P40 action, trigger, time,
-      weekdays and radius to use. In Shortcuts, the user opens the relevant P40
-      App Shortcut, chooses <strong>Use in New Shortcut</strong>, names it
-      <strong>P40 Start</strong>, <strong>P40 Ankomst</strong>, or
-      <strong>P40 Frigi</strong>, then chooses <strong>Edit → Automation</strong>
-      to add or change the trigger.
+      If the start time or weekdays are changed in P40, the relevant shortcut
+      is marked as stale. P40 opens <strong>P40 Start</strong> or
+      <strong>P40 Frigi</strong> for editing, shows the values to use, and asks
+      the user to confirm the setup again. If the control time crosses midnight,
+      P40 automatically shows the weekdays on which the control must actually run.
     </p>
 
     <p>
-      Apple does not give P40 access to read or modify the Personal Automation
-      trigger itself. If you change settings such as start time or weekdays in
-      P40, the relevant confirmation is marked as stale and the guide opens the
-      named shortcut so you can update its trigger in Shortcuts and then confirm
-      the setup again.
+      <strong>Shortcuts and status</strong> shows P40's local status: the last
+      confirmed setup, last observed run and last recorded result. This is not
+      a direct reading of Apple's Personal Automations list.
     </p>
 
     <p>
-      The <strong>Shortcuts and status</strong> screen in the app menu shows
-      P40's recorded setup, when it was last confirmed, the last observed run,
-      and the last recorded result for each automation. This is P40's local
-      status, not a direct reading of Apple's Personal Automations list.
+      <a href="automation.html"><strong>Detailed step-by-step guide</strong></a>
     </p>
 
     <h2>Privacy</h2>
