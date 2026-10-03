@@ -104,7 +104,9 @@
     <div class="flow-list">
       <div class="flow-item"><strong>Arrival already recorded:</strong> parking is kept.</div>
       <div class="flow-item"><strong>The phone is currently inside 1 km:</strong> arrival is recorded and parking is kept.</div>
-      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 verifies that the same vehicle still has the active P40 parking session before any release.</div>
+      <div class="flow-item"><strong>iOS has already reported that the phone entered the 1 km zone:</strong> P40 keeps parking even if an exact GPS verification was unavailable at that moment.</div>
+      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 can continue only if it can also confirm that the 1 km arrival monitor was actually armed after booking. It then verifies that the same vehicle still has the active P40 parking session before any release.</div>
+      <div class="flow-item"><strong>The 1 km arrival monitor was not confirmed active:</strong> P40 does not release. You receive a notification with booking time and control time and can stop manually if the space is not being used.</div>
       <div class="flow-item"><strong>Always location access is missing:</strong> P40 does not release. You receive a notification containing both the booking time and the time the safety check ran.</div>
       <div class="flow-item"><strong>GPS, network, sign-in or parking status is uncertain:</strong> P40 does not release.</div>
     </div>
@@ -114,6 +116,14 @@
       P40 prefers keeping a potentially unused parking session over stopping
       parking when the safety requirements cannot be verified.
     </div>
+
+    <h2>Do you have an older setup with “P40 Ankomst”?</h2>
+    <p>
+      Build 54 no longer requires a separate arrival Shortcut. The older action
+      remains available for backward compatibility so an existing setup does
+      not suddenly stop working. Once the Build 54 setup is configured,
+      <strong>P40 Ankomst</strong> is not required by the new automation flow.
+    </p>
 
     <h2>When you change the start time or weekdays</h2>
     <div class="step">
