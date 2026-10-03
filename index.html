@@ -86,13 +86,15 @@
       </li>
 
       <li>
-        <strong>Presis posisjon (valgfritt for automatisering)</strong> – kan
-        brukes lokalt på iPhone etter at P40 faktisk har opprettet en automatisk
-        booking. Appen kan da overvåke en fast 1 km sikkerhetssone rundt
-        Sluppenvegen 17A, registrere verifisert ankomst og gjøre en ny
-        posisjonskontroll før eventuell automatisk frigivelse. GPS-koordinaten
-        sendes ikke til parkeringstjenesten, utvikleren eller andre
-        tredjepartstjenester.
+        <strong>Presis posisjon (valgfritt for automatisering)</strong> –
+        brukes lokalt i to situasjoner. Dersom brukeren har satt opp valgfri
+        <strong>P40 Ankomststart</strong>, gjør appen en fersk posisjonskontroll
+        før eventuell booking og krever at telefonen faktisk er innenfor 1 km
+        fra Sluppenvegen 17A. Etter en tidsstyrt automatisk booking kan appen
+        overvåke den faste 1 km sikkerhetssonen, registrere ankomstbevis og gjøre
+        en ny posisjonskontroll før eventuell automatisk frigivelse.
+        GPS-koordinaten sendes ikke til parkeringstjenesten, utvikleren eller
+        andre tredjepartstjenester og lagres ikke som parkeringshistorikk.
       </li>
     </ul>
 
@@ -125,6 +127,60 @@
     <p>
       Opplysningene brukes ikke til annonsering, markedsføring eller sporing
       av brukeren på tvers av apper eller nettsteder.
+    </p>
+
+    <h3>Behandlingsansvar og rettslig grunnlag</h3>
+    <p>
+      For behandling som Parkeringsassistent P40 selv bestemmer formål og
+      midler for, er <strong>Roar Skjønberg</strong> behandlingsansvarlig.
+      Kontaktinformasjon står nederst på denne siden.
+    </p>
+    <ul>
+      <li>
+        <strong>Kjernefunksjoner som brukeren ber om</strong>, som lokal lagring
+        av valgt bil og nødvendig behandling for å kontrollere eller bestille P40,
+        behandles i den utstrekning det er nødvendig for å levere tjenesten
+        brukeren har bedt om, jf. personvernforordningen artikkel 6 nr. 1 bokstav b.
+      </li>
+      <li>
+        <strong>Valgfri posisjonsbasert automatisering</strong> bygger på
+        brukerens samtykke, jf. artikkel 6 nr. 1 bokstav a. Samtykket uttrykkes
+        ved at brukeren aktivt slår på funksjonen og gir nødvendig
+        posisjonstillatelse i iOS. Samtykket kan trekkes tilbake ved å slå av
+        automatikken eller trekke tilbake posisjonstillatelsen.
+      </li>
+      <li>
+        <strong>Lokal teknisk diagnostikk og sikkerhetsdata</strong> behandles
+        for P40s berettigede interesse i å levere en sikker, stabil og
+        feilsøkbar app, jf. artikkel 6 nr. 1 bokstav f. Behandlingen er
+        begrenset, hovedsakelig lokal og omfatter ikke SmartPark-token,
+        telefonnummer eller SMS-kode i diagnostikkhendelseslinjen.
+      </li>
+      <li>
+        <strong>Valgfritt kjøretøybilde og frivillig deling av diagnostikk</strong>
+        skjer etter brukerens aktive valg. Dersom diagnostikk sendes til
+        utvikleren, er delingen basert på samtykke og skjer aldri automatisk.
+      </li>
+    </ul>
+    <p>
+      Samtykke kan trekkes tilbake uten at det påvirker lovligheten av behandling
+      som fant sted før tilbaketrekkingen. Enkelte funksjoner kan da bli
+      utilgjengelige, for eksempel automatisk sikkerhetsfrigivelse uten
+      nødvendig posisjonstilgang.
+    </p>
+    <p>
+      SmartPark/Giant Leap, parkeringsoperatøren, Cloudflare og Statens vegvesen
+      kan ha egne roller og formål for opplysninger de mottar gjennom sine
+      tjenester. Deres behandling reguleres også av deres egne vilkår og
+      personvernerklæringer.
+    </p>
+    <p>
+      Parkeringsassistent P40 foretar ikke automatiserte individuelle
+      avgjørelser som gir rettsvirkning eller på tilsvarende måte i betydelig
+      grad påvirker brukeren etter personvernforordningen artikkel 22.
+      Den innebygde 2-timersfunksjonen er en teknisk automasjon som brukeren selv
+      aktiverer, og den er utformet fail-safe slik at parkeringen beholdes når
+      sikkerhetskrav ikke kan verifiseres.
     </p>
 
 
@@ -379,6 +435,13 @@
       driften av sine tjenester i henhold til sine egne vilkår og
       personvernregler.
     </p>
+    <p>
+      Cloudflare opplyser at tjenesten kan innebære behandling utenfor EØS.
+      For overføringer som krever særskilt overføringsgrunnlag beskriver
+      Cloudflares gjeldende Data Processing Addendum bruk av blant annet EUs
+      standard personvernbestemmelser (SCC-er) og andre relevante
+      overføringsmekanismer.
+    </p>
 
     <p>
       Parkeringsassistent P40 kontrollerer ikke hvordan tredjepartene behandler
@@ -454,32 +517,48 @@
     </p>
 
 
-    <h2>10. Innsyn og sletting</h2>
+    <h2>10. Rettigheter, innsyn og sletting</h2>
 
     <p>
-      Brukeren kan kontakte utvikleren dersom det er spørsmål om hvordan
-      Parkeringsassistent P40 behandler personopplysninger.
+      Etter personvernregelverket kan brukeren, når vilkårene for den aktuelle
+      rettigheten er oppfylt, ha rett til innsyn, retting, sletting,
+      begrensning av behandling, dataportabilitet og å protestere mot
+      behandling basert på berettiget interesse. Samtykke kan trekkes tilbake
+      når som helst.
     </p>
 
     <p>
-      Utlogging fjerner SmartPark-sessionen fra Apple Keychain, men lagrede
-      kjøretøy, kjøretøyopplysninger, eventuelle kjøretøybilder og lokale
-      innstillinger beholdes slik at de ikke går tapt ved vanlig utlogging.
-      Kjøretøy og kjøretøybilder kan slettes i appen. Avinstallering fjerner
-      data som ligger i appens lokale lagringsområde.
+      Mye av informasjonen P40 behandler finnes bare lokalt på brukerens egen
+      enhet og er derfor ikke tilgjengelig for utvikleren. Utlogging fjerner
+      SmartPark-sessionen fra Apple Keychain. Kjøretøy og kjøretøybilder kan
+      slettes i appen. Avinstallering fjerner data som ligger i appens lokale
+      lagringsområde.
     </p>
 
     <p>
-      Et lagret kjøretøybilde kan fjernes direkte i appen med funksjonen
-      «Fjern bilbilde». Bildet slettes også når det aktuelle kjøretøyet
-      fjernes fra appen. Avinstallering av appen fjerner data som ligger i
-      appens lokale lagringsområde.
+      Lokal automasjonsstatus utløper senest 24 timer etter den aktuelle
+      bookingen. Den lokale diagnostikkhendelseslinjen inneholder maksimalt
+      30 hendelser og beholdes i inntil 7 dager. Session-lifetime- og
+      innstillingsdata beholdes lokalt til de erstattes av nyere data, slettes
+      gjennom relevant appfunksjon eller appens lokale data fjernes.
     </p>
 
     <p>
-      Opplysninger som allerede er lagret hos SmartPark, parkeringsoperatøren
-      eller andre tredjepartstjenester må slettes eller administreres gjennom
-      den aktuelle tjenestens egne personvernrutiner.
+      Dersom brukeren frivillig har sendt personvernfiltrert diagnostikk til
+      utvikleren, kan brukeren kontakte utvikleren for innsyn, retting eller
+      sletting av det materialet utvikleren faktisk har mottatt og fortsatt
+      oppbevarer.
+    </p>
+
+    <p>
+      Opplysninger som allerede behandles av SmartPark, parkeringsoperatøren,
+      Cloudflare, Statens vegvesen eller andre tredjepartstjenester må også
+      håndteres etter den aktuelle tjenestens egne personvernrutiner.
+    </p>
+
+    <p>
+      Brukeren har rett til å klage på behandling av personopplysninger til
+      <a href="https://www.datatilsynet.no/">Datatilsynet</a>.
     </p>
 
 
