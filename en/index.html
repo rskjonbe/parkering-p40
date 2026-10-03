@@ -126,16 +126,16 @@
       <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
       <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
       <li><strong>Local automation state</strong> – the registration number selected as the dedicated Automatic P40 vehicle, the time a new P40 booking was actually created, the vehicle registration number it applies to, the technical SmartPark identifier used to bind any later automatic stop to that same parking session, the time the 1 km arrival monitor was confirmed armed, any time monitoring continuity was lost, any observed region-entry signal and GPS-verified arrival time, and the time and limited result status of the latest safety check may be stored locally. These are identifiers, status and event timestamps, not GPS coordinates. The state is retained only while relevant to the current automation flow and expires no later than 24 hours after booking. The GPS coordinate itself is not stored as parking history.</li>
-    <p>
-      <strong>Built-in two-hour safety check:</strong> After a confirmed
-      time-based pre-booking, P40 may register a local background task that
-      can run no earlier than two hours after booking. The task uses the
-      local automation state already stored by the app and does not introduce
-      any new sharing of location or parking data. iOS decides when the
-      background task actually runs. If execution is delayed, P40 may show
-      a local notification with relevant timing information. The notification
-      is created on the device and introduces no new data transfer.
-    </p>
+      <li>
+        <strong>Built-in two-hour safety check</strong> – after a confirmed
+        time-based pre-booking, P40 may register a local background task that
+        can run no earlier than two hours after booking. The task uses the
+        local automation state already stored by the app and does not introduce
+        any new sharing of location or parking data. iOS decides when the
+        background task actually runs. If execution is delayed, P40 may show
+        a local notification with relevant timing information. The notification
+        is created on the device and introduces no new data transfer.
+      </li>
 
       <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. To measure keep-alive effectiveness, the app may also store locally the time a sign-in session was created or first observed, the last authenticated verification, last keep-alive, number of successful keep-alive runs, and confirmed session end time/reason. The token, phone number and SMS code are not stored in this session measurement. The app may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
       <li><strong>Language preference and optional translated UI cache</strong> – the selected app language is stored locally. On supported devices, additional translated UI text may also be cached locally.</li>
@@ -179,6 +179,16 @@
       SmartPark token, phone number, SMS code and other sign-in credentials are
       not sent to Apple Watch. SmartPark authentication and parking logic remain
       on the iPhone.
+    </p>
+
+    <p>
+      <strong>CarPlay/StandBy status:</strong> The widget/status surface reads
+      local P40 status from the app's App Group, including parking state,
+      vehicle description, expiry and latest verified time. Depending on the
+      user's privacy setting, the registration number is shown or replaced by a
+      masked display value. The surface does not receive the SmartPark token,
+      SMS code, phone number or GPS coordinates and does not make its own
+      SmartPark or vehicle-lookup network requests.
     </p>
 
     <h3>AI-assisted diagnostics explanation</h3>
@@ -391,14 +401,7 @@
     </nav>
 
     <footer>Parkeringsassistent P40 – Privacy Policy</footer>
-    <p>
-      <strong>CarPlay/StandBy widget:</strong> The widget presents local P40
-      status from the device App Group, including parking state, vehicle
-      description, expiry and latest verified time. Depending on the user's
-      privacy setting, the registration number is either shown or masked. The
-      widget does not receive the SmartPark token, SMS code, phone number or GPS
-      coordinates and does not make SmartPark network requests itself.
-    </p>
+
   </div>
 </main>
 </body>
