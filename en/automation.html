@@ -97,6 +97,7 @@
         <li>Use the control time shown by P40. It is at least two hours after the selected start time.</li>
         <li>Use the weekdays shown by P40. If the control time crosses midnight, P40 shows the days on which the control actually needs to run.</li>
         <li>Enable <strong>Allow Running When Locked</strong>, save and confirm the setup in P40.</li>
+        <li><strong>P40 Frigi is intended for this time automation.</strong> It is not promoted as a Siri voice action because it can stop a parking session.</li>
       </ol>
     </div>
 
@@ -105,7 +106,9 @@
       <div class="flow-item"><strong>Arrival already recorded:</strong> parking is kept.</div>
       <div class="flow-item"><strong>The phone is currently inside 1 km:</strong> arrival is recorded and parking is kept.</div>
       <div class="flow-item"><strong>iOS has already reported that the phone entered the 1 km zone:</strong> P40 keeps parking even if an exact GPS verification was unavailable at that moment.</div>
-      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 can continue only if it can also confirm that the 1 km arrival monitor was actually armed after booking. It then verifies that the same vehicle still has the active P40 parking session before any release.</div>
+      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 requires a fresh location and accounts for GPS accuracy. Automatic release can continue only when even the closest plausible position is outside the 1 km zone.</div>
+      <div class="flow-item"><strong>Arrival monitoring was interrupted:</strong> P40 does not release automatically. Monitoring must have been armed shortly after booking and remained trustworthy for the full interval.</div>
+      <div class="flow-item"><strong>The correct parking session:</strong> P40 verifies not only the vehicle but also the exact SmartPark parking session created by the automation. A newer parking session for the same vehicle cannot therefore be stopped by an older safety check.</div>
       <div class="flow-item"><strong>The 1 km arrival monitor was not confirmed active:</strong> P40 does not release. You receive a notification with booking time and control time and can stop manually if the space is not being used.</div>
       <div class="flow-item"><strong>Always location access is missing:</strong> P40 does not release. You receive a notification containing both the booking time and the time the safety check ran.</div>
       <div class="flow-item"><strong>GPS, network, sign-in or parking status is uncertain:</strong> P40 does not release.</div>
@@ -162,7 +165,9 @@
       Sluppenvegen 17A. The GPS coordinate is not sent to the parking service or
       the developer by this feature and is not stored as parking history. P40
       stores limited local automation state, including booking time, vehicle
-      registration number, optional verified arrival time and the latest safety check.
+      registration number, the technical SmartPark identifier that binds the safety
+      check to the correct parking session, arrival-monitoring continuity status,
+      optional verified arrival time and the latest safety check.
     </p>
 
     <h2>Official Apple Shortcuts documentation</h2>
