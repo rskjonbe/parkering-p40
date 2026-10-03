@@ -203,8 +203,12 @@
       <strong>Aktiver P40</strong>. Etter en relevant booking kan P40 overvåke
       sin egen native, faste 1 km sikkerhetssone rundt Sluppenvegen 17A for å
       registrere ankomstbevis. Denne native sonen bestiller aldri parkering.
-      Appen kan vurdere automatisk frigivelse tidligst to timer etter en ny
-      booking som den tidsstyrte automatikken faktisk opprettet.
+      Appen håndterer selv sikkerhetskontrollen for automatisk frigivelse;
+      brukeren trenger ingen egen «P40 Frigi»-snarvei. P40 ber iOS om
+      bakgrunnskjøring tidligst to timer etter en ny booking som den tidsstyrte
+      automatikken faktisk opprettet. iOS bestemmer det faktiske tidspunktet for
+      bakgrunnskjøring, så kontrollen kan skje senere enn to-timersgrensen.
+      P40 avslutter aldri parkeringen før minst to timer har gått.
     </p>
 
     <p>
