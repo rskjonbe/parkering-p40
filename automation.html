@@ -104,7 +104,9 @@
     <div class="flow-list">
       <div class="flow-item"><strong>Ankomst allerede registrert:</strong> parkeringen beholdes.</div>
       <div class="flow-item"><strong>Telefonen er nå innenfor 1 km:</strong> ankomst registreres og parkeringen beholdes.</div>
-      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 kontrollerer at samme bil fortsatt har den aktive P40-parkeringen før eventuell frigivelse.</div>
+      <div class="flow-item"><strong>iOS har allerede meldt at telefonen kom inn i 1 km-sonen:</strong> P40 beholder parkeringen, også dersom en nøyaktig GPS-verifisering akkurat ved ankomst ikke var tilgjengelig.</div>
+      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 kan bare gå videre dersom appen også kan bekrefte at 1 km ankomstkontrollen faktisk ble armert etter bookingen. Deretter kontrolleres at samme bil fortsatt har den aktive P40-parkeringen før eventuell frigivelse.</div>
+      <div class="flow-item"><strong>1 km ankomstkontrollen ble ikke bekreftet aktiv:</strong> P40 frigir ikke. Du får et varsel med bookingtid og kontrolltid og kan avslutte manuelt dersom plassen ikke brukes.</div>
       <div class="flow-item"><strong>Posisjon «Alltid» mangler:</strong> P40 frigir ikke. Du får et varsel med tidspunktet parkeringen ble bestilt og tidspunktet sikkerhetskontrollen kjørte.</div>
       <div class="flow-item"><strong>GPS, nettverk, innlogging eller parkeringsstatus er usikker:</strong> P40 frigir ikke.</div>
     </div>
@@ -114,6 +116,14 @@
       P40 skal heller beholde en mulig ubrukt parkering enn å avslutte en parkering
       når appen ikke kan dokumentere at sikkerhetsvilkårene er oppfylt.
     </div>
+
+    <h2>Har du et eldre oppsett med «P40 Ankomst»?</h2>
+    <p>
+      Build 54 trenger ikke lenger en egen ankomst-Snarvei. Den eldre handlingen
+      beholdes for bakoverkompatibilitet, slik at et eksisterende oppsett ikke
+      plutselig slutter å virke. Når Build 54-oppsettet er ferdig konfigurert,
+      er <strong>P40 Ankomst</strong> ikke nødvendig for den nye automatikken.
+    </p>
 
     <h2>Når du endrer starttid eller ukedager</h2>
     <div class="step">
