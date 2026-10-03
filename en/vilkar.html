@@ -103,10 +103,22 @@
     <p>
       If the user enables <strong>Automatic P40</strong>, the app may also
       consider automatic release no earlier than two hours after a new booking
-      that the automation actually created. Immediately before any automatic
-      stop, a fresh GPS location is processed locally on the device and the
-      active SmartPark status is checked again. If GPS, network, sign-in or
-      SmartPark status is uncertain, the parking session is kept.
+      that the automation actually created. After such a booking, P40 may
+      monitor a fixed 1 km safety zone around Sluppenvegen 17A to record
+      arrival. The geofence does not book parking by itself.
+    </p>
+    <p>
+      Immediately before any automatic stop, a fresh GPS location is processed
+      locally on the device and active parking status is checked again.
+      Automatic stopping requires the same vehicle to be safely linked to the
+      relevant parking session. If GPS, network, sign-in or parking status is
+      uncertain, the parking session is kept.
+    </p>
+    <p>
+      If the required location access has not been granted, P40 does not stop
+      parking automatically. The user may be notified of the booking time and
+      the time the safety check ran and must stop the parking session manually
+      if the space is not being used.
     </p>
     <p>
       Automatic stopping is a convenience feature and does not remove the
