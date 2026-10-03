@@ -119,10 +119,12 @@
     <h3>AI-assisted diagnostics explanation</h3>
 
     <p>
-      On supported devices, Parkeringsassistent P40 may use Apple's on-device
-      Foundation Models / Apple Intelligence to explain technical diagnostics in
-      more understandable language. The AI feature is optional and is started by
-      the user from <strong>… → Diagnostics</strong>.
+      On supported devices, Parkeringsassistent P40 may use
+      <strong>Apple Foundation Models – SystemLanguageModel.default (on-device)</strong>
+      to explain technical diagnostics in more understandable language. The AI
+      feature is optional and is started by the user from
+      <strong>… → Diagnostics</strong>. The exact system-model version is selected
+      by iOS, so the app does not claim a more specific model identity.
     </p>
 
     <p>
@@ -134,7 +136,9 @@
     </p>
 
     <p>
-      The result is clearly labeled <strong>AI-generated explanation</strong>.
+      The result is clearly labeled <strong>AI-generated explanation</strong>,
+      and the app identifies the model/API used as
+      <strong>Apple Foundation Models – SystemLanguageModel.default (on-device)</strong>.
       The app may also use the privacy-filtered Health Check summary and local
       event timeline when the user chooses “What happened? Explain with AI”.
       The recommendation about whether diagnostics should be shared is separate,
@@ -152,10 +156,13 @@
 
     <h2>5. Language and local translation</h2>
     <p>
-      Norwegian and English are built-in, reviewed app languages. On devices
-      where Apple Intelligence is available and enabled, the app may offer
-      additional interface languages using Apple's Translation framework.
-      Translated UI text may be cached locally on the device.
+      Norwegian and English are built-in, reviewed app languages. New users
+      start directly in Norwegian or English when that is the iPhone language.
+      For another iPhone language, the app starts in English. If both Apple
+      Foundation Models and Apple Translation report support for the phone
+      language on that device, the user is offered that language. The interface
+      translation itself uses <strong>Apple Translation – on-device translation
+      model</strong>. Translated UI text may be cached locally on the device.
     </p>
     <p>
       If a required translation language is not ready, iOS may ask the user to
