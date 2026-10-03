@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatic P40 – setup and help</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <div class="card">
+    <p class="eyebrow">Parkeringsassistent P40</p>
+    <h1>Automatic P40 – setup and help</h1>
+    <p class="intro">
+      This page explains exactly what P40 handles automatically, what Apple
+      requires you to configure in Shortcuts, and how to change the setup later.
+    </p>
+
+    <div class="notice">
+      <strong>In short:</strong>
+      You create two time automations in Apple Shortcuts. P40 then handles
+      arrival verification itself using a local 1 km safety zone around
+      Sluppenvegen 17A. The geofence never books parking by itself.
+    </div>
+
+    <h2>What does P40 do, and what do you do yourself?</h2>
+    <div class="split-grid">
+      <section class="panel good-panel">
+        <h3>P40 handles automatically</h3>
+        <ul>
+          <li>provides <strong>Activate P40</strong> and <strong>Release P40 if not arrived</strong> actions to Shortcuts</li>
+          <li>stores the start time and weekdays selected in P40</li>
+          <li>creates a safety candidate only when a scheduled run actually creates a new P40 parking session</li>
+          <li>monitors arrival within a fixed <strong>1 km zone</strong> around Sluppenvegen 17A when Automatic P40 is enabled and Always location access is granted</li>
+          <li>performs a new, fresh location check before any automatic release</li>
+          <li>keeps parking if location, sign-in, network or parking status is uncertain</li>
+          <li>shows local status for the last run and result</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h3>You configure in Shortcuts</h3>
+        <ul>
+          <li>the time automation that starts P40</li>
+          <li>the time automation that runs the safety check at least two hours later</li>
+          <li>the same time and weekdays shown by P40</li>
+          <li>permission for the shortcuts to run while the phone is locked</li>
+          <li>updated time triggers if you later change the start time or weekdays in P40</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>Before you start</h2>
+    <div class="checklist">
+      <div class="check-row"><span>1</span><p>Sign in to Parkeringsassistent P40 and select the correct vehicle.</p></div>
+      <div class="check-row"><span>2</span><p>Open <strong>Set up / change automation</strong> in P40.</p></div>
+      <div class="check-row"><span>3</span><p>Select the start time and weekdays, then enable <strong>Automatic P40</strong>.</p></div>
+      <div class="check-row"><span>4</span><p>Grant P40 <strong>Always</strong> location access and allow notifications.</p></div>
+    </div>
+
+    <h2>Step 1 – create “P40 Start”</h2>
+    <div class="step">
+      <p><strong>Purpose:</strong> starts the parking request at your selected time.</p>
+      <ol>
+        <li>In the P40 setup guide, tap <strong>Create in Shortcuts</strong> for Start P40.</li>
+        <li>Find the P40 action <strong>Activate P40</strong> and use it in a new shortcut.</li>
+        <li>Name the shortcut <strong>P40 Start</strong>.</li>
+        <li>In Shortcuts choose <strong>Edit → Automation</strong> and add <strong>Time of Day</strong>.</li>
+        <li>Use the start time and weekdays shown by P40.</li>
+        <li>Open <strong>Info → Privacy</strong> and enable <strong>Allow Running When Locked</strong>.</li>
+        <li>Save, return to P40 and confirm that the setup matches.</li>
+      </ol>
+    </div>
+
+    <h2>Step 2 – P40 handles arrival itself</h2>
+    <div class="step">
+      <p>
+        You do <strong>not</strong> need a separate arrival automation in Shortcuts.
+        After an automatic booking is actually created, P40 uses a local 1 km
+        safety zone around Sluppenvegen 17A.
+      </p>
+      <p>
+        When the phone enters the zone, P40 verifies the position and records
+        arrival for that booking. This is only a safety check:
+        <strong>entering the 1 km zone without an active automatic booking never starts parking.</strong>
+      </p>
+    </div>
+
+    <h2>Step 3 – create “P40 Frigi”</h2>
+    <div class="step">
+      <p><strong>Purpose:</strong> checks whether an automatically booked space is still unused.</p>
+      <ol>
+        <li>In the P40 setup guide, tap <strong>Create in Shortcuts</strong> for Release unused space.</li>
+        <li>Find <strong>Release P40 if not arrived</strong>.</li>
+        <li>Name the shortcut <strong>P40 Frigi</strong>.</li>
+        <li>Choose <strong>Edit → Automation → Time of Day</strong>.</li>
+        <li>Use the control time shown by P40. It is at least two hours after the selected start time.</li>
+        <li>Use the weekdays shown by P40. If the control time crosses midnight, P40 shows the days on which the control actually needs to run.</li>
+        <li>Enable <strong>Allow Running When Locked</strong>, save and confirm the setup in P40.</li>
+      </ol>
+    </div>
+
+    <h2>What happens at the two-hour safety check?</h2>
+    <div class="flow-list">
+      <div class="flow-item"><strong>Arrival already recorded:</strong> parking is kept.</div>
+      <div class="flow-item"><strong>The phone is currently inside 1 km:</strong> arrival is recorded and parking is kept.</div>
+      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 verifies that the same vehicle still has the active P40 parking session before any release.</div>
+      <div class="flow-item"><strong>Always location access is missing:</strong> P40 does not release. You receive a notification containing both the booking time and the time the safety check ran.</div>
+      <div class="flow-item"><strong>GPS, network, sign-in or parking status is uncertain:</strong> P40 does not release.</div>
+    </div>
+
+    <div class="warning">
+      <strong>Fail-safe:</strong>
+      P40 prefers keeping a potentially unused parking session over stopping
+      parking when the safety requirements cannot be verified.
+    </div>
+
+    <h2>When you change the start time or weekdays</h2>
+    <div class="step">
+      <ol>
+        <li>Change the value in P40.</li>
+        <li>P40 marks which of the two Shortcuts need to be updated.</li>
+        <li>Tap <strong>Edit / verify in Shortcuts</strong>. P40 opens the named shortcut as far as Apple's supported URL integration allows.</li>
+        <li>Choose <strong>Edit → Automation</strong> in Shortcuts and update the time trigger to the values shown by P40.</li>
+        <li>Return to P40 and confirm the setup again.</li>
+      </ol>
+      <p class="secondary">
+        Apple does not give third-party apps access to read or modify a Personal
+        Automation trigger directly. P40 therefore cannot inspect Apple's automation
+        list or silently change the trigger time in the background.
+      </p>
+    </div>
+
+    <h2>“Shortcuts and status” in P40</h2>
+    <p>
+      The status screen shows P40's own knowledge: the setup you last confirmed,
+      the last observed execution of the P40 action and the last recorded result.
+      An observed run does not prove which Apple trigger launched it.
+    </p>
+
+    <h2>If location access is not granted</h2>
+    <p>
+      Automatic P40 may still have created parking through P40 Start, but P40
+      will <strong>not</strong> stop it automatically without a safe location check.
+      At the safety check you are notified of the booking time and control time,
+      and told to stop the parking session manually if you are not parked at P40.
+    </p>
+
+    <h2>Privacy</h2>
+    <p>
+      Location is processed locally on the device to calculate distance to
+      Sluppenvegen 17A. The GPS coordinate is not sent to the parking service or
+      the developer by this feature and is not stored as parking history. P40
+      stores limited local automation state, including booking time, vehicle
+      registration number, optional verified arrival time and the latest safety check.
+    </p>
+
+    <h2>Official Apple Shortcuts documentation</h2>
+    <p>
+      The setup above follows Apple's current Shortcuts model for iPhone.
+      Apple may change the names or placement of controls in later iOS versions.
+    </p>
+    <ul>
+      <li><a href="https://support.apple.com/guide/shortcuts/add-automations-apdfbdbd7123/ios">Apple: Add automations to Shortcuts</a></li>
+      <li><a href="https://support.apple.com/guide/iphone/shortcuts-iph47e1c9d7d/27/ios/27">Apple: Use Shortcuts to automate tasks on iPhone</a></li>
+    </ul>
+
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="index.html">Privacy</a>
+      <a href="vilkar.html">Terms of use</a>
+      <a href="../automation.html">Norsk</a>
+    </nav>
+
+    <footer>
+      Parkeringsassistent P40 is an independent project and is not developed,
+      approved, supported or operated by SmartPark, Trondheim Parking,
+      Trondheim Municipality or the parking operator.
+    </footer>
+  </div>
+</main>
+</body>
+</html>
