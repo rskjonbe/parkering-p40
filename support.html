@@ -213,33 +213,52 @@
     <h2>Automatisering</h2>
 
     <p>
-      I menyen <strong>… → Automatisering</strong> kan du slå automatisk P40
-      av eller på og velge starttid, ukedager og radius for Sluppen-kontrollen.
-      Siden viser også status for posisjonstilgang og varsler.
+      Åpne <strong>… → Sett opp / endre automatikk</strong> for den anbefalte
+      opplevelsen. Brukeren velger starttid og ukedager i P40 og oppretter to
+      tidsautomasjoner i Apples Snarveier: <strong>P40 Start</strong> og
+      <strong>P40 Frigi</strong>.
     </p>
 
     <p>
-      iOS krever fortsatt at de personlige triggerne opprettes i Apples
-      Snarveier-app. Appen viser hvilke handlinger som skal brukes for
-      <strong>Aktiver P40</strong>, <strong>Registrer P40-ankomst</strong> og
-      <strong>Frigi P40 hvis ikke ankommet</strong>.
+      <strong>P40 Start</strong> kjører handlingen <strong>Aktiver P40</strong>.
+      P40 oppretter bare en sikkerhetskandidat dersom denne kjøringen faktisk
+      oppretter en ny P40-parkering nær konfigurert starttid på en valgt dag.
+      En allerede aktiv parkering armerer ikke automatisk frigivelse.
     </p>
 
     <p>
-      Når automatiseringen er aktivert kan Parkeringsassistent P40 behandle en
-      fersk GPS-posisjon lokalt på enheten for å kontrollere om den er innenfor
-      valgt Sluppen-radius. Posisjonen sendes ikke til SmartPark, utvikleren
-      eller kjøretøyoppslagstjenesten, og GPS-koordinaten lagres ikke som
-      parkeringshistorikk.
+      Etter en slik booking registrerer P40 ankomst selv med en lokal,
+      fast <strong>1 km sikkerhetssone</strong> rundt Sluppenvegen 17A.
+      Det er ikke nødvendig å lage en egen ankomst-automatisering i Snarveier.
+      Geofencen er kun en sikkerhetskontroll og bestiller aldri parkering når
+      det ikke finnes en aktuell automatisk booking.
     </p>
 
     <p>
-      Automatisk frigivelse skjer tidligst to timer etter en ny booking som
-      automasjonen faktisk opprettet. Rett før eventuell avslutning kontrolleres
-      posisjon og SmartPark-status på nytt. Ved usikker posisjon, nettverk,
-      innlogging eller SmartPark-status beholdes parkeringen.
+      <strong>P40 Frigi</strong> kjører
+      <strong>Frigi P40 hvis ikke ankommet</strong> tidligst to timer etter
+      den faktiske bookingen. Før eventuell automatisk avslutning gjør P40 en
+      ny, fersk posisjonskontroll og kontrollerer at samme kjøretøy fortsatt har
+      den aktuelle aktive parkeringen. Ved usikker GPS, nettverk, innlogging
+      eller parkeringsstatus beholdes parkeringen.
     </p>
 
+    <p>
+      Hvis posisjon «Alltid» ikke er gitt, avslutter P40 aldri parkeringen
+      automatisk. Brukeren varsles med tidspunktet parkeringen ble bestilt og
+      tidspunktet sikkerhetskontrollen kjørte, og får beskjed om å avslutte
+      manuelt dersom bilen ikke står på P40.
+    </p>
+
+    <p>
+      Posisjonen behandles lokalt på enheten. GPS-koordinaten sendes ikke til
+      parkeringstjenesten, utvikleren eller kjøretøyoppslagstjenesten og lagres
+      ikke som parkeringshistorikk.
+    </p>
+
+    <p>
+      <a href="automation.html"><strong>Åpne komplett steg-for-steg-hjelp for Automatisk P40</strong></a>
+    </p>
 
     <h2>Systemkontroll – Aktiver P40</h2>
 
