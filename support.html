@@ -339,6 +339,22 @@
       parkering.
     </p>
 
+    <h3>Session keep-alive og levetid</h3>
+    <p>
+      Diagnostikk viser når den gjeldende innloggingen ble opprettet. Dersom
+      sesjonen allerede eksisterte da denne målingen ble innført, vises i stedet
+      tidspunktet P40 først observerte den. Appen viser også siste autentiserte
+      verifisering, siste keep-alive, antall vellykkede keep-alive-kjøringer og
+      løpende sesjonslevetid.
+    </p>
+    <p>
+      Når parkeringstjenesten bekrefter at innloggingen er utløpt, fryses
+      sluttidspunkt og målt levetid slik at keep-alive-effekten kan vurderes.
+      En manuell utlogging registreres separat og merkes ikke som at sesjonen
+      «utløp». Selve tokenet, telefonnummeret og SMS-koden inngår ikke i denne
+      målingen.
+    </p>
+
     <h3>Nylige hendelser</h3>
     <p>
       Appen kan vise en lokal hendelseslinje over nylige diagnostikkhendelser.
