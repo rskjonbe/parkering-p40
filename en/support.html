@@ -128,9 +128,12 @@
     <h2>Automation</h2>
     <p>
       Open <strong>… → Set up / change automation</strong> for the recommended
-      flow. The user selects the <strong>Automation vehicle</strong>, start time and weekdays in P40 and creates two
-      time automations in Apple Shortcuts: <strong>P40 Start</strong> and
-      <strong>P40 Frigi</strong>.
+      flow. The user selects the <strong>Automation vehicle</strong>, start time
+      and weekdays in P40 and creates two core time automations in Apple
+      Shortcuts: <strong>P40 Start</strong> and <strong>P40 Frigi</strong>.
+      An optional/recommended <strong>P40 Ankomststart</strong> can also use
+      Apple's <strong>Arrive</strong> trigger at 1 km around Sluppenvegen 17A
+      to run <strong>Activate P40</strong> as extra booking coverage.
     </p>
     <p>
       <strong>P40 Start</strong> runs <strong>Activate P40</strong>. P40 creates
@@ -139,11 +142,13 @@
       active parking session does not arm automatic release.
     </p>
     <p>
-      After such a booking, P40 handles arrival itself using a local, fixed
-      <strong>1 km safety zone</strong> around Sluppenvegen 17A. A separate
-      arrival automation in Shortcuts is not required. The geofence is only a
-      safety check and never books parking when there is no current automatic
-      booking.
+      After a time-based booking, P40 handles arrival itself using a local,
+      fixed <strong>1 km safety zone</strong> around Sluppenvegen 17A.
+      No separate Shortcut is required for this safety monitor. The optional
+      <strong>P40 Ankomststart</strong> above is different: it is an extra
+      <em>booking trigger</em> in Apple Shortcuts for evenings, weekends or
+      later arrivals. P40's native 1 km zone is post-booking safety logic and
+      never books parking by itself.
     </p>
     <p>
       <strong>P40 Frigi</strong> runs <strong>Release P40 if not arrived</strong>
