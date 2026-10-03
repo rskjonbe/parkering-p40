@@ -18,9 +18,12 @@
 
     <div class="notice">
       <strong>In short:</strong>
-      You create two time automations in Apple Shortcuts. P40 then handles
-      arrival verification itself using a local 1 km safety zone around
-      Sluppenvegen 17A. The geofence never books parking by itself.
+      You create <strong>P40 Start</strong> as a time-based start and
+      <strong>P40 Frigi</strong> as the safety control. In addition,
+      <strong>P40 Ankomststart</strong> is recommended: an Apple Shortcuts
+      <strong>Arrive</strong> automation at 1 km around Sluppenvegen 17A that
+      also runs <strong>Activate P40</strong>. P40's own native 1 km zone is a
+      separate post-booking safety mechanism and never books parking by itself.
     </div>
 
     <h2>What does P40 do, and what do you do yourself?</h2>
@@ -42,6 +45,7 @@
         <h3>You configure in Shortcuts</h3>
         <ul>
           <li>the time automation that starts P40</li>
+          <li>optionally/recommended, <strong>P40 Ankomststart</strong> using an Arrive trigger at 1 km and the <strong>Activate P40</strong> action</li>
           <li>the time automation that runs the safety check at least two hours later</li>
           <li>the same time and weekdays shown by P40</li>
           <li>permission for the shortcuts to run while the phone is locked</li>
@@ -73,21 +77,38 @@
       </ol>
     </div>
 
-    <h2>Step 2 – P40 handles arrival itself</h2>
+    <h2>Step 2 – recommended “P40 Ankomststart”</h2>
     <div class="step">
+      <p><strong>Purpose:</strong> extra booking coverage when you actually arrive at Sluppen, for example evenings, weekends or days you arrive later than usual.</p>
+      <ol>
+        <li>Create a new shortcut with the P40 action <strong>Activate P40</strong>.</li>
+        <li>Name it <strong>P40 Ankomststart</strong>.</li>
+        <li>Choose <strong>Edit → Automation → Arrive</strong>.</li>
+        <li>Use <strong>Sluppenvegen 17A</strong> with a <strong>1.0 km</strong> radius.</li>
+        <li>Enable <strong>Allow Running When Locked</strong>.</li>
+        <li>Return to P40 and confirm the setup.</li>
+      </ol>
       <p>
-        You do <strong>not</strong> need a separate arrival automation in Shortcuts.
-        After an automatic booking is actually created, P40 uses a local 1 km
-        safety zone around Sluppenvegen 17A.
-      </p>
-      <p>
-        When the phone enters the zone, P40 verifies the position and records
-        arrival for that booking. This is only a safety check:
-        <strong>entering the 1 km zone without an active automatic booking never starts parking.</strong>
+        This Shortcuts geofence can start a P40 booking. “Activate P40” always
+        checks for an existing active parking session before attempting a new one,
+        so time start and arrival start can coexist without blindly creating duplicates.
       </p>
     </div>
 
-    <h2>Step 3 – create “P40 Frigi”</h2>
+    <h2>Step 3 – P40's own native 1 km safety zone</h2>
+    <div class="step">
+      <p>
+        After a relevant automatic booking, P40 arms its <strong>own native 1 km
+        zone</strong>. This is not the same mechanism as the Shortcuts geofence above.
+      </p>
+      <p>
+        P40's native zone can <strong>never start parking</strong>. It only records
+        arrival evidence for the current booking and contributes to the later
+        safety decision about whether an unused parking session can be released.
+      </p>
+    </div>
+
+    <h2>Step 4 – create “P40 Frigi”</h2>
     <div class="step">
       <p><strong>Purpose:</strong> checks whether an automatically booked space is still unused.</p>
       <ol>
@@ -124,17 +145,18 @@
 
     <h2>Do you have an older setup with “P40 Ankomst”?</h2>
     <p>
-      Build 54 no longer requires a separate arrival Shortcut. The older action
-      remains available for backward compatibility so an existing setup does
-      not suddenly stop working. Once the Build 54 setup is configured,
-      <strong>P40 Ankomst</strong> is not required by the new automation flow.
+      The older <strong>P40 Ankomst</strong> action recorded arrival and remains
+      only for backward compatibility. Do not use it for a new setup. The new
+      recommended <strong>P40 Ankomststart</strong> is different: it uses Apple's
+      <strong>Arrive</strong> trigger and runs the normal <strong>Activate P40</strong>
+      action so it can start booking.
     </p>
 
     <h2>When you change the start time or weekdays</h2>
     <div class="step">
       <ol>
         <li>Change the value in P40.</li>
-        <li>P40 marks which of the two Shortcuts need to be updated.</li>
+        <li>P40 marks which time-based Shortcuts need to be updated. “P40 Ankomststart” uses a fixed 1 km radius and normally does not change when times change.</li>
         <li>Tap <strong>Edit / verify in Shortcuts</strong>. P40 opens the named shortcut as far as Apple's supported URL integration allows.</li>
         <li>Choose <strong>Edit → Automation</strong> in Shortcuts and update the time trigger to the values shown by P40.</li>
         <li>Return to P40 and confirm the setup again.</li>
