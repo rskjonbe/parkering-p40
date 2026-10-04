@@ -46,7 +46,7 @@
       <li><strong>Vehicle registration number</strong> – used to identify the vehicle a parking permit applies to and may be used to retrieve technical vehicle information.</li>
       <li><strong>Vehicle information</strong> – make, model and colour may be retrieved from the Norwegian Public Roads Administration API for technical vehicle information.</li>
       <li><strong>Optional vehicle photo</strong> – a photo selected by the user for easier visual identification. The photo is processed locally on the user's device.</li>
-      <li><strong>Precise location (optional)</strong> – is processed locally when the user taps <strong>I'M AT WORK</strong> so P40 can warn if a newly created parking session was started while the phone is safely outside the fixed 1 km zone around Sluppenvegen 17A. The user then chooses <strong>Keep parking</strong> or <strong>Release parking</strong>; a manual parking session is never released automatically. Location is also used after a scheduled automatic booking for arrival and safety checks. Optional <strong>P40 Arrival Start</strong> booking is triggered by the user's Apple Shortcuts automation and does not require an additional in-app GPS check before booking. GPS coordinates are not sent to the parking service, the developer or other third-party services and are not stored as parking history.</li>
+      <li><strong>Precise location (optional)</strong> – is processed locally <strong>before</strong> a manual booking through <strong>I'M AT WORK</strong> and before booking started from the CarPlay widget. If the phone is safely more than 1 km from the fixed zone around Sluppenvegen 17A, or the distance cannot be verified, the user must explicitly choose <strong>Book P40</strong> before anything is sent to SmartPark. Manual booking does not arm the two-hour safety follow-up. Location is also used after a scheduled automatic booking for arrival and safety checks. Optional <strong>P40 Arrival Start</strong> booking is triggered by the user's Apple Shortcuts automation and does not require an additional in-app GPS check before booking. GPS coordinates are not sent to the parking service, the developer or other third-party services and are not stored as parking history.</li>
     </ul>
 
     <h2>3. Purpose of processing</h2>
@@ -59,7 +59,7 @@
       <li>display an optional vehicle photo selected by the user</li>
       <li>check the relevant parking permit</li>
       <li>display parking status and remaining time</li>
-      <li>locally verify whether a new manual parking was started while the iPhone is safely outside the fixed 1 km zone, and support post-booking automatic arrival/safety checks</li>
+      <li>locally verify whether a manual or CarPlay-originated booking may be sent when the iPhone is outside the fixed 1 km zone, and support post-booking scheduled-arrival/safety checks</li>
       <li>display relevant information through Live Activities, the Lock Screen, Dynamic Island and a compatible paired Apple Watch when supported by the operating system</li>
     </ul>
     <p>The information is not used for advertising, marketing or cross-app or cross-site tracking.</p>
