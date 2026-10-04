@@ -183,7 +183,7 @@
       that name is not sufficient. The selected start time is a hard lower
       boundary: the action is never accepted before that time. P40 creates a safety candidate only when that dedicated run
       actually creates a new P40 parking session on an enabled day. An already
-      active parking session does not arm automatic release.
+      active parking session does not arm the two-hour safety follow-up.
     </p>
     <p>
       After a time-based booking, P40 handles arrival itself using a local,
@@ -195,7 +195,7 @@
       never books parking by itself.
     </p>
     <p>
-      <strong>The two-hour safety release is built into P40.</strong>
+      <strong>The two-hour safety follow-up is built into P40.</strong>
       After a confirmed time-based pre-booking, the app schedules its own
       background check no earlier than two hours after the actual booking.
       iOS controls when the background task actually runs. If delayed, P40
@@ -343,8 +343,8 @@
       <strong>P40 Start</strong> uses <strong>Start Automatic P40</strong>.
       <strong>P40 Arrival Start</strong> is optional and uses its dedicated action
       with an Arrive trigger. Manual <strong>Activate P40</strong> is separate and
-      can never arm automatic release. P40's native 1 km arrival monitor is separate and
-      never starts parking. The two-hour safety release is handled by P40 and
+      can never arm the two-hour safety follow-up. P40's native 1 km arrival monitor is separate and
+      never starts parking. The two-hour safety follow-up is handled by P40 and
       requires no separate shortcut.
     </p>
 
