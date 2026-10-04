@@ -21,17 +21,17 @@
       You create <strong>P40 Start</strong> with a time automation. You may
       also use <strong>P40 Ankomststart</strong> with an <strong>Arrive</strong>
       trigger at 1.5 km around Sluppenvegen 17A for extra booking coverage.
-      P40 handles the <strong>two-hour safety release itself</strong>; do not
+      P40 handles the <strong>two-hour safety follow-up itself</strong>; do not
       create a “P40 Frigi” shortcut.
     </div>
 
     <div class="notice">
-      <strong>Start time in Build 63:</strong>
+      <strong>Current start logic:</strong>
       The time selected in P40 is a hard lower boundary. <strong>P40 Start is
       never accepted before that time.</strong> If iOS delays the Time of Day
       automation, it may still run later on the same selected weekday.
       Manual <strong>Activate P40</strong> is separate and can never arm the
-      automatic two-hour safety release.
+      two-hour safety follow-up.
     </div>
 
     <h2>What does P40 do, and what do you do yourself?</h2>
@@ -43,7 +43,7 @@
           <li>stores the start time and weekdays selected in P40</li>
           <li>creates a safety candidate only when a scheduled run actually creates a new P40 parking session</li>
           <li>monitors arrival within a fixed <strong>1 km zone</strong> around Sluppenvegen 17A when Automatic P40 is enabled and Always location access is granted</li>
-          <li>performs a new, fresh location check before any automatic release</li>
+          <li>performs a new, fresh location check before the safety follow-up can offer <strong>Release parking</strong></li>
           <li>keeps parking if location, sign-in, network or parking status is uncertain</li>
           <li>shows local status for the last run and result</li>
         </ul>
@@ -102,7 +102,7 @@
     <div class="step">
       <p><strong>Purpose:</strong> extra booking coverage when you actually arrive at Sluppen, for example evenings, weekends or days you arrive later than usual.</p>
       <ol>
-        <li>Create a new shortcut with the P40 action <strong>P40 Arrival Start</strong>.</li>
+        <li>Create a new shortcut with the P40 action <strong>P40 Arrival Start</strong>. Verify that the <strong>action card itself</strong> says P40 Arrival Start; naming the automation P40 Arrival Start is not enough.</li>
         <li>Name it <strong>P40 Ankomststart</strong>.</li>
         <li>Choose <strong>Edit → Automation → Arrive</strong>.</li>
         <li>Use <strong>Sluppenvegen 17A</strong> with a <strong>1.5 km</strong> radius.</li>
@@ -111,7 +111,7 @@
         <li>Return to P40 and confirm the setup.</li>
       </ol>
       <p>
-        This Shortcuts geofence is an extra booking trigger. When iOS fires the Arrive trigger, P40 runs the dedicated <strong>P40 Arrival Start</strong> action and performs the normal status/duplicate checks without an additional 1 km GPS gate. P40's separate native 1 km zone is used only after a scheduled booking as safety evidence for the two-hour release flow. Use Arrival Start only when entering the area normally means you intend to park at P40.
+        This Shortcuts geofence is an extra booking trigger. When iOS fires the Arrive trigger, P40 runs the dedicated <strong>P40 Arrival Start</strong> action and performs the normal status/duplicate checks without an additional 1 km GPS gate. P40's separate native 1 km zone is used only after a scheduled booking as safety evidence for the two-hour safety follow-up. Use Arrival Start only when entering the area normally means you intend to park at P40.
         “P40 Arrival Start” also checks for an existing active parking session before
         attempting a new one, so time start and arrival start can coexist without
         blindly creating duplicates.
@@ -119,7 +119,7 @@
     </div>
 
     <div class="notice">
-      <strong>Setup health in Build 63:</strong>
+      <strong>Current setup health:</strong>
       Apple does not let P40 directly read the Personal Automation switch,
       Ask Before Running, or Allow Running When Locked. These settings must
       therefore be confirmed in the P40 guide. P40 can, however, record when
@@ -166,14 +166,14 @@
         runs the same fail-safe check immediately.
       </p>
       <p>
-        P40 never stops parking before 2 hours have elapsed. All existing
+        P40 never offers <strong>Release parking</strong> before 2 hours have elapsed and never stops parking unless the user explicitly chooses it. All existing
         safety rules still apply: native 1 km arrival monitoring, fresh GPS,
         GPS accuracy, monitoring continuity, correct vehicle, exact SmartPark
         parking session and verified sign-in/status.
       </p>
       <p>
         If you still have an old “P40 Frigi” shortcut or automation from an
-        earlier test build, you can delete it. Build 63 does not use it.
+        earlier test build, you can delete it. The current setup does not use it.
       </p>
     </div>
 
@@ -182,7 +182,7 @@
       <div class="flow-item"><strong>Arrival already recorded:</strong> parking is kept.</div>
       <div class="flow-item"><strong>The phone is currently inside 1 km:</strong> arrival is recorded and parking is kept.</div>
       <div class="flow-item"><strong>iOS has already reported that the phone entered the 1 km zone:</strong> P40 keeps parking even if an exact GPS verification was unavailable at that moment.</div>
-      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 requires a fresh location and accounts for GPS accuracy. Automatic release can continue only when even the closest plausible position is outside the 1 km zone.</div>
+      <div class="flow-item"><strong>The phone is safely outside 1 km:</strong> P40 requires a fresh location and accounts for GPS accuracy. <strong>Release parking</strong> can only be offered when even the closest plausible position is outside the 1 km zone.</div>
       <div class="flow-item"><strong>Arrival monitoring was interrupted:</strong> P40 does not release automatically. Monitoring must have been armed shortly after booking and remained trustworthy for the full interval.</div>
       <div class="flow-item"><strong>The correct parking session:</strong> P40 verifies not only the vehicle but also the exact SmartPark parking session created by the automation. A newer parking session for the same vehicle cannot therefore be stopped by an older safety check.</div>
       <div class="flow-item"><strong>The 1 km arrival monitor was not confirmed active:</strong> P40 does not release. You receive a notification with booking time and control time and can stop manually if the space is not being used.</div>
@@ -260,6 +260,7 @@
 
     <nav>
       <a href="support.html">Support</a>
+      <a href="security.html">Security</a>
       <a href="index.html">Privacy</a>
       <a href="vilkar.html">Terms of use</a>
       <a href="../automation.html">Norsk</a>
