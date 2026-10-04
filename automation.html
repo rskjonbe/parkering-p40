@@ -21,17 +21,17 @@
       Du lager <strong>P40 Start</strong> med tidsautomasjon. I tillegg kan du
       bruke <strong>P40 Ankomststart</strong> med <strong>Arrive</strong> ved
       1,5 km rundt Sluppenvegen 17A som ekstra bookingdekning. P40 håndterer
-      <strong>2-timers sikkerhetsfrigivelsen selv</strong>; det skal ikke lages
+      <strong>2-timers sikkerhetsoppfølgingen selv</strong>; det skal ikke lages
       noen «P40 Frigi»-snarvei.
     </div>
 
     <div class="notice">
-      <strong>Starttid i Build 63:</strong>
+      <strong>Gjeldende startlogikk:</strong>
       Tidspunktet du velger i P40 er en hard nedre grense. <strong>P40 Start
       godtas aldri før dette klokkeslettet.</strong> Hvis iOS forsinker
       Time of Day-automasjonen, kan den fortsatt kjøre senere samme valgte ukedag.
       Manuell <strong>Aktiver P40</strong> er separat og kan aldri armere den
-      automatiske 2-timers sikkerhetsfrigivelsen.
+      2-timers sikkerhetsoppfølgingen.
     </div>
 
     <h2>Hva gjør P40 – og hva må du gjøre selv?</h2>
@@ -43,7 +43,7 @@
           <li>lagrer starttid og ukedager du har valgt i P40</li>
           <li>registrerer en sikkerhetskandidat bare når en tidsstyrt kjøring faktisk oppretter en ny P40-parkering</li>
           <li>overvåker ankomst til en fast <strong>1 km-sone</strong> rundt Sluppenvegen 17A når Automatisk P40 er aktivert og posisjon «Alltid» er tillatt</li>
-          <li>gjør en ny, fersk posisjonskontroll før eventuell automatisk frigivelse</li>
+          <li>gjør en ny, fersk posisjonskontroll før sikkerhetsoppfølgingen eventuelt kan tilby <strong>Frigi parkering</strong></li>
           <li>beholder parkeringen dersom posisjon, innlogging, nettverk eller parkeringsstatus er usikker</li>
           <li>viser lokal status for siste kjøring og resultat</li>
         </ul>
@@ -102,7 +102,7 @@
     <div class="step">
       <p><strong>Formål:</strong> ekstra bookingstart når du faktisk ankommer Sluppen, for eksempel helg, kveld eller dager du kommer senere enn vanlig.</p>
       <ol>
-        <li>Opprett en ny snarvei med P40-handlingen <strong>P40 Ankomststart</strong>.</li>
+        <li>Opprett en ny snarvei med P40-handlingen <strong>P40 Ankomststart</strong>. Kontroller at <strong>selve handlingskortet</strong> heter P40 Ankomststart; det er ikke nok at automasjonen har dette navnet.</li>
         <li>Gi snarveien navnet <strong>P40 Ankomststart</strong>.</li>
         <li>Velg <strong>Edit → Automation → Arrive</strong>.</li>
         <li>Bruk <strong>Sluppenvegen 17A</strong> og radius <strong>1,5 km</strong>.</li>
@@ -115,7 +115,7 @@
         Arrive-triggeren, kjører P40 den dedikerte <strong>P40 Ankomststart</strong>-handlingen
         og gjør vanlig status-/duplikatkontroll uten en ekstra 1 km GPS-sperre.
         P40s separate native 1 km-sone brukes først etter en tidsstyrt booking som
-        sikkerhetsgrunnlag for eventuell 2-timers frigivelse. Bruk ankomststart bare
+        sikkerhetsgrunnlag for 2-timers sikkerhetsoppfølging. Bruk ankomststart bare
         dersom ankomst til området normalt betyr at du skal parkere på P40.
         «P40 Ankomststart» sjekker også om
         parkering allerede er aktiv før en ny bestilling forsøkes, så tidsstart
@@ -124,7 +124,7 @@
     </div>
 
     <div class="notice">
-      <strong>Statuskontroll i Build 63:</strong>
+      <strong>Gjeldende statuskontroll:</strong>
       Apple gir ikke P40 tilgang til å lese selve Personal Automation-bryteren,
       «Bekreft før utførelse» eller «Allow Running When Locked» direkte.
       Derfor må disse bekreftes i veiviseren. P40 registrerer derimot når de
@@ -170,14 +170,14 @@
         appen fra varselet, kjøres den samme sikkerhetskontrollen med én gang.
       </p>
       <p>
-        P40 avslutter aldri parkeringen før 2 timer har gått. Alle eksisterende
+        P40 tilbyr aldri <strong>Frigi parkering</strong> før 2 timer har gått, og avslutter aldri uten at brukeren velger dette. Alle eksisterende
         sikkerhetsregler gjelder fortsatt: native 1 km ankomstkontroll, fersk GPS,
         GPS-nøyaktighet, kontinuerlig monitorering, riktig bil, eksakt
         SmartPark-parkering og sikker innlogging/status.
       </p>
       <p>
         Har du en eldre «P40 Frigi»-snarvei eller automasjon fra en tidligere
-        testversjon, kan den slettes. Build 63 bruker den ikke.
+        testversjon, kan den slettes. Gjeldende oppsett bruker den ikke.
       </p>
     </div>
 
@@ -186,13 +186,13 @@
       <div class="flow-item"><strong>Ankomst allerede registrert:</strong> parkeringen beholdes.</div>
       <div class="flow-item"><strong>Telefonen er nå innenfor 1 km:</strong> ankomst registreres og parkeringen beholdes.</div>
       <div class="flow-item"><strong>iOS har allerede meldt at telefonen kom inn i 1 km-sonen:</strong> P40 beholder parkeringen, også dersom en nøyaktig GPS-verifisering akkurat ved ankomst ikke var tilgjengelig.</div>
-      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 krever en fersk posisjon og tar hensyn til GPS-nøyaktigheten. Automatisk frigivelse kan bare fortsette dersom selv den nærmeste plausible posisjonen er utenfor 1 km-sonen.</div>
-      <div class="flow-item"><strong>Ankomstkontrollen har hatt et avbrudd:</strong> P40 frigir ikke automatisk. Monitoreringen må ha blitt aktivert kort tid etter bookingen og ha vært pålitelig gjennom hele perioden.</div>
+      <div class="flow-item"><strong>Telefonen er sikkert utenfor 1 km:</strong> P40 krever en fersk posisjon og tar hensyn til GPS-nøyaktigheten. <strong>Frigi parkering</strong> kan bare tilbys dersom selv den nærmeste plausible posisjonen er utenfor 1 km-sonen.</div>
+      <div class="flow-item"><strong>Ankomstkontrollen har hatt et avbrudd:</strong> P40 tilbyr ikke <strong>Frigi parkering</strong>. Monitoreringen må ha blitt aktivert kort tid etter bookingen og ha vært pålitelig gjennom hele perioden.</div>
       <div class="flow-item"><strong>Riktig parkering:</strong> P40 kontrollerer ikke bare bilen, men også den eksakte SmartPark-parkeringen som automatikken opprettet. En nyere parkering på samme bil kan derfor ikke avsluttes av en gammel sikkerhetskontroll.</div>
-      <div class="flow-item"><strong>1 km ankomstkontrollen ble ikke bekreftet aktiv:</strong> P40 frigir ikke. Du får et varsel med bookingtid og kontrolltid og kan avslutte manuelt dersom plassen ikke brukes.</div>
+      <div class="flow-item"><strong>1 km ankomstkontrollen ble ikke bekreftet aktiv:</strong> P40 tilbyr ikke <strong>Frigi parkering</strong>. Du får et varsel med bookingtid og kontrolltid og kan avslutte manuelt dersom plassen ikke brukes.</div>
       <div class="flow-item"><strong>Kontrollen kom for tidlig:</strong> dersom P40 Start var forsinket og det ennå ikke har gått 2 faktiske timer siden bookingen, beholdes parkeringen. Varslet viser bookingtid, kontrolltid og tidligste tidspunkt en ny sikker kontroll kan kjøres.</div>
-      <div class="flow-item"><strong>Posisjon «Alltid» mangler:</strong> P40 frigir ikke. Du får et varsel med tidspunktet parkeringen ble bestilt og tidspunktet sikkerhetskontrollen kjørte.</div>
-      <div class="flow-item"><strong>GPS, nettverk, innlogging eller parkeringsstatus er usikker:</strong> P40 frigir ikke.</div>
+      <div class="flow-item"><strong>Posisjon «Alltid» mangler:</strong> P40 tilbyr ikke <strong>Frigi parkering</strong>. Du får et varsel med tidspunktet parkeringen ble bestilt og tidspunktet sikkerhetskontrollen kjørte.</div>
+      <div class="flow-item"><strong>GPS, nettverk, innlogging eller parkeringsstatus er usikker:</strong> P40 tilbyr ikke <strong>Frigi parkering</strong>.</div>
     </div>
 
     <div class="warning">
@@ -265,6 +265,7 @@
 
     <nav>
       <a href="support.html">Support</a>
+      <a href="security.html">Sikkerhet</a>
       <a href="index.html">Personvern</a>
       <a href="vilkar.html">Bruksvilkår</a>
       <a href="en/automation.html">English</a>
