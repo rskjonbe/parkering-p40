@@ -36,12 +36,13 @@
     <ul>
       <li>SmartPark-kommunikasjon bruker HTTPS mot en fast forventet tjenesteadresse.</li>
       <li>Verifiseringssiden bruker en ikke-persistent WebView og begrenser native meldingsbro til forventet SmartPark-origin.</li>
-      <li>Kjøretøyoppslag går over HTTPS via utviklerens Cloudflare Worker til Statens vegvesens tekniske kjøretøy-API. API-nøkkelen ligger ikke i appen.</li>
+      <li>Kjøretøyoppslag går over HTTPS via utviklerens Cloudflare Worker til Statens vegvesens tekniske kjøretøy-API. Registreringsnummeret sendes i JSON-bodyen til en HTTPS POST-forespørsel, ikke i Worker-URL-en. API-nøkkelen ligger ikke i appen.</li>
       <li>P40 er avhengig av tredjepartstjenester og kan slutte å fungere dersom deres API, policy eller tilgang endres. Ved ukjent/endrede svar skal appen feile sikkert fremfor å gjette.</li>
     </ul>
 
     <h2>Bestilling og avslutning av parkering</h2>
     <ul>
+      <li>Brukerinitiert aktivering fra Home, manuell Snarvei, Control Center, Apple Watch og CarPlay går til samme kontrollerte forgrunnsflyt før en SmartPark-bestilling kan sendes.</li>
       <li>P40 sjekker eksisterende P40-status før ny bestilling og forsøker ikke blindt på nytt etter et usikkert skriveresultat.</li>
       <li>Destruktiv avslutning bindes til forventet bil og eksakt aktiv SmartPark-tillatelse.</li>
       <li><strong>P40 avslutter ikke en ubrukt tidsstyrt parkering automatisk.</strong> Etter sikkerhetskontroll kan appen tilby <strong>Behold parkering</strong> eller <strong>Frigi parkering</strong>. DELETE sendes bare etter brukerens uttrykkelige valg og en ny kontroll av aktiv parkering.</li>
