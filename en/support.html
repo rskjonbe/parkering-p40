@@ -57,12 +57,13 @@
 
 <h2>Privacy and security</h2>
     <p>
-      Location is processed locally <strong>before</strong> a manual booking
-      when you tap <strong>I'M AT WORK</strong>, and before a booking started
-      from the CarPlay widget. If the phone is safely more than 1 km from
-      Sluppenvegen 17A, or the distance cannot be verified, P40 asks for an
-      explicit <strong>Book P40</strong> confirmation before anything is sent
-      to SmartPark. Manual booking never arms the two-hour safety follow-up.
+      Location is processed locally <strong>before</strong> user-initiated
+      booking from Home, a manual Shortcut, Control Center, Apple Watch and
+      CarPlay. All of these entry points use the same controlled foreground
+      flow. If the phone is safely more than 1 km from Sluppenvegen 17A, or the
+      distance cannot be verified, P40 asks for an explicit
+      <strong>Book P40</strong> confirmation before anything is sent to
+      SmartPark. User-initiated booking never arms the two-hour safety follow-up.
       Location is also used after a scheduled automatic booking for arrival
       evidence and the later safety check. Optional P40 Arrival Start uses the
       Apple Shortcuts trigger and does not perform an additional in-app GPS
@@ -372,6 +373,20 @@
 
     <p>
       <a href="automation.html"><strong>Detailed step-by-step guide</strong></a>
+    </p>
+
+    <h2>System control – Activate P40</h2>
+
+    <p>
+      On supported iOS versions, <strong>Activate P40</strong> can be added as
+      a system control in Control Center or other Control surfaces offered by iOS.
+    </p>
+
+    <p>
+      The system control opens Parkeringsassistent P40 and uses the same
+      controlled foreground flow as user-initiated activation from Home,
+      a manual Shortcut, Apple Watch and CarPlay. There is no separate booking
+      engine in the widget or Watch extension.
     </p>
 
     <h2>Privacy</h2>
