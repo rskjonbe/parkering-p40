@@ -86,17 +86,18 @@
       </li>
 
       <li>
-        <strong>Presis posisjon (valgfritt)</strong> – brukes lokalt når brukeren trykker
-        <strong>JEG ER PÅ JOBB</strong> for å varsle dersom en ny parkering opprettes
-        mens telefonen er sikkert utenfor den faste 1 km-sonen rundt Sluppenvegen 17A.
-        Brukeren velger da selv <strong>Behold parkering</strong> eller
-        <strong>Frigi parkering</strong>; en manuell parkering avsluttes aldri automatisk.
-        Posisjon brukes også etter en tidsstyrt automatisk booking til ankomst- og
-        sikkerhetskontroll. Den valgfrie <strong>P40 Ankomststart</strong>-bookingen
-        trigges av brukerens Apple Snarveier-automatisering og krever ikke en ekstra
-        GPS-kontroll i P40 før booking. GPS-koordinaten sendes ikke til
-        parkeringstjenesten, utvikleren eller andre tredjepartstjenester og lagres
-        ikke som parkeringshistorikk.
+        <strong>Presis posisjon (valgfritt)</strong> – brukes lokalt
+        <strong>før</strong> manuell bestilling via <strong>JEG ER PÅ JOBB</strong>
+        og før bestilling startet fra CarPlay-widgeten. Dersom telefonen er sikkert
+        mer enn 1 km fra den faste sonen rundt Sluppenvegen 17A, eller avstanden
+        ikke kan verifiseres, må brukeren uttrykkelig velge
+        <strong>Bestill P40</strong> før noe sendes til SmartPark. Manuell booking
+        armerer ikke 2-timers sikkerhetsoppfølging. Posisjon brukes også etter en
+        tidsstyrt automatisk booking til ankomst- og sikkerhetskontroll. Den valgfrie
+        <strong>P40 Ankomststart</strong>-bookingen trigges av brukerens Apple
+        Snarveier-automatisering og krever ikke en ekstra GPS-kontroll i P40 før
+        booking. GPS-koordinaten sendes ikke til parkeringstjenesten, utvikleren
+        eller andre tredjepartstjenester og lagres ikke som parkeringshistorikk.
       </li>
     </ul>
 
@@ -116,9 +117,9 @@
       <li>kontrollere relevant parkeringstillatelse</li>
       <li>vise parkeringsstatus og eventuell gjenstående tid</li>
       <li>
-        verifisere lokalt om en ny manuell parkering ble startet mens iPhone
-        er sikkert utenfor den faste 1 km-sonen, og utføre ankomst- og
-        sikkerhetskontroll etter tidsstyrt automatisk booking
+        verifisere lokalt om en manuell eller CarPlay-startet booking kan
+        sendes når iPhone er utenfor den faste 1 km-sonen, og utføre ankomst-
+        og sikkerhetskontroll etter tidsstyrt automatisk booking
       </li>
       <li>
         vise relevant informasjon gjennom Live Activities når funksjonen brukes,
