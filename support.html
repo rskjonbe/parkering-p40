@@ -47,11 +47,24 @@
     <h2>CarPlay-widget</h2>
 
     <p>
-      P40 har en liten status-widget som er optimalisert for CarPlay og StandBy.
-      Den viser aktiv P40-parkering, bil/registreringsnummer, gjenstående tid og
-      sist verifiserte status. I P40 kan du velge å skjule registreringsnummeret
-      på låseskjerm og statusflater. Widgeten er laget for rask avlesning og utfører
-      ikke SmartPark-nettverkskall eller parkeringsendringer selv.
+      P40 har en liten widget for CarPlay og StandBy. Den kan vise flere lagrede
+      biler med lokale bilbilder fra iPhone. Hvis en P40-parkering er aktiv,
+      viser widgeten hvilken bil som er aktiv og hvor mye parkeringstid som gjenstår.
+    </p>
+
+    <p>
+      CarPlay settes opp per bil i P40. Slå på <strong>P40 i CarPlay</strong> for
+      bilen og skriv inn <strong>Biltilkobling</strong>, for eksempel
+      <strong>My Škoda 0190</strong>. En bil som ikke bruker CarPlay trenger ikke
+      dette oppsettet og får ingen bestillingsknapp i widgeten.
+    </p>
+
+    <p>
+      Når P40 finner nøyaktig én bil som matcher den aktive bil-/lydtilkoblingen,
+      og P40-status er bekreftet tom, kan widgeten vise <strong>Bestill</strong>.
+      Trykket åpner P40-appen. Widgeten har ikke SmartPark-token og sender aldri
+      en parkeringsbestilling selv. Appen sjekker SmartPark og avstand før en
+      bestilling kan sendes.
     </p>
 
     <p>
@@ -70,15 +83,15 @@
 <h2>Personvern og sikkerhet</h2>
 
     <p>
-      Posisjon brukes lokalt når du trykker <strong>JEG ER PÅ JOBB</strong>.
-      Hvis en ny parkering blir opprettet og telefonen er sikkert utenfor 1 km
-      fra Sluppenvegen 17A, spør P40 om du vil <strong>Beholde parkering</strong>
-      eller <strong>Frigi parkering</strong>. P40 frigir aldri en manuell parkering
-      automatisk. Posisjon brukes også etter en tidsstyrt automatisk booking til
-      ankomstregistrering og den senere sikkerhetskontrollen. Den valgfrie
-      P40 Ankomststart-bookingen bruker Apple Snarveier-triggeren og gjør ikke
-      en ekstra GPS-kontroll i P40 før booking. GPS-koordinaten sendes ikke til
-      SmartPark eller utvikleren og lagres ikke som parkeringshistorikk.
+      Posisjon brukes lokalt <strong>før</strong> manuell bestilling fra
+      <strong>JEG ER PÅ JOBB</strong> og før bestilling startet fra CarPlay-widgeten.
+      Er telefonen sikkert mer enn 1 km fra P40, eller avstanden ikke kan
+      kontrolleres, spør P40 om du vil <strong>Bestill P40</strong> før noe sendes
+      til SmartPark. Posisjon brukes også etter en tidsstyrt automatisk booking til
+      ankomstregistrering og sikkerhetskontroll. Den valgfrie P40 Ankomststart-
+      bookingen bruker Apple Snarveier-triggeren og gjør ikke en ekstra GPS-kontroll
+      i P40 før booking. GPS-koordinaten sendes ikke til SmartPark eller utvikleren
+      og lagres ikke som parkeringshistorikk.
     </p>
 
     <p>
@@ -283,21 +296,20 @@
     </p>
 
     <p>
-      <strong>2-timers sikkerhetsfrigivelse er innebygd i P40.</strong>
-      Etter en bekreftet tidsstyrt forhåndsbestilling planlegger appen selv en
-      bakgrunnskontroll tidligst to timer etter den faktiske bookingen. iOS
-      bestemmer når bakgrunnsoppgaven faktisk får kjøre. Hvis kjøringen blir
-      forsinket, prøver P40 igjen ved neste bakgrunnsmulighet eller når appen
-      blir aktiv. Dersom bakgrunnskjøringen fortsatt er forsinket, viser P40
-      et lokalt tidskritisk varsel slik at brukeren kan åpne appen og kjøre
-      sikkerhetskontrollen umiddelbart. Ingen «P40 Frigi»-snarvei er nødvendig.
+      <strong>2-timers sikkerhetskontrollen er innebygd i P40.</strong>
+      Etter en bekreftet tidsstyrt forhåndsbestilling kan appen kontrollere om
+      P40 har registrert ankomst. Hvis alle sikkerhetskrav er oppfylt og telefonen
+      fortsatt er sikkert utenfor 1 km, får brukeren et tidskritisk varsel:
+      <strong>Behold parkering</strong> eller <strong>Frigi parkering</strong>.
+      P40 frigir aldri parkeringen automatisk.
     </p>
 
     <p>
-      Hvis posisjon «Alltid» ikke er gitt, avslutter P40 aldri parkeringen
-      automatisk. Brukeren varsles med tidspunktet parkeringen ble bestilt og
-      tidspunktet sikkerhetskontrollen kjørte, og får beskjed om å avslutte
-      manuelt dersom bilen ikke står på P40.
+      Hvis brukeren ikke svarer, sendes én ny påminnelse omtrent én time senere.
+      Hvis heller ikke den besvares, beholdes parkeringen. Velges
+      <strong>Frigi parkering</strong>, kontrollerer P40 riktig bil og eksakt
+      SmartPark-parkering på nytt før den kan avsluttes. Ingen «P40 Frigi»-snarvei
+      er nødvendig.
     </p>
 
     <p>
