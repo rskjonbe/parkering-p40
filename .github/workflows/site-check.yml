@@ -1,0 +1,97 @@
+name: Public documentation quality gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-public-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate static pages and internal links
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          root = Path(".")
+          pages = sorted(root.glob("*.html")) + sorted((root / "en").glob("*.html"))
+          if not pages:
+              raise SystemExit("No HTML pages found")
+
+          class Parser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hrefs = []
+                  self.forbidden = []
+              def handle_starttag(self, tag, attrs):
+                  if tag in {"script", "form", "iframe"}:
+                      self.forbidden.append(tag)
+                  for key, value in attrs:
+                      if key == "href" and value:
+                          self.hrefs.append(value)
+
+          for page in pages:
+              text = page.read_text(encoding="utf-8")
+              parser = Parser()
+              parser.feed(text)
+              if parser.forbidden:
+                  raise SystemExit(f"{page}: forbidden active tag(s): {parser.forbidden}")
+
+              for href in parser.hrefs:
+                  parsed = urlparse(href)
+                  if parsed.scheme in {"http", "https", "mailto"} or href.startswith("#"):
+                      continue
+                  target_text = parsed.path
+                  if not target_text:
+                      continue
+                  target = (page.parent / target_text).resolve()
+                  if target.is_dir():
+                      target = target / "index.html"
+                  if not target.exists():
+                      raise SystemExit(f"{page}: broken internal link {href} -> {target}")
+
+          required = [
+              root / "index.html",
+              root / "vilkar.html",
+              root / "support.html",
+              root / "automation.html",
+              root / "security.html",
+              root / "en" / "index.html",
+              root / "en" / "vilkar.html",
+              root / "en" / "support.html",
+              root / "en" / "automation.html",
+              root / "en" / "security.html",
+          ]
+          missing = [str(p) for p in required if not p.exists()]
+          if missing:
+              raise SystemExit(f"Missing public pages: {missing}")
+
+          print(f"Validated {len(pages)} static HTML pages")
+          PY
+
+      - name: Guard current safety semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ! grep -R -nE 'Build 63|automatisk frigivelse|automatic release|automatisk stopp|automatic stop'             --include='*.html' .
+
+          grep -q 'uten en ekstra native 1 km GPS-sperre' vilkar.html
+          grep -q 'without an additional.*1 km GPS gate' en/vilkar.html ||             grep -q 'without an additional' en/vilkar.html
+
+          grep -q 'ikke et sikkerhetskrav' support.html
+          grep -q 'not required' en/support.html
+
+          grep -q 'P40 avslutter ikke en ubrukt tidsstyrt parkering automatisk' security.html
+          grep -q 'does not automatically stop an unused scheduled parking session' en/security.html
+
+          grep -q 'selve handlingskortet' automation.html
+          grep -q 'action card itself' en/automation.html
+
+          echo "Current public safety semantics verified"
