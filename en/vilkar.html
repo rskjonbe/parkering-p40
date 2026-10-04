@@ -113,38 +113,42 @@
       by the time automation <strong>P40 Start</strong>, which uses the
       dedicated <strong>Start Automatic P40</strong> action, and optionally by
       <strong>P40 Arrival Start</strong> using Apple's <strong>Arrive</strong>
-      trigger. P40 Arrival Start uses its own dedicated action and requires a
-      fresh on-device location check within 1 km before any booking. Manual
-      <strong>Activate P40</strong> is separate and can never arm automatic
-      release. The selected start time is a hard lower boundary; P40 Start is
-      never accepted before that time. After a relevant scheduled booking, P40
-      may monitor its own native fixed 1 km safety zone around Sluppenvegen 17A
-      to record arrival evidence. This native zone never books parking. The app
-      handles the automatic-release safety check itself; no separate “P40 Frigi”
-      shortcut is required. P40 asks iOS for background execution no earlier
-      than two hours after a new booking actually created by the time-based
-      automation. iOS determines the actual background execution time, so the
-      check may occur later than the two-hour threshold. P40 never stops parking
-      before at least two hours have elapsed.
+      trigger. P40 Arrival Start uses its own dedicated action. When the user's Apple
+      Shortcuts <strong>Arrive</strong> automation runs this action, P40 performs
+      the normal status, duplicate and vehicle checks without an additional
+      native 1 km GPS gate before booking. Manual <strong>Activate P40</strong>
+      is separate and can never arm the two-hour safety follow-up. The selected
+      start time is a hard lower boundary; P40 Start is never accepted before
+      that time. After a relevant scheduled booking, P40 may monitor its own
+      native fixed 1 km safety zone around Sluppenvegen 17A to record arrival
+      evidence. This native zone never books parking. The app handles the
+      two-hour safety follow-up itself; no separate “P40 Frigi” shortcut is
+      required. P40 asks iOS for background execution no earlier than two hours
+      after a new booking actually created by the time-based automation. iOS
+      determines the actual background execution time, so the check may occur
+      later than the two-hour threshold. P40 never stops parking unless the user
+      explicitly chooses <strong>Release parking</strong>.
     </p>
     <p>
-      Immediately before any automatic stop, a fresh GPS location is processed
-      locally on the device and active parking status is checked again. GPS
-      accuracy must be sufficient to prove that the phone is safely outside the
-      1 km zone. Arrival monitoring must have remained trustworthy since booking,
-      and automatic stopping requires the exact SmartPark parking session created
-      by the automation to still be active. If GPS, arrival-monitoring continuity,
-      network, sign-in or parking status is uncertain, the parking session is kept.
+      Before P40 can offer <strong>Release parking</strong>, a fresh GPS location
+      is processed locally on the device and active parking status is checked
+      again. GPS accuracy must be sufficient to prove that the phone is safely
+      outside the 1 km zone. Arrival monitoring must have remained trustworthy
+      since booking, and any later user-confirmed stop requires the exact
+      SmartPark parking session created by the automation to still be active. If
+      GPS, arrival-monitoring continuity, network, sign-in or parking status is
+      uncertain, the parking session is kept and the release option is not
+      offered.
     </p>
     <p>
-      If the required location access has not been granted, P40 does not stop
-      parking automatically. The user may be notified of the booking time and
-      the time the safety check ran and must stop the parking session manually
-      if the space is not being used.
+      If the required location access has not been granted, P40 does not offer
+      the release option in the two-hour safety follow-up. The user may be
+      notified of the booking time and the time the safety check ran and must
+      check/stop the parking session manually if the space is not being used.
     </p>
     <p>
-      Automatic stopping is a convenience feature and does not remove the
-      user's responsibility to verify parking status when needed. SmartPark
+      The two-hour safety follow-up is a convenience feature and does not remove
+      the user's responsibility to verify parking status when needed. SmartPark
       remains the authoritative place to check when status is uncertain or
       differs.
     </p>
@@ -287,7 +291,7 @@
       <a href="support.html">Support</a>
       <a href="../vilkar.html">Norsk</a>
     </nav>
-    <footer>Last updated: 3 October 2026</footer>
+    <footer>Last updated: 4 October 2026</footer>
   </div>
 </main>
 </body>
