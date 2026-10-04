@@ -141,11 +141,12 @@
         P40's native zone can <strong>never start parking</strong>. It records
         arrival evidence for the current scheduled booking and contributes to the
         later safety decision about whether an unused parking session can be released.
-        The same fixed 1 km boundary is also used as a one-shot check when you
-        manually tap <strong>I'M AT WORK</strong>. If a new manual parking session
-        is created while the phone is safely outside the zone, P40 asks whether to
-        <strong>Keep parking</strong> or <strong>Release parking</strong>. Manual
-        parking is never released automatically.
+        The same fixed 1 km boundary is also used as a one-shot check
+        <strong>before</strong> a manual booking through
+        <strong>I'M AT WORK</strong>. If the phone is safely outside the zone,
+        or the distance cannot be verified, P40 asks for an explicit
+        <strong>Book P40</strong> confirmation before anything is sent to
+        SmartPark. Manual booking never arms the two-hour safety follow-up.
       </p>
     </div>
 
