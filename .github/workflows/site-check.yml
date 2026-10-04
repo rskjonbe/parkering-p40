@@ -95,3 +95,66 @@ jobs:
           grep -q 'action card itself' en/automation.html
 
           echo "Current public safety semantics verified"
+
+      - name: Guard Norwegian and English semantic parity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          checks = {
+              "support.html": [
+                  "Systemkontroll – Aktiver P40",
+                  "Home",
+                  "manuell Snarvei",
+                  "Control Center",
+                  "Apple Watch",
+                  "CarPlay",
+              ],
+              "en/support.html": [
+                  "System control – Activate P40",
+                  "Home",
+                  "manual Shortcut",
+                  "Control Center",
+                  "Apple Watch",
+                  "CarPlay",
+              ],
+              "index.html": [
+                  "Home",
+                  "manuell Snarvei",
+                  "Control Center",
+                  "Apple Watch",
+                  "CarPlay",
+                  "HTTPS POST",
+                  "JSON-bodyen",
+              ],
+              "en/index.html": [
+                  "Home",
+                  "manual Shortcut",
+                  "Control Center",
+                  "Apple Watch",
+                  "CarPlay",
+                  "HTTPS POST",
+                  "JSON body",
+              ],
+              "security.html": [
+                  "samme kontrollerte forgrunnsflyt",
+                  "HTTPS POST",
+                  "JSON-bodyen",
+              ],
+              "en/security.html": [
+                  "same controlled foreground flow",
+                  "HTTPS POST",
+                  "JSON body",
+              ],
+          }
+
+          for filename, markers in checks.items():
+              text = Path(filename).read_text(encoding="utf-8")
+              missing = [marker for marker in markers if marker not in text]
+              if missing:
+                  raise SystemExit(f"{filename}: missing semantic parity markers: {missing}")
+
+          print("Norwegian/English semantic parity markers verified")
+          PY
