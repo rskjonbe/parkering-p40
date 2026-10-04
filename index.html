@@ -17,7 +17,7 @@
     <h1>Personvernerklæring – Parkeringsassistent P40</h1>
 
     <p class="updated">
-      <strong>Sist oppdatert: 3. oktober 2026</strong>
+      <strong>Sist oppdatert: 4. oktober 2026</strong>
     </p>
 
     <div class="notice">
@@ -168,7 +168,7 @@
     <p>
       Samtykke kan trekkes tilbake uten at det påvirker lovligheten av behandling
       som fant sted før tilbaketrekkingen. Enkelte funksjoner kan da bli
-      utilgjengelige, for eksempel automatisk sikkerhetsfrigivelse uten
+      utilgjengelige, for eksempel 2-timers sikkerhetsoppfølging med frigivelsesvalg uten
       nødvendig posisjonstilgang.
     </p>
     <p>
@@ -234,7 +234,7 @@
         <strong>Lokal automasjonsstatus</strong> – registreringsnummeret som er
         valgt som fast bil for Automatisk P40, tidspunktet da en ny P40-booking
         faktisk ble opprettet, registreringsnummeret den gjelder,
-        den tekniske SmartPark-ID-en som binder en eventuell automatisk avslutning
+        den tekniske SmartPark-ID-en som binder et eventuelt senere brukerbekreftet stopp
         til akkurat samme parkering, tidspunkt for bekreftet aktivering av 1 km
         ankomstkontrollen, eventuelt tidspunkt for tap av kontinuitet i
         ankomstovervåkingen, tidspunkt for et registrert sonesignal og
@@ -324,12 +324,15 @@
     </p>
 
     <p>
-      <strong>CarPlay/StandBy-status:</strong> Widget-/statusflaten leser lokal
-      P40-status fra appens App Group, blant annet parkeringsstatus,
-      kjøretøybeskrivelse, utløpstid og sist verifiserte tidspunkt. Avhengig av
-      brukerens personvernvalg vises registreringsnummeret eller en maskert
-      visningsverdi. Flaten mottar ikke SmartPark-token, SMS-kode, telefonnummer
-      eller GPS-koordinater og gjør ikke egne SmartPark- eller kjøretøyoppslag.
+      <strong>CarPlay/StandBy-widget:</strong> Widgeten leser lokal P40-status fra appens
+      App Group, blant annet parkeringsstatus, kjøretøybeskrivelse, utløpstid og
+      sist verifiserte tidspunkt. Avhengig av brukerens personvernvalg vises
+      registreringsnummeret eller en maskert visningsverdi. Widgeten mottar ikke
+      SmartPark-token, SMS-kode, telefonnummer eller GPS-koordinater og gjør ikke
+      egne SmartPark- eller kjøretøyoppslag. <strong>Bestill</strong> og
+      <strong>Frigi</strong> åpner hovedappen, som gjør fersk kontroll før en
+      eventuell SmartPark-write. Eksakt lyd-/tilkoblingsnavn er ikke et
+      sikkerhetskrav.
     </p>
 
 
@@ -484,11 +487,11 @@
 
     <p>
       Presis posisjon kan behandles lokalt på iPhone både ved den valgfrie
-      GPS-baserte P40-automatiseringen og som en engangskontroll etter at brukeren
-      manuelt trykker «JEG ER PÅ JOBB» og en ny parkering blir opprettet. Den
-      manuelle kontrollen brukes bare til å varsle dersom telefonen er sikkert
-      utenfor 1 km-sonen; parkeringen frigjøres kun etter et uttrykkelig valg fra
-      brukeren. Posisjonen overføres ikke til utvikleren, SmartPark eller andre
+      P40-automatiseringen og som en engangskontroll <strong>før</strong> brukeren
+      manuelt bestiller via «JEG ER PÅ JOBB». Dersom telefonen er sikkert utenfor
+      1 km-sonen, eller posisjon ikke kan verifiseres, må brukeren uttrykkelig
+      velge <strong>Bestill P40</strong> før noe sendes til SmartPark. Manuell
+      booking armerer ikke 2-timers sikkerhetsoppfølging. Posisjonen overføres ikke til utvikleren, SmartPark eller andre
       tredjepartstjenester av denne funksjonen og brukes ikke til sporing,
       profilering eller annonsering.
     </p>
@@ -606,6 +609,7 @@
       <a href="./">Personvern</a>
       <a href="vilkar.html">Bruksvilkår</a>
       <a href="support.html">Support</a>
+      <a href="security.html">Sikkerhet</a>
       <a href="en/">English</a>
     </nav>
 
