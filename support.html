@@ -54,17 +54,21 @@
 
     <p>
       CarPlay settes opp per bil i P40. Slå på <strong>P40 i CarPlay</strong> for
-      bilen og skriv inn <strong>Biltilkobling</strong>, for eksempel
-      <strong>My Škoda 0190</strong>. En bil som ikke bruker CarPlay trenger ikke
-      dette oppsettet og får ingen bestillingsknapp i widgeten.
+      bilen. <strong>Biltilkobling</strong>, for eksempel
+      <strong>My Škoda 0190</strong>, kan brukes som lokal identifikasjon av
+      biltilkoblingen, men er ikke et sikkerhetskrav for bestillingsknappen.
+      En bil som ikke har P40 i CarPlay aktivert får ingen bestillingsknapp i
+      widgeten.
     </p>
 
     <p>
-      Når P40 finner nøyaktig én bil som matcher den aktive bil-/lydtilkoblingen,
-      og P40-status er bekreftet tom, kan widgeten vise <strong>Bestill</strong>.
-      Trykket åpner P40-appen. Widgeten har ikke SmartPark-token og sender aldri
-      en parkeringsbestilling selv. Appen sjekker SmartPark og avstand før en
-      bestilling kan sendes.
+      Når en bil har <strong>P40 i CarPlay</strong> aktivert, brukeren er innlogget
+      og lokal P40-status er bekreftet tom, kan widgeten vise
+      <strong>Bestill</strong> på denne bilen. Eksakt samsvar med navn på
+      bil-/lydtilkoblingen er ikke nødvendig. Trykket åpner P40-appen. Widgeten
+      har ikke SmartPark-token og sender aldri en parkeringsbestilling selv.
+      Appen gjør en fersk SmartPark-kontroll, kontrollerer valgt lagret bil og
+      avstand før en bestilling kan sendes.
     </p>
 
     <p>
@@ -278,8 +282,10 @@
 
     <p>
       <strong>P40 Start</strong> kjører handlingen <strong>Start automatisk P40</strong>.
-      Valgt starttid er en hard nedre grense: handlingen godtas aldri før dette
-      klokkeslettet. P40 oppretter bare en sikkerhetskandidat dersom denne
+      <strong>P40 Ankomststart</strong> må ha selve handlingskortet
+      <strong>P40 Ankomststart</strong>; det er ikke nok at automasjonen bare har
+      dette navnet. Valgt starttid er en hard nedre grense: handlingen godtas
+      aldri før dette klokkeslettet. P40 oppretter bare en sikkerhetskandidat dersom denne
       dedikerte kjøringen faktisk oppretter en ny P40-parkering på en valgt dag.
       En allerede aktiv parkering armerer ikke automatisk frigivelse.
     </p>
@@ -571,6 +577,7 @@
       <a href="./">Personvern</a>
       <a href="vilkar.html">Bruksvilkår</a>
       <a href="support.html">Support</a>
+      <a href="security.html">Sikkerhet</a>
       <a href="en/support.html">English</a>
     </nav>
 
