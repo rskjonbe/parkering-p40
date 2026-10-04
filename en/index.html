@@ -11,7 +11,7 @@
   <div class="card">
     <h1>Privacy Policy – Parkeringsassistent P40</h1>
 
-    <p class="updated"><strong>Last updated: 3 October 2026</strong></p>
+    <p class="updated"><strong>Last updated: 4 October 2026</strong></p>
 
     <div class="notice">
       <strong>Independent app:</strong>
@@ -99,7 +99,7 @@
     <p>
       Withdrawing consent does not affect the lawfulness of processing that
       took place before withdrawal. Some optional features may then be
-      unavailable, such as automatic safety release without the required
+      unavailable, such as the two-hour safety follow-up with a release option without the required
       location access.
     </p>
     <p>
@@ -125,7 +125,7 @@
       <li><strong>Vehicle information</strong> – make, model and colour may be cached locally to reduce unnecessary lookups.</li>
       <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
       <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
-      <li><strong>Local automation state</strong> – the registration number selected as the dedicated Automatic P40 vehicle, the time a new P40 booking was actually created, the vehicle registration number it applies to, the technical SmartPark identifier used to bind any later automatic stop to that same parking session, the time the 1 km arrival monitor was confirmed armed, any time monitoring continuity was lost, any observed region-entry signal and GPS-verified arrival time, and the time and limited result status of the latest safety check may be stored locally. These are identifiers, status and event timestamps, not GPS coordinates. The state is retained only while relevant to the current automation flow and expires no later than 24 hours after booking. The GPS coordinate itself is not stored as parking history.</li>
+      <li><strong>Local automation state</strong> – the registration number selected as the dedicated Automatic P40 vehicle, the time a new P40 booking was actually created, the vehicle registration number it applies to, the technical SmartPark identifier used to bind any later user-confirmed stop to that same parking session, the time the 1 km arrival monitor was confirmed armed, any time monitoring continuity was lost, any observed region-entry signal and GPS-verified arrival time, and the time and limited result status of the latest safety check may be stored locally. These are identifiers, status and event timestamps, not GPS coordinates. The state is retained only while relevant to the current automation flow and expires no later than 24 hours after booking. The GPS coordinate itself is not stored as parking history.</li>
       <li>
         <strong>Built-in two-hour safety check</strong> – after a confirmed
         time-based pre-booking, P40 may register a local background task that
@@ -182,13 +182,15 @@
     </p>
 
     <p>
-      <strong>CarPlay/StandBy status:</strong> The widget/status surface reads
-      local P40 status from the app's App Group, including parking state,
-      vehicle description, expiry and latest verified time. Depending on the
-      user's privacy setting, the registration number is shown or replaced by a
-      masked display value. The surface does not receive the SmartPark token,
-      SMS code, phone number or GPS coordinates and does not make its own
-      SmartPark or vehicle-lookup network requests.
+      <strong>CarPlay/StandBy widget:</strong> The widget reads local P40 status from
+      the app's App Group, including parking state, vehicle description, expiry
+      and latest verified time. Depending on the user's privacy setting, the
+      registration number is shown or replaced by a masked display value. The
+      widget does not receive the SmartPark token, SMS code, phone number or GPS
+      coordinates and does not make its own SmartPark or vehicle-lookup network
+      requests. <strong>Book</strong> and <strong>Release</strong> open the main
+      app, which performs fresh verification before any SmartPark write. An exact
+      audio/connection-name match is not a security requirement.
     </p>
 
     <h3>AI-assisted diagnostics explanation</h3>
@@ -308,11 +310,12 @@
       <li>vehicle-owner information</li>
     </ul>
     <p>
-      Precise location may be processed locally on the iPhone both for optional
-      GPS-based P40 automation and as a one-shot check after the user manually
-      taps “I'M AT WORK” and a new parking session is created. The manual check
-      is used only to warn when the phone is safely outside the 1 km zone; the
-      parking session is released only after an explicit user choice. Location
+      Precise location may be processed locally on the iPhone both for optional P40
+      automation and as a one-shot check <strong>before</strong> a manual booking
+      through “I'M AT WORK”. If the phone is safely outside the 1 km zone, or
+      location cannot be verified, the user must explicitly choose
+      <strong>Book P40</strong> before anything is sent to SmartPark. Manual
+      booking does not arm the two-hour safety follow-up. Location
       is not transmitted to the developer, SmartPark or other third-party
       services by this feature and is not used for tracking, profiling or
       advertising.
@@ -401,6 +404,7 @@
       <a href="./">Privacy</a>
       <a href="vilkar.html">Terms</a>
       <a href="support.html">Support</a>
+      <a href="security.html">Security</a>
       <a href="../">Norsk</a>
     </nav>
 
