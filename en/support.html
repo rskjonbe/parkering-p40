@@ -31,11 +31,15 @@
     <h2>CarPlay widget</h2>
 
     <p>
-      P40 includes a small status widget optimized for CarPlay and StandBy.
-      It shows active P40 parking, vehicle/registration number, remaining time
-      and the latest verified status. P40 includes an option to hide the
-      registration number on Lock Screen and status surfaces. The widget is designed for glanceable
-      information and does not itself make SmartPark network requests or change parking.
+      P40 includes a small multi-vehicle widget optimized for CarPlay and StandBy.
+      It shows saved vehicles and, when P40 is active, the active vehicle,
+      remaining time and the latest verified status. P40 includes an option to
+      hide the registration number on Lock Screen and status surfaces. A vehicle
+      with <strong>P40 in CarPlay</strong> enabled may show <strong>Book</strong>
+      when the cached P40 status is confirmed empty. Exact audio-route-name
+      matching is not required. The widget itself does not make SmartPark network
+      requests or change parking; Book/Release opens the iPhone app for fresh
+      verification.
     </p>
 
     <p>
@@ -173,9 +177,11 @@
       without an additional 1 km GPS gate before booking.
     </p>
     <p>
-      <strong>P40 Start</strong> runs <strong>Start Automatic P40</strong>. The selected
-      start time is a hard lower boundary: the action is never accepted before
-      that time. P40 creates a safety candidate only when that dedicated run
+      <strong>P40 Start</strong> runs <strong>Start Automatic P40</strong>. The
+      optional <strong>P40 Arrival Start</strong> automation must contain the
+      actual <strong>P40 Arrival Start</strong> action card; giving the automation
+      that name is not sufficient. The selected start time is a hard lower
+      boundary: the action is never accepted before that time. P40 creates a safety candidate only when that dedicated run
       actually creates a new P40 parking session on an enabled day. An already
       active parking session does not arm automatic release.
     </p>
@@ -381,6 +387,7 @@
       <a href="./">Privacy</a>
       <a href="vilkar.html">Terms</a>
       <a href="support.html">Support</a>
+      <a href="security.html">Security</a>
       <a href="../support.html">Norsk</a>
     </nav>
 
