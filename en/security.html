@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security – Parkeringsassistent P40</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <div class="card">
+    <p class="eyebrow">Parkeringsassistent P40</p>
+    <h1>Security and technical safety principles</h1>
+    <p class="updated"><strong>Last updated: 4 October 2026</strong></p>
+
+    <div class="notice">
+      <strong>Independent app:</strong> Parkeringsassistent P40 is not developed,
+      approved, supported or operated by SmartPark, Trondheim Parking,
+      Trondheim Municipality or the parking operator.
+    </div>
+
+    <p>
+      This page describes user-relevant security principles. It does not publish
+      secrets, tokens, private keys or internal details that would weaken security.
+    </p>
+
+    <h2>Sign-in and credentials</h2>
+    <ul>
+      <li>The SmartPark session/token is stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
+      <li>Phone number and SMS code are used in the sign-in flow and are not included in shared diagnostics.</li>
+      <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again.</li>
+    </ul>
+
+    <h2>Network and third-party services</h2>
+    <ul>
+      <li>SmartPark communication uses HTTPS to a fixed expected service origin.</li>
+      <li>The verification page uses a non-persistent WebView and restricts the native message bridge to the expected SmartPark origin.</li>
+      <li>Vehicle lookup uses HTTPS through the developer's Cloudflare Worker to the Norwegian Public Roads Administration technical vehicle API. The API key is not embedded in the app.</li>
+      <li>P40 depends on third-party services and can stop working if their API, policy or access changes. Unknown/changed responses are intended to fail closed rather than be guessed around.</li>
+    </ul>
+
+    <h2>Parking booking and stopping</h2>
+    <ul>
+      <li>P40 checks existing P40 status before a new booking and does not blindly retry writes after an uncertain result.</li>
+      <li>A destructive stop is bound to the expected vehicle and exact active SmartPark permit.</li>
+      <li><strong>P40 does not automatically stop an unused scheduled parking session.</strong> After safety checks the app may offer <strong>Keep parking</strong> or <strong>Release parking</strong>. DELETE is sent only after the user's explicit choice and a fresh active-parking verification.</li>
+      <li>If status, authentication, network, GPS or permit identity is uncertain, the parking session is kept.</li>
+    </ul>
+
+    <h2>Automation and location</h2>
+    <ul>
+      <li><strong>P40 Start</strong> is the scheduled action. Optional <strong>P40 Arrival Start</strong> uses the user's Apple Shortcuts <strong>Arrive</strong> trigger.</li>
+      <li>P40 Arrival Start does not perform a second native 1 km GPS gate before booking. P40's own 1 km region is post-booking safety evidence for a relevant scheduled booking.</li>
+      <li>Location is processed locally. GPS coordinates are not sent to SmartPark, the developer or the vehicle-lookup service by this feature and are not stored as parking history.</li>
+      <li>Boundary uncertainty fails closed: P40 must establish that even the closest plausible position is outside 1 km before <strong>Release parking</strong> can be offered.</li>
+    </ul>
+
+    <h2>CarPlay, widget and Apple Watch</h2>
+    <ul>
+      <li>Widget and Watch do not receive the SmartPark token, SMS code or phone number.</li>
+      <li>The CarPlay widget may show <strong>Book</strong> for vehicles the user explicitly enabled for P40 in CarPlay when local status is confirmed missing. An exact audio/connection-name match is not a security factor.</li>
+      <li>Book/Release from the widget opens the main app. The main app performs fresh SmartPark, vehicle and safety verification before any write/DELETE.</li>
+      <li>The user can mask the registration number on Lock Screen, Dynamic Island, Apple Watch and CarPlay/StandBy surfaces.</li>
+    </ul>
+
+    <h2>Diagnostics and on-device AI</h2>
+    <ul>
+      <li>Diagnostics are never sent automatically to the developer.</li>
+      <li>Known registration numbers are masked before diagnostics are copied, shared or used by the optional AI explanation.</li>
+      <li>The AI explanation uses Apple Foundation Models on-device when available and is clearly labelled AI-generated. AI output does not confirm valid parking.</li>
+      <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
+    </ul>
+
+    <h2>Report a security or privacy issue</h2>
+    <p>
+      Send a brief description to
+      <a href="mailto:rskjonbe@gmail.com">rskjonbe@gmail.com</a>.
+      Do not send SmartPark tokens, SMS codes or other sign-in secrets.
+    </p>
+
+    <nav>
+      <a href="./">Privacy</a>
+      <a href="vilkar.html">Terms of use</a>
+      <a href="support.html">Support</a>
+      <a href="automation.html">Automatic P40</a>
+      <a href="../security.html">Norsk</a>
+    </nav>
+
+    <footer>
+      Parkeringsassistent P40 – public security overview
+    </footer>
+  </div>
+</main>
+</body>
+</html>
