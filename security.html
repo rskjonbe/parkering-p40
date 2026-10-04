@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sikkerhet – Parkeringsassistent P40</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div class="card">
+    <p class="eyebrow">Parkeringsassistent P40</p>
+    <h1>Sikkerhet og tekniske sikkerhetsprinsipper</h1>
+    <p class="updated"><strong>Sist oppdatert: 4. oktober 2026</strong></p>
+
+    <div class="notice">
+      <strong>Uavhengig app:</strong> Parkeringsassistent P40 er ikke utviklet,
+      godkjent, støttet eller drevet av SmartPark, Trondheim Parkering,
+      Trondheim kommune eller parkeringsoperatøren.
+    </div>
+
+    <p>
+      Denne siden beskriver sikkerhetsprinsippene som er relevante for brukeren.
+      Den publiserer ikke hemmeligheter, tokens, interne nøkler eller detaljer som
+      kan svekke sikkerheten.
+    </p>
+
+    <h2>Innlogging og legitimasjon</h2>
+    <ul>
+      <li>SmartPark-session/token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
+      <li>Telefonnummer og SMS-kode brukes i innloggingsflyten og inngår ikke i delt diagnostikk.</li>
+      <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging.</li>
+    </ul>
+
+    <h2>Nettverk og tredjepartstjenester</h2>
+    <ul>
+      <li>SmartPark-kommunikasjon bruker HTTPS mot en fast forventet tjenesteadresse.</li>
+      <li>Verifiseringssiden bruker en ikke-persistent WebView og begrenser native meldingsbro til forventet SmartPark-origin.</li>
+      <li>Kjøretøyoppslag går over HTTPS via utviklerens Cloudflare Worker til Statens vegvesens tekniske kjøretøy-API. API-nøkkelen ligger ikke i appen.</li>
+      <li>P40 er avhengig av tredjepartstjenester og kan slutte å fungere dersom deres API, policy eller tilgang endres. Ved ukjent/endrede svar skal appen feile sikkert fremfor å gjette.</li>
+    </ul>
+
+    <h2>Bestilling og avslutning av parkering</h2>
+    <ul>
+      <li>P40 sjekker eksisterende P40-status før ny bestilling og forsøker ikke blindt på nytt etter et usikkert skriveresultat.</li>
+      <li>Destruktiv avslutning bindes til forventet bil og eksakt aktiv SmartPark-tillatelse.</li>
+      <li><strong>P40 avslutter ikke en ubrukt tidsstyrt parkering automatisk.</strong> Etter sikkerhetskontroll kan appen tilby <strong>Behold parkering</strong> eller <strong>Frigi parkering</strong>. DELETE sendes bare etter brukerens uttrykkelige valg og en ny kontroll av aktiv parkering.</li>
+      <li>Hvis status, innlogging, nettverk, GPS eller tillatelses-ID er usikker, beholdes parkeringen.</li>
+    </ul>
+
+    <h2>Automatisering og posisjon</h2>
+    <ul>
+      <li><strong>P40 Start</strong> er den tidsstyrte handlingen. Valgfri <strong>P40 Ankomststart</strong> bruker brukerens Apple Snarveier <strong>Arrive</strong>-trigger.</li>
+      <li>P40 Ankomststart gjør ikke en ekstra native 1 km GPS-kontroll før booking. P40s egen 1 km-sone brukes etter en relevant tidsstyrt booking som sikkerhetsbevis.</li>
+      <li>Posisjon behandles lokalt. GPS-koordinater sendes ikke til SmartPark, utvikleren eller kjøretøyoppslagstjenesten av denne funksjonen og lagres ikke som parkeringshistorikk.</li>
+      <li>Ved grenseusikkerhet brukes GPS-nøyaktighet fail-safe: P40 må kunne fastslå at selv nærmeste plausible posisjon er utenfor 1 km før <strong>Frigi parkering</strong> kan tilbys.</li>
+    </ul>
+
+    <h2>CarPlay, widget og Apple Watch</h2>
+    <ul>
+      <li>Widget og Watch mottar ikke SmartPark-token, SMS-kode eller telefonnummer.</li>
+      <li>CarPlay-widgeten kan vise <strong>Bestill</strong> for biler brukeren uttrykkelig har aktivert for P40 i CarPlay når lokal status er bekreftet tom. Eksakt lyd-/tilkoblingsnavn er ikke en sikkerhetsfaktor.</li>
+      <li>Bestill/Frigi fra widget åpner hovedappen. Hovedappen gjør fersk SmartPark-, bil- og sikkerhetskontroll før en eventuell write/DELETE.</li>
+      <li>Brukeren kan skjule registreringsnummer på låseskjerm, Dynamic Island, Apple Watch og CarPlay/StandBy.</li>
+    </ul>
+
+    <h2>Diagnostikk og lokal AI</h2>
+    <ul>
+      <li>Diagnostikk sendes aldri automatisk til utvikleren.</li>
+      <li>Kjente registreringsnumre maskeres før diagnostikk kopieres, deles eller brukes av den valgfrie AI-forklaringen.</li>
+      <li>AI-forklaringen bruker Apple Foundation Models på enheten når tilgjengelig og er tydelig merket som AI-generert. AI-resultatet bekrefter ikke gyldig parkering.</li>
+      <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
+    </ul>
+
+    <h2>Rapportere sikkerhets- eller personvernproblem</h2>
+    <p>
+      Send en kort beskrivelse til
+      <a href="mailto:rskjonbe@gmail.com">rskjonbe@gmail.com</a>.
+      Ikke send SmartPark-token, SMS-koder eller andre innloggingshemmeligheter.
+    </p>
+
+    <nav>
+      <a href="./">Personvern</a>
+      <a href="vilkar.html">Bruksvilkår</a>
+      <a href="support.html">Support</a>
+      <a href="automation.html">Automatisk P40</a>
+      <a href="en/security.html">English</a>
+    </nav>
+
+    <footer>
+      Parkeringsassistent P40 – offentlig sikkerhetsoversikt
+    </footer>
+  </div>
+</main>
+</body>
+</html>
