@@ -87,17 +87,19 @@
 
       <li>
         <strong>Presis posisjon (valgfritt)</strong> – brukes lokalt
-        <strong>før</strong> manuell bestilling via <strong>JEG ER PÅ JOBB</strong>
-        og før bestilling startet fra CarPlay-widgeten. Dersom telefonen er sikkert
-        mer enn 1 km fra den faste sonen rundt Sluppenvegen 17A, eller avstanden
-        ikke kan verifiseres, må brukeren uttrykkelig velge
-        <strong>Bestill P40</strong> før noe sendes til SmartPark. Manuell booking
-        armerer ikke 2-timers sikkerhetsoppfølging. Posisjon brukes også etter en
-        tidsstyrt automatisk booking til ankomst- og sikkerhetskontroll. Den valgfrie
-        <strong>P40 Ankomststart</strong>-bookingen trigges av brukerens Apple
-        Snarveier-automatisering og krever ikke en ekstra GPS-kontroll i P40 før
-        booking. GPS-koordinaten sendes ikke til parkeringstjenesten, utvikleren
-        eller andre tredjepartstjenester og lagres ikke som parkeringshistorikk.
+        <strong>før</strong> brukerinitiert bestilling fra Home,
+        manuell Snarvei, Control Center, Apple Watch og CarPlay. Disse inngangene
+        går til samme kontrollerte forgrunnsflyt før en SmartPark-bestilling kan
+        sendes. Dersom telefonen er sikkert mer enn 1 km fra den faste sonen rundt
+        Sluppenvegen 17A, eller avstanden ikke kan verifiseres, må brukeren
+        uttrykkelig velge <strong>Bestill P40</strong> før noe sendes til SmartPark.
+        Brukerinitiert booking armerer ikke 2-timers sikkerhetsoppfølging. Posisjon
+        brukes også etter en tidsstyrt automatisk booking til ankomst- og
+        sikkerhetskontroll. Den valgfrie <strong>P40 Ankomststart</strong>-bookingen
+        trigges av brukerens Apple Snarveier-automatisering og krever ikke en ekstra
+        GPS-kontroll i P40 før booking. GPS-koordinaten sendes ikke til
+        parkeringstjenesten, utvikleren eller andre tredjepartstjenester og lagres
+        ikke som parkeringshistorikk.
       </li>
     </ul>
 
@@ -117,9 +119,10 @@
       <li>kontrollere relevant parkeringstillatelse</li>
       <li>vise parkeringsstatus og eventuell gjenstående tid</li>
       <li>
-        verifisere lokalt om en manuell eller CarPlay-startet booking kan
-        sendes når iPhone er utenfor den faste 1 km-sonen, og utføre ankomst-
-        og sikkerhetskontroll etter tidsstyrt automatisk booking
+        verifisere lokalt om en brukerinitiert booking fra Home, manuell
+        Snarvei, Control Center, Apple Watch eller CarPlay kan sendes når iPhone
+        er utenfor den faste 1 km-sonen, og utføre ankomst- og sikkerhetskontroll
+        etter tidsstyrt automatisk booking
       </li>
       <li>
         vise relevant informasjon gjennom Live Activities når funksjonen brukes,
@@ -435,7 +438,9 @@
     <p>
       For kjøretøyoppslag sendes registreringsnummeret via en Cloudflare Worker
       som teknisk mellomledd til Statens vegvesens API for tekniske
-      kjøretøyopplysninger. Appen bruker svaret til å vise merke, modell og farge.
+      kjøretøyopplysninger. Den nåværende appen sender registreringsnummeret i
+      JSON-bodyen til en HTTPS POST-forespørsel til Workeren, ikke som parameter i
+      Worker-URL-en. Appen bruker svaret til å vise merke, modell og farge.
     </p>
 
     <p>
