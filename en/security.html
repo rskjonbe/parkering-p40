@@ -35,12 +35,13 @@
     <ul>
       <li>SmartPark communication uses HTTPS to a fixed expected service origin.</li>
       <li>The verification page uses a non-persistent WebView and restricts the native message bridge to the expected SmartPark origin.</li>
-      <li>Vehicle lookup uses HTTPS through the developer's Cloudflare Worker to the Norwegian Public Roads Administration technical vehicle API. The API key is not embedded in the app.</li>
+      <li>Vehicle lookup uses HTTPS through the developer's Cloudflare Worker to the Norwegian Public Roads Administration technical vehicle API. The registration number is sent in the JSON body of an HTTPS POST request, not in the Worker URL. The API key is not embedded in the app.</li>
       <li>P40 depends on third-party services and can stop working if their API, policy or access changes. Unknown/changed responses are intended to fail closed rather than be guessed around.</li>
     </ul>
 
     <h2>Parking booking and stopping</h2>
     <ul>
+      <li>User-initiated activation from Home, a manual Shortcut, Control Center, Apple Watch and CarPlay uses the same controlled foreground flow before a SmartPark booking can be sent.</li>
       <li>P40 checks existing P40 status before a new booking and does not blindly retry writes after an uncertain result.</li>
       <li>A destructive stop is bound to the expected vehicle and exact active SmartPark permit.</li>
       <li><strong>P40 does not automatically stop an unused scheduled parking session.</strong> After safety checks the app may offer <strong>Keep parking</strong> or <strong>Release parking</strong>. DELETE is sent only after the user's explicit choice and a fresh active-parking verification.</li>
