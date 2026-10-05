@@ -353,6 +353,9 @@
       appoppstart til SmartPark-status er kontrollert. Når SmartPark bekrefter
       aktiv P40 og Live Activity mangler, forsøker appen å opprette den på nytt.
       Når SmartPark bekrefter at P40 ikke lenger er aktiv, fjernes Live Activity.
+      Dersom ActivityKit avviser opprettelse med det valgfrie kjøretøybildet,
+      prøver P40 én gang til uten bilde slik at parkeringsstatus fortsatt kan
+      vises på låseskjerm og Dynamic Island.
     </p>
 
     <p>
@@ -479,7 +482,10 @@
       <strong>«Diagnostikk»</strong> for å se teknisk status for blant annet
       SmartPark-session, siste statuskontroll, eventuell automatisk status-retry,
       bakgrunnsoppdatering, session keep-alive, varsler, Live Activity og
-      Apple Watch-forbindelse.
+      Apple Watch-forbindelse. Feltet <strong>«Live Activity siste resultat»</strong>
+      viser tidspunkt og om aktiviteten sist ble opprettet, oppdatert, fjernet,
+      hoppet over fordi Live Activities er deaktivert, eller om ActivityKit
+      avviste opprettelsen.
     </p>
 
     <p>
