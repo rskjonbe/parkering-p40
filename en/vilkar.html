@@ -62,7 +62,9 @@
     <p>
       To display vehicle information, a registration number may be sent through
       a Cloudflare Worker to the Norwegian Public Roads Administration API for
-      technical vehicle information. The app may display make, model and colour.
+      technical vehicle information. The app sends the registration number in
+      the JSON body of an HTTPS POST request, not in the Worker URL. The app may
+      display make, model and colour.
     </p>
     <p>
       The API provides technical vehicle information rather than owner

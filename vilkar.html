@@ -107,7 +107,8 @@
     <p>
       For å vise kjøretøyinformasjon kan registreringsnummer sendes via
       en Cloudflare Worker til Statens vegvesens API for tekniske
-      kjøretøyopplysninger.
+      kjøretøyopplysninger. Appen sender registreringsnummeret i JSON-bodyen
+      til en HTTPS POST-forespørsel og ikke i Worker-URL-en.
     </p>
 
     <p>

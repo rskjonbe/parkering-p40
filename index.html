@@ -17,7 +17,7 @@
     <h1>Personvernerklæring – Parkeringsassistent P40</h1>
 
     <p class="updated">
-      <strong>Sist oppdatert: 4. oktober 2026</strong>
+      <strong>Sist oppdatert: 5. oktober 2026</strong>
     </p>
 
     <div class="notice">
@@ -76,7 +76,9 @@
       <li>
         <strong>Kjøretøyopplysninger</strong> – merke, modell og farge kan
         hentes fra Statens vegvesens API for tekniske kjøretøyopplysninger
-        for å gjøre det enklere å kontrollere at riktig bil er valgt.
+        via utviklerens Cloudflare Worker. Registreringsnummeret sendes fra
+        appen i JSON-bodyen til en HTTPS POST-forespørsel og ikke i Worker-URL-en.
+        API-nøkkelen til Statens vegvesen ligger ikke i appen.
       </li>
 
       <li>
@@ -261,13 +263,14 @@
       <li>
         <strong>Lokal diagnostikk</strong> – appen kan lagre tidspunkt og
         resultat for statuskontroller, vellykkede SmartPark-kall,
-        bakgrunnssjekk, session keep-alive, status-retry, teknisk Apple Watch/
+        bakgrunnssjekk, sesjonsbekreftelser, status-retry, teknisk Apple Watch/
         WatchConnectivity-status, Health Check og tekniske feil. For å måle
-        keep-alive-effekt kan appen også lagre lokalt tidspunkt for opprettet
+        sesjonslevetid kan appen også lagre lokalt tidspunkt for opprettet
         eller først observert innloggingssesjon, siste autentiserte
-        verifisering, siste keep-alive, antall vellykkede keep-alive-kjøringer,
-        samt bekreftet sluttid og sluttårsak. Token, telefonnummer og SMS-kode
-        lagres ikke i denne sesjonsmålingen. Appen kan også lagre en begrenset
+        verifisering, siste keep-alive og antall vellykkede
+        sesjonsbekreftelser, inkludert bekreftelser ved oppstart og når appen
+        kommer i forgrunnen, samt bekreftet sluttid og sluttårsak. Token,
+        telefonnummer og SMS-kode lagres ikke i denne sesjonsmålingen. Appen kan også lagre en begrenset
         hendelseslinje med maksimalt 30 diagnostikkhendelser i inntil 7 dager.
         Denne informasjonen brukes til feilsøking og lagres lokalt på enheten.
       </li>

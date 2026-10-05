@@ -29,14 +29,14 @@
     <ul>
       <li>SmartPark-session/token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
       <li>Telefonnummer og SMS-kode brukes i innloggingsflyten og inngår ikke i delt diagnostikk.</li>
-      <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging.</li>
+      <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging. Midlertidig nettverks-/restore-feil med fortsatt lagret Keychain-session behandles ikke alene som bekreftet utlogging, og et eldre lokalt innloggingsvarsel ryddes når en senere autentisert SmartPark-kontroll lykkes.</li>
     </ul>
 
     <h2>Nettverk og tredjepartstjenester</h2>
     <ul>
       <li>SmartPark-kommunikasjon bruker HTTPS mot en fast forventet tjenesteadresse.</li>
       <li>Verifiseringssiden bruker en ikke-persistent WebView og begrenser native meldingsbro til forventet SmartPark-origin.</li>
-      <li>Kjøretøyoppslag går over HTTPS via utviklerens Cloudflare Worker til Statens vegvesens tekniske kjøretøy-API. API-nøkkelen ligger ikke i appen.</li>
+      <li>Kjøretøyoppslag går over HTTPS via utviklerens Cloudflare Worker til Statens vegvesens tekniske kjøretøy-API. Registreringsnummeret sendes av appen i JSON-bodyen til en HTTPS POST-forespørsel og ikke i Worker-URL-en. API-nøkkelen ligger ikke i appen.</li>
       <li>P40 er avhengig av tredjepartstjenester og kan slutte å fungere dersom deres API, policy eller tilgang endres. Ved ukjent/endrede svar skal appen feile sikkert fremfor å gjette.</li>
     </ul>
 
