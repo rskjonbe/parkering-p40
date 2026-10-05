@@ -229,13 +229,18 @@
     <p>
       Active P40 parking can be shown on the Lock Screen and Dynamic Island,
       including registration number, vehicle, start/end time, remaining time
-      and last verified status.
+      and last verified status. P40 preserves a possibly valid Live Activity
+      across app startup until SmartPark status has been checked. If SmartPark
+      confirms active P40 while the Live Activity is missing, the app attempts
+      to recreate it. A confirmed non-active P40 status removes it.
     </p>
     <p>
       “Last verified” shows when the app last received a successful status
       confirmation. If approximately 60 minutes pass without a new successful
       check, the Live Activity may say that status should be checked. This does
-      not automatically mean the parking has expired.
+      not automatically mean the parking has expired. P40 Health Check also
+      flags the inconsistent state where SmartPark confirms active P40 but no
+      Live Activity exists; a fresh status check attempts to repair it.
     </p>
 
     <h2>Diagnostics and troubleshooting</h2>
