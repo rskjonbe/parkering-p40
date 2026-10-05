@@ -29,6 +29,7 @@
       <li>The SmartPark session/token is stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
       <li>Phone number and SMS code are used in the sign-in flow and are not included in shared diagnostics.</li>
       <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again. A temporary network/restore failure while a Keychain session is still stored is not by itself treated as confirmed sign-out, and an older local sign-in warning is cleared after a later authenticated SmartPark verification succeeds.</li>
+      <li>After real expiry, the notification/dialog action reveals the normal phone-number sign-in form. P40 does not start the SmartPark verification page until a valid mobile number has been entered.</li>
     </ul>
 
     <h2>Network and third-party services</h2>
@@ -69,6 +70,8 @@
       <li>Known registration numbers are masked before diagnostics are copied, shared or used by the optional AI explanation.</li>
       <li>The AI explanation uses Apple Foundation Models on-device when available and is clearly labelled AI-generated. AI output does not confirm valid parking.</li>
       <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
+      <li>Session diagnostics may locally store counters/timestamps, a coarse endpoint label, HTTP status and whether an X-Token header was observed or actually rotated. The token value itself is never written to diagnostics and remains Keychain-only.</li>
+      <li>P40 does not add or guess an undocumented SmartPark refresh endpoint.</li>
     </ul>
 
     <h2>Report a security or privacy issue</h2>

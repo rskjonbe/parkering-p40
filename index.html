@@ -265,12 +265,16 @@
         resultat for statuskontroller, vellykkede SmartPark-kall,
         bakgrunnssjekk, sesjonsbekreftelser, status-retry, teknisk Apple Watch/
         WatchConnectivity-status, Health Check og tekniske feil. For å måle
-        sesjonslevetid kan appen også lagre lokalt tidspunkt for opprettet
-        eller først observert innloggingssesjon, siste autentiserte
-        verifisering, siste keep-alive og antall vellykkede
-        sesjonsbekreftelser, inkludert bekreftelser ved oppstart og når appen
-        kommer i forgrunnen, samt bekreftet sluttid og sluttårsak. Token,
-        telefonnummer og SMS-kode lagres ikke i denne sesjonsmålingen. Appen kan også lagre en begrenset
+        sesjonslevetid kan appen også lagre lokalt tidspunkt for opprettet eller
+        først observert innloggingssesjon, siste autentiserte verifisering,
+        siste bakgrunns-keep-alive, antall vellykkede <code>client/account</code>-
+        bekreftelser, antall autentiserte SmartPark-svar, om SmartPark returnerte
+        en <code>X-Token</code>-header og om tokenet faktisk ble rotert, samt
+        bekreftet sluttid, sluttårsak og en begrenset oppsummering av forrige
+        avsluttede sesjon. Ved en bekreftet autentiseringsavvisning kan P40 lagre
+        en grov, forhåndsdefinert endepunktetikett og HTTP-status for feilsøking.
+        Selve tokenverdien, telefonnummer og SMS-kode lagres ikke i denne
+        sesjonsmålingen. Appen kan også lagre en begrenset
         hendelseslinje med maksimalt 30 diagnostikkhendelser i inntil 7 dager.
         Denne informasjonen brukes til feilsøking og lagres lokalt på enheten.
       </li>

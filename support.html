@@ -119,9 +119,11 @@
 
     <p>
       Dersom SmartPark-sessionen er utløpt, kan appen vise varselet
-      <strong>«P40 – innlogging nødvendig»</strong>. Velg
-      <strong>«Åpne og logg inn»</strong> for å gå direkte tilbake til
-      innloggingsflyten i Parkeringsassistent P40.
+      <strong>«P40 – innlogging nødvendig»</strong>. Velg handlingen i varselet,
+      eller <strong>«Gå til innlogging»</strong> i appen. P40 viser da den vanlige
+      innloggingsskjermen først, slik at du kan skrive inn mobilnummeret som brukes
+      i SmartPark. Verifiseringssiden åpnes ikke før et gyldig mobilnummer er
+      skrevet inn og du velger å fortsette.
     </p>
 
 
@@ -411,20 +413,23 @@
     <p>
       Diagnostikk viser når den gjeldende innloggingen ble opprettet. Dersom
       sesjonen allerede eksisterte da denne målingen ble innført, vises i stedet
-      tidspunktet P40 først observerte den. Appen viser også siste autentiserte
-      verifisering, siste keep-alive, antall vellykkede sesjonsbekreftelser
-      (inkludert oppstart/forgrunn) og løpende sesjonslevetid. Keep-alive er én
-      type sesjonsbekreftelse og må derfor ikke tolkes som at alle bekreftelser
-      er bakgrunnskjøringer.
+      tidspunktet P40 først observerte den. Appen skiller mellom vellykkede
+      <code>client/account</code>-bekreftelser, faktiske bakgrunns-keep-alive og
+      øvrige autentiserte SmartPark-svar. P40 viser også om SmartPark har
+      returnert en <code>X-Token</code>-header og om tokenet faktisk ble rotert.
+      Dette gjør det mulig å skille mellom «autentisert kall lyktes» og
+      «sessionen ble fornyet».
     </p>
     <p>
       Når parkeringstjenesten bekrefter at innloggingen er utløpt, fryses
-      sluttidspunkt og målt levetid. En manuell utlogging registreres separat og
-      merkes ikke som at sesjonen «utløp». En midlertidig nettverks- eller
-      restore-feil med fortsatt lagret Keychain-session skal ikke alene vises
-      som utløpt innlogging. Når en senere autentisert SmartPark-kontroll
-      lykkes, fjernes et eventuelt eldre lokalt «innlogging nødvendig»-varsel.
-      Selve tokenet, telefonnummeret og SMS-koden inngår ikke i denne målingen.
+      sluttidspunkt og målt levetid, og en begrenset oppsummering av den
+      avsluttede sesjonen beholdes også etter neste SMS-innlogging. Ved en ekte
+      autentiseringsavvisning kan P40 lagre en grov endepunktetikett og HTTP-
+      status, for eksempel at <code>client/account</code> svarte 401. En manuell
+      utlogging registreres separat. Midlertidig nettverks- eller restore-feil
+      med fortsatt lagret Keychain-session behandles ikke alene som utløpt
+      innlogging. Selve tokenverdien, telefonnummeret og SMS-koden inngår ikke
+      i denne målingen.
     </p>
 
     <h3>Nylige hendelser</h3>
