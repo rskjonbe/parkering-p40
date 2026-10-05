@@ -63,7 +63,7 @@
       <li>Book/Release from the widget opens the main app. The main app performs fresh SmartPark, vehicle and safety verification before any write/DELETE.</li>
       <li>The user can mask the registration number on Lock Screen, Dynamic Island, Apple Watch and CarPlay/StandBy surfaces.</li>
       <li>App startup no longer ends a possibly valid Live Activity before SmartPark status is known. Confirmed active P40 updates or restores Live Activity; confirmed non-active P40 removes it.</li>
-      <li>If ActivityKit rejects the full Live Activity presentation with the optional local vehicle photo, P40 may retry once without the image. This is presentation-only and never triggers a parking booking or DELETE.</li>
+      <li>Build 78 does not place image bytes in ActivityKit ContentState. An optional vehicle photo is resized locally to a dedicated 144 × 108 JPEG in P40's App Group and is read directly by the Live Activity extension. The image is not sent to the developer, SmartPark or the vehicle-lookup service.</li>
     </ul>
 
     <h2>Diagnostics and on-device AI</h2>
@@ -74,7 +74,7 @@
       <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
       <li>Session diagnostics may locally store counters/timestamps, a coarse endpoint label, HTTP status and whether an X-Token header was observed or actually rotated. The token value itself is never written to diagnostics and remains Keychain-only.</li>
       <li>P40 does not add or guess an undocumented SmartPark refresh endpoint.</li>
-      <li>Live Activity diagnostics may store a local timestamp/result for creation, update or fallback. This introduces no new external data sharing.</li>
+      <li>Live Activity diagnostics may store a local timestamp/result for creation, update, removal and whether ActivityKit still reports the activity after creation. An approximate encoded ActivityKit payload size may also be logged locally. The image file is not part of that payload or diagnostics.</li>
     </ul>
 
     <h2>Report a security or privacy issue</h2>
