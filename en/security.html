@@ -34,7 +34,7 @@
 
     <h2>Network and third-party services</h2>
     <ul>
-      <li>SmartPark communication uses HTTPS to a fixed expected service origin.</li>
+      <li>P40 constructs SmartPark requests against a fixed expected HTTPS service origin and rejects server-provided service paths that resolve outside that origin. Redirect handling is tracked separately as a Build 78 hardening item.</li>
       <li>The verification page uses a non-persistent WebView and restricts the native message bridge to the expected SmartPark origin.</li>
       <li>Vehicle lookup uses HTTPS through the developer's Cloudflare Worker to the Norwegian Public Roads Administration technical vehicle API. The registration number is sent by the app in the JSON body of an HTTPS POST request, not in the Worker URL. The API key is not embedded in the app.</li>
       <li>P40 depends on third-party services and can stop working if their API, policy or access changes. Unknown/changed responses are intended to fail closed rather than be guessed around.</li>
