@@ -84,8 +84,11 @@
     </p>
     <p>
       If the SmartPark session has expired, the app may show
-      <strong>“P40 – sign-in required”</strong>. Choose
-      <strong>“Open and sign in”</strong> to return to the sign-in flow.
+      <strong>“P40 – sign-in required”</strong>. Use the notification action,
+      or choose <strong>“Go to sign in”</strong> in the app. P40 first shows
+      the normal phone-number form so you can enter the mobile number used with
+      SmartPark. The verification page is not opened until a valid mobile
+      number has been entered and you choose to continue.
     </p>
 
     <h2>Parking is not shown as active</h2>
@@ -253,20 +256,23 @@
     <p>
       Diagnostics shows when the current sign-in session was created. If the
       session already existed when this measurement feature was introduced,
-      P40 instead shows when it first observed that session. The app also shows
-      the last authenticated verification, last keep-alive, the number of
-      successful session confirmations (including startup/foreground) and the
-      live session lifetime. Keep-alive is one type of session confirmation and
-      should not be read as meaning that every confirmation was a background run.
+      P40 instead shows when it first observed that session. The app separates
+      successful <code>client/account</code> confirmations, actual background
+      keep-alive executions and other authenticated SmartPark responses. P40
+      also shows whether SmartPark returned an <code>X-Token</code> header and
+      whether the token actually rotated. This distinguishes “authenticated
+      request succeeded” from “the session was renewed”.
     </p>
     <p>
       When the parking service confirms that sign-in has expired, the end time
-      and measured lifetime are frozen. Manual sign-out is recorded separately
-      and is not labelled as session expiry. A temporary network/restore failure
-      while a Keychain session is still stored is not by itself treated as
-      confirmed expiry. If a later authenticated SmartPark verification
-      succeeds, any older local “sign-in required” warning is cleared. The
-      token, phone number and SMS code are not part of this measurement.
+      and measured lifetime are frozen, and a limited summary of that completed
+      session remains available after the next SMS sign-in. On a real
+      authentication rejection, P40 may record a coarse endpoint label and HTTP
+      status, for example that <code>client/account</code> returned 401. Manual
+      sign-out is recorded separately. A temporary network/restore failure while
+      a Keychain session is still stored is not by itself treated as confirmed
+      expiry. The token value itself, phone number and SMS code are not part of
+      this measurement.
     </p>
 
     <h3>Recent events</h3>
