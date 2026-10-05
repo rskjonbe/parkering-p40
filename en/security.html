@@ -28,14 +28,14 @@
     <ul>
       <li>The SmartPark session/token is stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
       <li>Phone number and SMS code are used in the sign-in flow and are not included in shared diagnostics.</li>
-      <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again.</li>
+      <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again. A temporary network/restore failure while a Keychain session is still stored is not by itself treated as confirmed sign-out, and an older local sign-in warning is cleared after a later authenticated SmartPark verification succeeds.</li>
     </ul>
 
     <h2>Network and third-party services</h2>
     <ul>
       <li>SmartPark communication uses HTTPS to a fixed expected service origin.</li>
       <li>The verification page uses a non-persistent WebView and restricts the native message bridge to the expected SmartPark origin.</li>
-      <li>Vehicle lookup uses HTTPS through the developer's Cloudflare Worker to the Norwegian Public Roads Administration technical vehicle API. The API key is not embedded in the app.</li>
+      <li>Vehicle lookup uses HTTPS through the developer's Cloudflare Worker to the Norwegian Public Roads Administration technical vehicle API. The registration number is sent by the app in the JSON body of an HTTPS POST request, not in the Worker URL. The API key is not embedded in the app.</li>
       <li>P40 depends on third-party services and can stop working if their API, policy or access changes. Unknown/changed responses are intended to fail closed rather than be guessed around.</li>
     </ul>
 
