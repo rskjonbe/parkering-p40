@@ -64,7 +64,7 @@
       <li>Bestill/Frigi fra widget åpner hovedappen. Hovedappen gjør fersk SmartPark-, bil- og sikkerhetskontroll før en eventuell write/DELETE.</li>
       <li>Brukeren kan skjule registreringsnummer på låseskjerm, Dynamic Island, Apple Watch og CarPlay/StandBy.</li>
       <li>Appoppstart avslutter ikke lenger en mulig gyldig Live Activity før SmartPark-status er kjent. Bekreftet aktiv P40 oppdaterer eller gjenoppretter Live Activity; bekreftet ikke-aktiv P40 fjerner den.</li>
-      <li>Dersom ActivityKit avviser full Live Activity-visning med valgfritt lokalt bilbilde, kan P40 prøve én gang til uten bildet. Dette er kun presentasjonsdata og utløser ingen parkeringsbestilling eller DELETE.</li>
+      <li>Build 78 legger ikke bildebiter i ActivityKit ContentState. Et valgfritt bilbilde skaleres lokalt til en egen 144 × 108 JPEG i P40s App Group og leses direkte av Live Activity-utvidelsen. Bildet sendes ikke til utvikleren, SmartPark eller kjøretøyoppslaget.</li>
     </ul>
 
     <h2>Diagnostikk og lokal AI</h2>
@@ -75,7 +75,7 @@
       <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
       <li>Sesjonsdiagnostikk kan lokalt lagre tellere/tidspunkt, grov endepunktetikett, HTTP-status og om en X-Token-header ble observert eller faktisk rotert. Selve tokenverdien logges aldri i diagnostikken og forblir i Keychain.</li>
       <li>P40 legger ikke til eller gjetter et udokumentert SmartPark refresh-endepunkt.</li>
-      <li>Live Activity-diagnostikk kan lagre lokal tidspunkt/resultatstatus for opprettelse, oppdatering eller fallback. Den introduserer ingen ny ekstern datadeling.</li>
+      <li>Live Activity-diagnostikk kan lagre lokalt tidspunkt/resultat for opprettelse, oppdatering, fjerning og om ActivityKit fortsatt registrerer aktiviteten etter opprettelse. Omtrentlig kodet ActivityKit-payloadstørrelse kan også logges lokalt. Bildefilen inngår ikke i denne payloaden eller diagnostikken.</li>
     </ul>
 
     <h2>Rapportere sikkerhets- eller personvernproblem</h2>
