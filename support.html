@@ -349,7 +349,10 @@
 
     <p>
       Ved aktiv P40-parkering kan appen vise informasjon på låseskjermen og
-      Dynamic Island.
+      Dynamic Island. P40 beholder en mulig gyldig Live Activity gjennom
+      appoppstart til SmartPark-status er kontrollert. Når SmartPark bekrefter
+      aktiv P40 og Live Activity mangler, forsøker appen å opprette den på nytt.
+      Når SmartPark bekrefter at P40 ikke lenger er aktiv, fjernes Live Activity.
     </p>
 
     <p>
@@ -372,7 +375,9 @@
       «Sist verifisert» viser når appen sist fikk bekreftet status fra
       parkeringstjenesten, og er ikke en garanti for at statusen fortsatt er
       uendret. Trykk på oppdateringssymbolet ved siden av tidspunktet for å
-      åpne appen og kontrollere P40-status på nytt.
+      åpne appen og kontrollere P40-status på nytt. P40 Health Check varsler
+      også dersom SmartPark bekrefter aktiv P40 samtidig som Live Activity
+      mangler, og en ny statuskontroll forsøker å reparere visningen.
     </p>
 
     <p>
