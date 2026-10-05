@@ -63,6 +63,8 @@
       <li>CarPlay-widgeten kan vise <strong>Bestill</strong> for biler brukeren uttrykkelig har aktivert for P40 i CarPlay når lokal status er bekreftet tom. Eksakt lyd-/tilkoblingsnavn er ikke en sikkerhetsfaktor.</li>
       <li>Bestill/Frigi fra widget åpner hovedappen. Hovedappen gjør fersk SmartPark-, bil- og sikkerhetskontroll før en eventuell write/DELETE.</li>
       <li>Brukeren kan skjule registreringsnummer på låseskjerm, Dynamic Island, Apple Watch og CarPlay/StandBy.</li>
+      <li>Appoppstart avslutter ikke lenger en mulig gyldig Live Activity før SmartPark-status er kjent. Bekreftet aktiv P40 oppdaterer eller gjenoppretter Live Activity; bekreftet ikke-aktiv P40 fjerner den.</li>
+      <li>Dersom ActivityKit avviser full Live Activity-visning med valgfritt lokalt bilbilde, kan P40 prøve én gang til uten bildet. Dette er kun presentasjonsdata og utløser ingen parkeringsbestilling eller DELETE.</li>
     </ul>
 
     <h2>Diagnostikk og lokal AI</h2>
@@ -73,6 +75,7 @@
       <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
       <li>Sesjonsdiagnostikk kan lokalt lagre tellere/tidspunkt, grov endepunktetikett, HTTP-status og om en X-Token-header ble observert eller faktisk rotert. Selve tokenverdien logges aldri i diagnostikken og forblir i Keychain.</li>
       <li>P40 legger ikke til eller gjetter et udokumentert SmartPark refresh-endepunkt.</li>
+      <li>Live Activity-diagnostikk kan lagre lokal tidspunkt/resultatstatus for opprettelse, oppdatering eller fallback. Den introduserer ingen ny ekstern datadeling.</li>
     </ul>
 
     <h2>Rapportere sikkerhets- eller personvernproblem</h2>

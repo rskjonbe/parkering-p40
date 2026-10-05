@@ -62,6 +62,8 @@
       <li>The CarPlay widget may show <strong>Book</strong> for vehicles the user explicitly enabled for P40 in CarPlay when local status is confirmed missing. An exact audio/connection-name match is not a security factor.</li>
       <li>Book/Release from the widget opens the main app. The main app performs fresh SmartPark, vehicle and safety verification before any write/DELETE.</li>
       <li>The user can mask the registration number on Lock Screen, Dynamic Island, Apple Watch and CarPlay/StandBy surfaces.</li>
+      <li>App startup no longer ends a possibly valid Live Activity before SmartPark status is known. Confirmed active P40 updates or restores Live Activity; confirmed non-active P40 removes it.</li>
+      <li>If ActivityKit rejects the full Live Activity presentation with the optional local vehicle photo, P40 may retry once without the image. This is presentation-only and never triggers a parking booking or DELETE.</li>
     </ul>
 
     <h2>Diagnostics and on-device AI</h2>
@@ -72,6 +74,7 @@
       <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
       <li>Session diagnostics may locally store counters/timestamps, a coarse endpoint label, HTTP status and whether an X-Token header was observed or actually rotated. The token value itself is never written to diagnostics and remains Keychain-only.</li>
       <li>P40 does not add or guess an undocumented SmartPark refresh endpoint.</li>
+      <li>Live Activity diagnostics may store a local timestamp/result for creation, update or fallback. This introduces no new external data sharing.</li>
     </ul>
 
     <h2>Report a security or privacy issue</h2>
