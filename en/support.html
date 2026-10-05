@@ -232,7 +232,10 @@
       and last verified status. P40 preserves a possibly valid Live Activity
       across app startup until SmartPark status has been checked. If SmartPark
       confirms active P40 while the Live Activity is missing, the app attempts
-      to recreate it. A confirmed non-active P40 status removes it.
+      to recreate it. A confirmed non-active P40 status removes it. If
+      ActivityKit rejects creation with the optional vehicle image, P40 retries
+      once without the image so parking status can still be restored on the
+      Lock Screen and Dynamic Island.
     </p>
     <p>
       “Last verified” shows when the app last received a successful status
@@ -320,7 +323,10 @@
     <p>
       Open <strong>… → Diagnostics</strong> to view SmartPark session state,
       latest status check, background refresh, session keep-alive, status retry,
-      notifications, Live Activity and Apple Watch connectivity.
+      notifications, Live Activity and Apple Watch connectivity. The
+      <strong>“Live Activity latest result”</strong> field shows the time and
+      whether the activity was last created, updated, removed, skipped because
+      Live Activities are disabled, or rejected by ActivityKit.
     </p>
     <p>
       Use <strong>Copy diagnostics</strong> if technical information needs to be
