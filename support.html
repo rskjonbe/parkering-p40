@@ -246,19 +246,19 @@
     <p>
       Ved første oppstart brukes norsk når iPhone-språket er norsk og engelsk
       når iPhone-språket er engelsk. Har telefonen et annet språk, starter P40
-      på engelsk. Dersom både Apples innebygde Foundation Model og Apple
-      Translation støtter telefonens språk på akkurat denne enheten, får en ny
-      bruker et tydelig tilbud om å bytte til dette språket. Hvis språket eller
-      enheten ikke støttes, fortsetter appen på engelsk. Eksisterende brukere
-      uten tidligere språkvalg beholdes på norsk.
+      på engelsk. Dersom Apple Translation støtter språkparet på akkurat denne
+      enheten, får en ny bruker et tydelig tilbud om å bytte til dette språket.
+      Foundation Models er en separat funksjon for valgfri AI-basert diagnostikk.
+      Hvis språket eller enheten ikke støttes, fortsetter appen på engelsk.
+      Eksisterende brukere uten tidligere språkvalg beholdes på norsk.
     </p>
 
     <p>
-      Tilleggsspråk vises bare når P40 kan bekrefte støtte på den aktuelle
-      iPhone-en både fra Apple Foundation Models og Apple Translation.
-      Selve grensesnittoversettelsen bruker <strong>Apple Translation –
-      on-device translation model</strong>; den er ikke den samme modellen som
-      P40s generative AI-funksjon. På eldre eller ikke-støttede enheter vises
+      Tilleggsspråk vises bare når Apple Translation rapporterer språkparet som
+      støttet eller installert på den aktuelle iPhone-en. Selve
+      grensesnittoversettelsen bruker <strong>Apple Translation – on-device
+      translation model</strong>; Foundation Models er separat og brukes bare
+      til valgfri generativ AI-diagnostikk. På eldre eller ikke-støttede enheter vises
       bare norsk og engelsk. Dersom et tidligere valgt tilleggsspråk ikke lenger
       støttes på enheten, brukes engelsk som fallback.
     </p>
