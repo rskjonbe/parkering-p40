@@ -11,7 +11,7 @@
   <div class="card">
     <h1>Privacy Policy – Parkeringsassistent P40</h1>
 
-    <p class="updated"><strong>Last updated: 4 October 2026</strong></p>
+    <p class="updated"><strong>Last updated: 5 October 2026</strong></p>
 
     <div class="notice">
       <strong>Independent app:</strong>
@@ -44,7 +44,7 @@
       <li><strong>Phone number</strong> – used for authentication with the underlying parking service.</li>
       <li><strong>User or account identification</strong> – used to identify and authenticate the user's existing parking account.</li>
       <li><strong>Vehicle registration number</strong> – used to identify the vehicle a parking permit applies to and may be used to retrieve technical vehicle information.</li>
-      <li><strong>Vehicle information</strong> – make, model and colour may be retrieved from the Norwegian Public Roads Administration API for technical vehicle information.</li>
+      <li><strong>Vehicle information</strong> – make, model and colour may be retrieved from the Norwegian Public Roads Administration technical vehicle API through the developer's Cloudflare Worker. The registration number is sent by the app in the JSON body of an HTTPS POST request, not in the Worker URL. The Norwegian Public Roads Administration API key is not embedded in the app.</li>
       <li><strong>Optional vehicle photo</strong> – a photo selected by the user for easier visual identification. The photo is processed locally on the user's device.</li>
       <li><strong>Precise location (optional)</strong> – is processed locally <strong>before</strong> a manual booking through <strong>I'M AT WORK</strong> and before booking started from the CarPlay widget. If the phone is safely more than 1 km from the fixed zone around Sluppenvegen 17A, or the distance cannot be verified, the user must explicitly choose <strong>Book P40</strong> before anything is sent to SmartPark. Manual booking does not arm the two-hour safety follow-up. Location is also used after a scheduled automatic booking for arrival and safety checks. Optional <strong>P40 Arrival Start</strong> booking is triggered by the user's Apple Shortcuts automation and does not require an additional in-app GPS check before booking. GPS coordinates are not sent to the parking service, the developer or other third-party services and are not stored as parking history.</li>
     </ul>
@@ -137,7 +137,7 @@
         is created on the device and introduces no new data transfer.
       </li>
 
-      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session keep-alive, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. To measure keep-alive effectiveness, the app may also store locally the time a sign-in session was created or first observed, the last authenticated verification, last keep-alive, number of successful keep-alive runs, and confirmed session end time/reason. The token, phone number and SMS code are not stored in this session measurement. The app may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
+      <li><strong>Local diagnostics</strong> – timestamps and results for status checks, successful SmartPark calls, background checks, session confirmations, Apple Watch/WatchConnectivity status, status retry, Health Check and technical errors. To measure session lifetime, the app may also store locally the time a sign-in session was created or first observed, the last authenticated verification, last keep-alive and the number of successful session confirmations, including confirmations at startup and when the app enters the foreground, plus confirmed session end time/reason. The token, phone number and SMS code are not stored in this session measurement. The app may also keep a limited timeline of up to 30 diagnostic events for up to 7 days. These data are used for troubleshooting and stored locally.</li>
       <li><strong>Language preference and optional translated UI cache</strong> – the selected app language is stored locally. On supported devices, additional translated UI text may also be cached locally.</li>
     </ul>
 
