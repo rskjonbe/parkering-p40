@@ -407,20 +407,24 @@
       parkering.
     </p>
 
-    <h3>Session keep-alive og levetid</h3>
+    <h3>Sesjonsbekreftelser, keep-alive og levetid</h3>
     <p>
       Diagnostikk viser når den gjeldende innloggingen ble opprettet. Dersom
       sesjonen allerede eksisterte da denne målingen ble innført, vises i stedet
       tidspunktet P40 først observerte den. Appen viser også siste autentiserte
-      verifisering, siste keep-alive, antall vellykkede keep-alive-kjøringer og
-      løpende sesjonslevetid.
+      verifisering, siste keep-alive, antall vellykkede sesjonsbekreftelser
+      (inkludert oppstart/forgrunn) og løpende sesjonslevetid. Keep-alive er én
+      type sesjonsbekreftelse og må derfor ikke tolkes som at alle bekreftelser
+      er bakgrunnskjøringer.
     </p>
     <p>
       Når parkeringstjenesten bekrefter at innloggingen er utløpt, fryses
-      sluttidspunkt og målt levetid slik at keep-alive-effekten kan vurderes.
-      En manuell utlogging registreres separat og merkes ikke som at sesjonen
-      «utløp». Selve tokenet, telefonnummeret og SMS-koden inngår ikke i denne
-      målingen.
+      sluttidspunkt og målt levetid. En manuell utlogging registreres separat og
+      merkes ikke som at sesjonen «utløp». En midlertidig nettverks- eller
+      restore-feil med fortsatt lagret Keychain-session skal ikke alene vises
+      som utløpt innlogging. Når en senere autentisert SmartPark-kontroll
+      lykkes, fjernes et eventuelt eldre lokalt «innlogging nødvendig»-varsel.
+      Selve tokenet, telefonnummeret og SMS-koden inngår ikke i denne målingen.
     </p>
 
     <h3>Nylige hendelser</h3>
