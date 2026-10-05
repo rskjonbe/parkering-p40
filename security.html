@@ -35,7 +35,7 @@
 
     <h2>Nettverk og tredjepartstjenester</h2>
     <ul>
-      <li>SmartPark-kommunikasjon bruker HTTPS mot en fast forventet tjenesteadresse.</li>
+      <li>P40 konstruerer SmartPark-forespørsler mot en fast forventet HTTPS-tjenesteadresse og avviser serveroppgitte tjenestestier som peker utenfor denne origin-en. Redirect-grensen er et eget hardeningpunkt i Build 78-revisjonen.</li>
       <li>Verifiseringssiden bruker en ikke-persistent WebView og begrenser native meldingsbro til forventet SmartPark-origin.</li>
       <li>Kjøretøyoppslag går over HTTPS via utviklerens Cloudflare Worker til Statens vegvesens tekniske kjøretøy-API. Registreringsnummeret sendes av appen i JSON-bodyen til en HTTPS POST-forespørsel og ikke i Worker-URL-en. API-nøkkelen ligger ikke i appen.</li>
       <li>P40 er avhengig av tredjepartstjenester og kan slutte å fungere dersom deres API, policy eller tilgang endres. Ved ukjent/endrede svar skal appen feile sikkert fremfor å gjette.</li>
