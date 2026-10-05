@@ -235,11 +235,13 @@
     <p>
       Norwegian and English are built-in, reviewed app languages. New users
       start directly in Norwegian or English when that is the iPhone language.
-      For another iPhone language, the app starts in English. If both Apple
-      Foundation Models and Apple Translation report support for the phone
-      language on that device, the user is offered that language. The interface
-      translation itself uses <strong>Apple Translation – on-device translation
-      model</strong>. Translated UI text may be cached locally on the device.
+      For another iPhone language, the app starts in English. If Apple
+      Translation reports support for the phone language on that device, the
+      user is offered that language. Foundation Models are a separate capability
+      used only for optional AI-assisted diagnostics and are not required for
+      interface translation. The interface translation itself uses
+      <strong>Apple Translation – on-device translation model</strong>.
+      Translated UI text may be cached locally on the device.
     </p>
     <p>
       If a required translation language is not ready, iOS may ask the user to
