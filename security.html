@@ -30,6 +30,7 @@
       <li>SmartPark-session/token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
       <li>Telefonnummer og SMS-kode brukes i innloggingsflyten og inngår ikke i delt diagnostikk.</li>
       <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging. Midlertidig nettverks-/restore-feil med fortsatt lagret Keychain-session behandles ikke alene som bekreftet utlogging, og et eldre lokalt innloggingsvarsel ryddes når en senere autentisert SmartPark-kontroll lykkes.</li>
+      <li>Etter ekte utløp åpner varsel-/dialoghandlingen den vanlige innloggingsskjermen med mobilnummerfelt. P40 starter ikke SmartPark-verifiseringssiden før et gyldig mobilnummer er skrevet inn.</li>
     </ul>
 
     <h2>Nettverk og tredjepartstjenester</h2>
@@ -70,6 +71,8 @@
       <li>Kjente registreringsnumre maskeres før diagnostikk kopieres, deles eller brukes av den valgfrie AI-forklaringen.</li>
       <li>AI-forklaringen bruker Apple Foundation Models på enheten når tilgjengelig og er tydelig merket som AI-generert. AI-resultatet bekrefter ikke gyldig parkering.</li>
       <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
+      <li>Sesjonsdiagnostikk kan lokalt lagre tellere/tidspunkt, grov endepunktetikett, HTTP-status og om en X-Token-header ble observert eller faktisk rotert. Selve tokenverdien logges aldri i diagnostikken og forblir i Keychain.</li>
+      <li>P40 legger ikke til eller gjetter et udokumentert SmartPark refresh-endepunkt.</li>
     </ul>
 
     <h2>Rapportere sikkerhets- eller personvernproblem</h2>
