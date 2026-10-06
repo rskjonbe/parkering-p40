@@ -94,4 +94,14 @@ jobs:
           grep -q 'selve handlingskortet' automation.html
           grep -q 'action card itself' en/automation.html
 
+          # Build 80 automation-history and language/privacy semantics.
+          grep -q 'Siste automatiske forsøk' automation.html
+          grep -q 'Latest automatic attempt' en/automation.html
+          grep -q 'sist bekreftede automatiske parkeringsstart' automation.html
+          grep -q 'last confirmed automatic parking start' en/automation.html
+          grep -q 'språk-uavhengig resultat' index.html
+          grep -q 'language-independent outcome' en/index.html
+          grep -q 'systemprompt-/instruksjonsfelt' index.html
+          grep -q 'system-prompt or instruction field' en/index.html
+
           echo "Current public safety semantics verified"
