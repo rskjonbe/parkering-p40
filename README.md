@@ -2,6 +2,8 @@
 
 Public Norwegian/English documentation used by the app and App Store metadata.
 
+Current documentation baseline: **Build 80**. The public pages distinguish the latest automatic attempt/result from the last confirmed automatic parking start, document the local language-independent outcome state, and describe the separate roles of Apple Translation and Apple Foundation Models.
+
 - Privacy: `index.html` / `en/index.html`
 - Terms: `vilkar.html` / `en/vilkar.html`
 - Support: `support.html` / `en/support.html`
