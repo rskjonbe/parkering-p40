@@ -11,7 +11,7 @@
   <div class="card">
     <p class="eyebrow">Parkeringsassistent P40</p>
     <h1>Security and technical safety principles</h1>
-    <p class="updated"><strong>Last updated: 4 October 2026</strong></p>
+    <p class="updated"><strong>Last updated: 6 October 2026</strong></p>
 
     <div class="notice">
       <strong>Independent app:</strong> Parkeringsassistent P40 is not developed,
@@ -52,6 +52,8 @@
     <ul>
       <li><strong>P40 Start</strong> is the scheduled action. Optional <strong>P40 Arrival Start</strong> uses the user's Apple Shortcuts <strong>Arrive</strong> trigger.</li>
       <li>P40 Arrival Start does not perform a second native 1 km GPS gate before booking. P40's own 1 km region is post-booking safety evidence for a relevant scheduled booking.</li>
+      <li>P40 keeps the latest automatic attempt, its outcome and the last confirmed automatic parking start separate. An attempt made while parking is already active is recorded as not started and does not change confirmed-start history.</li>
+      <li>The latest automatic-attempt outcome is stored locally as language-independent status used only for presentation and diagnostics; it does not grant authority to book or stop parking.</li>
       <li>Location is processed locally. GPS coordinates are not sent to SmartPark, the developer or the vehicle-lookup service by this feature and are not stored as parking history.</li>
       <li>Boundary uncertainty fails closed: P40 must establish that even the closest plausible position is outside 1 km before <strong>Release parking</strong> can be offered.</li>
     </ul>
@@ -71,6 +73,8 @@
       <li>Diagnostics are never sent automatically to the developer.</li>
       <li>Known registration numbers are masked before diagnostics are copied, shared or used by the optional AI explanation.</li>
       <li>The AI explanation uses Apple Foundation Models on-device when available and is clearly labelled AI-generated. AI output does not confirm valid parking.</li>
+      <li>The AI model is instructed to use natural wording in the selected language and to distinguish clearly between started, not started, blocked, failed and uncertain outcomes without inventing new facts.</li>
+      <li>Interface translation uses Apple Translation on-device. That API does not expose a separate system-prompt field, so P40 uses short, explicit and context-rich source text to improve translation quality.</li>
       <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
       <li>Session diagnostics may locally store counters/timestamps, a coarse endpoint label, HTTP status and whether an X-Token header was observed or actually rotated. The token value itself is never written to diagnostics and remains Keychain-only.</li>
       <li>P40 does not add or guess an undocumented SmartPark refresh endpoint.</li>
