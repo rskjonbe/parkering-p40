@@ -17,7 +17,7 @@
     <h1>Personvernerklæring – Parkeringsassistent P40</h1>
 
     <p class="updated">
-      <strong>Sist oppdatert: 5. oktober 2026</strong>
+      <strong>Sist oppdatert: 6. oktober 2026</strong>
     </p>
 
     <div class="notice">
@@ -242,8 +242,12 @@
         ankomstkontrollen, eventuelt tidspunkt for tap av kontinuitet i
         ankomstovervåkingen, tidspunkt for et registrert sonesignal og
         GPS-verifisert ankomst, samt tidspunkt og begrenset resultatstatus for
-        siste sikkerhetskontroll kan lagres lokalt. Dette er identifikatorer,
-        status og hendelsestidspunkter, ikke GPS-koordinater.
+        siste sikkerhetskontroll kan lagres lokalt. P40 kan også lagre tidspunkt
+        og et begrenset, språk-uavhengig resultat for siste automatiske forsøk,
+        for eksempel startet, allerede aktiv, utilgjengelig, usikkert eller
+        feilet. Dette brukes til å vise korrekt resultat på språket som er valgt
+        i appen. Opplysningen sendes ikke automatisk til utvikleren. Dette er
+        identifikatorer, status og hendelsestidspunkter, ikke GPS-koordinater.
         Tilstanden beholdes bare så lenge den er relevant for den aktuelle
         automasjonsflyten og utløper senest etter 24 timer. Selve
         GPS-koordinaten lagres ikke som parkeringshistorikk.
@@ -371,8 +375,11 @@
       og den lokale hendelseslinjen når brukeren velger «Hva skjedde? Forklar
       med AI». Anbefalingen om diagnostikk bør deles er separat,
       deterministisk P40-logikk og er ikke generert av AI. AI kan ta feil og
-      resultatet er ikke en bekreftelse på at parkeringen er gyldig. Ved
-      usikker status skal SmartPark kontrolleres direkte.
+      resultatet er ikke en bekreftelse på at parkeringen er gyldig. Modellen
+      instrueres til å skrive naturlig på valgt språk og til å skille tydelig
+      mellom startet, ikke startet, blokkert, feilet og usikkert resultat, uten
+      å legge til fakta som ikke finnes i diagnostikken. Ved usikker status skal
+      SmartPark kontrolleres direkte.
     </p>
 
     <p>
@@ -399,8 +406,11 @@
       Dersom nødvendig språkmodell ikke er klar, kan iOS be brukeren om å
       laste den ned. Parkeringsassistent P40 sender ikke disse
       grensesnitttekstene til utviklerens egen server for oversettelse.
-      Dersom en oversettelse ikke er tilgjengelig, brukes engelsk som
-      fallback.
+      Apple Translation-grensesnittet som brukes av appen har ikke et eget
+      systemprompt-/instruksjonsfelt. P40 forbedrer derfor oversettelseskvaliteten
+      ved å bruke korte, tydelige og kontekstrike kildetekster med konsekvent
+      terminologi. Dersom en oversettelse ikke er tilgjengelig, brukes engelsk
+      som fallback.
     </p>
 
     <p>
