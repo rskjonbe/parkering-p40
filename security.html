@@ -11,7 +11,7 @@
   <div class="card">
     <p class="eyebrow">Parkeringsassistent P40</p>
     <h1>Sikkerhet og tekniske sikkerhetsprinsipper</h1>
-    <p class="updated"><strong>Sist oppdatert: 4. oktober 2026</strong></p>
+    <p class="updated"><strong>Sist oppdatert: 6. oktober 2026</strong></p>
 
     <div class="notice">
       <strong>Uavhengig app:</strong> Parkeringsassistent P40 er ikke utviklet,
@@ -53,6 +53,8 @@
     <ul>
       <li><strong>P40 Start</strong> er den tidsstyrte handlingen. Valgfri <strong>P40 Ankomststart</strong> bruker brukerens Apple Snarveier <strong>Arrive</strong>-trigger.</li>
       <li>P40 Ankomststart gjør ikke en ekstra native 1 km GPS-kontroll før booking. P40s egen 1 km-sone brukes etter en relevant tidsstyrt booking som sikkerhetsbevis.</li>
+      <li>P40 skiller mellom siste automatiske forsøk, resultatet av forsøket og sist bekreftede automatiske parkeringsstart. Et forsøk mens parkering allerede er aktiv, registreres som ikke startet og endrer ikke den bekreftede startloggen.</li>
+      <li>Resultatet av siste automatiske forsøk lagres lokalt som en språk-uavhengig status og brukes bare til presentasjon og diagnostikk; den gir ingen egen rett til å bestille eller avslutte parkering.</li>
       <li>Posisjon behandles lokalt. GPS-koordinater sendes ikke til SmartPark, utvikleren eller kjøretøyoppslagstjenesten av denne funksjonen og lagres ikke som parkeringshistorikk.</li>
       <li>Ved grenseusikkerhet brukes GPS-nøyaktighet fail-safe: P40 må kunne fastslå at selv nærmeste plausible posisjon er utenfor 1 km før <strong>Frigi parkering</strong> kan tilbys.</li>
     </ul>
@@ -72,6 +74,8 @@
       <li>Diagnostikk sendes aldri automatisk til utvikleren.</li>
       <li>Kjente registreringsnumre maskeres før diagnostikk kopieres, deles eller brukes av den valgfrie AI-forklaringen.</li>
       <li>AI-forklaringen bruker Apple Foundation Models på enheten når tilgjengelig og er tydelig merket som AI-generert. AI-resultatet bekrefter ikke gyldig parkering.</li>
+      <li>AI-modellen instrueres til å bruke naturlig språk på valgt språk og til å skille tydelig mellom startet, ikke startet, blokkert, feilet og usikkert resultat uten å finne på nye fakta.</li>
+      <li>Grensesnittoversettelser bruker Apple Translation lokalt. Dette grensesnittet har ikke et eget systemprompt-felt, så P40 bruker korte, tydelige og kontekstrike kildetekster for å øke oversettelseskvaliteten.</li>
       <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
       <li>Sesjonsdiagnostikk kan lokalt lagre tellere/tidspunkt, grov endepunktetikett, HTTP-status og om en X-Token-header ble observert eller faktisk rotert. Selve tokenverdien logges aldri i diagnostikken og forblir i Keychain.</li>
       <li>P40 legger ikke til eller gjetter et udokumentert SmartPark refresh-endepunkt.</li>

@@ -34,6 +34,17 @@
       two-hour safety follow-up.
     </div>
 
+    <div class="notice">
+      <strong>Latest automatic attempt:</strong>
+      P40 keeps the <strong>latest automatic attempt</strong>, its result and the
+      <strong>last confirmed automatic parking start</strong> separate.
+      If a parking session is already active when P40 Start or P40 Arrival Start
+      runs, no new parking session is created. The attempt is recorded as
+      <strong>not started because a P40 parking session was already active</strong>.
+      This does not change the last confirmed automatic-start history or the
+      source of the currently active parking session.
+    </div>
+
     <h2>What does P40 do, and what do you do yourself?</h2>
     <div class="split-grid">
       <section class="panel good-panel">
@@ -45,7 +56,7 @@
           <li>monitors arrival within a fixed <strong>1 km zone</strong> around Sluppenvegen 17A when Automatic P40 is enabled and Always location access is granted</li>
           <li>performs a new, fresh location check before the safety follow-up can offer <strong>Release parking</strong></li>
           <li>keeps parking if location, sign-in, network or parking status is uncertain</li>
-          <li>shows local status for the last run and result</li>
+          <li>shows the latest automatic attempt and result separately from the last confirmed automatic parking start</li>
         </ul>
       </section>
 
