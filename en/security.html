@@ -28,7 +28,8 @@
     <ul>
       <li>The SmartPark session/token is stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
       <li>Phone number and SMS code are used in the sign-in flow and are not included in shared diagnostics.</li>
-      <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again. A temporary network/restore failure while a Keychain session is still stored is not by itself treated as confirmed sign-out, and an older local sign-in warning is cleared after a later authenticated SmartPark verification succeeds.</li>
+      <li>Starting with Build 84, P40 attempts to renew a rejected SmartPark access token using the observed <code>client/reauth</code> flow when SmartPark has issued a separate refresh credential. If SmartPark accepts the renewal, the sign-in may continue without a new SMS code. This depends on SmartPark and does not guarantee a permanent sign-in.</li>
+      <li>If SmartPark rejects renewal, P40 stops the action and requires a new SMS sign-in. Temporary network failures alone do not delete stored credentials. An earlier sign-in warning is cleared after a fresh authenticated verification.</li>
       <li>After real expiry, the notification/dialog action reveals the normal phone-number sign-in form. P40 does not start the SmartPark verification page until a valid mobile number has been entered.</li>
     </ul>
 
@@ -43,6 +44,7 @@
     <h2>Parking booking and stopping</h2>
     <ul>
       <li>P40 checks existing P40 status before a new booking and does not blindly retry writes after an uncertain result.</li>
+      <li>An upcoming stabilization build is designed to retain an unresolved parking request marker in a separate secure Keychain record after authentication expires or the user signs out. It is not sent to the developer and should only be cleared after SmartPark provides an authoritative result. This change has not yet been distributed as a completed release.</li>
       <li>A destructive stop is bound to the expected vehicle and exact active SmartPark permit.</li>
       <li><strong>P40 does not automatically stop an unused scheduled parking session.</strong> After safety checks the app may offer <strong>Keep parking</strong> or <strong>Release parking</strong>. DELETE is sent only after the user's explicit choice and a fresh active-parking verification.</li>
       <li>If status, authentication, network, GPS or permit identity is uncertain, the parking session is kept.</li>
@@ -77,7 +79,7 @@
       <li>Interface translation uses Apple Translation on-device. That API does not expose a separate system-prompt field, so P40 uses short, explicit and context-rich source text to improve translation quality.</li>
       <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
       <li>Session diagnostics may locally store counters/timestamps, a coarse endpoint label, HTTP status and whether an X-Token header was observed or actually rotated. The token value itself is never written to diagnostics and remains Keychain-only.</li>
-      <li>P40 does not add or guess an undocumented SmartPark refresh endpoint.</li>
+      <li>P40 uses only the specific <code>client/reauth</code> flow observed in publicly available reference code. It is not a publicly documented or guaranteed SmartPark API. P40 does not guess other renewal endpoints.</li>
       <li>Live Activity diagnostics may store a local timestamp/result for creation, update or fallback. This introduces no new external data sharing.</li>
     </ul>
 
