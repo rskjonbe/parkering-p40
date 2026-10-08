@@ -124,7 +124,7 @@
       <li><strong>Registration numbers</strong> – vehicles added or selected by the user may be stored locally.</li>
       <li><strong>Vehicle information</strong> – make, model and colour may be cached locally to reduce unnecessary lookups.</li>
       <li><strong>Optional vehicle photo</strong> – a compressed copy is stored locally and associated with the registration number. It is not sent to the developer, SmartPark, Cloudflare, the Norwegian Public Roads Administration or other third-party services.</li>
-      <li><strong>Technical session information</strong> – limited information may be stored temporarily to handle a pending or uncertain parking request.</li>
+      <li><strong>Technical session information and unresolved booking</strong> – limited data may be stored locally for a pending or uncertain parking request. A forthcoming security update retains the pending-order identifier and uncertainty marker in a separate protected Keychain item after sign-out until parking status is verified. This item contains no SmartPark tokens, SMS codes or location data.</li>
       <li><strong>Local automation state</strong> – the registration number selected as the dedicated Automatic P40 vehicle, the time a new P40 booking was actually created, the vehicle registration number it applies to, the technical SmartPark identifier used to bind any later user-confirmed stop to that same parking session, the time the 1 km arrival monitor was confirmed armed, any time monitoring continuity was lost, any observed region-entry signal and GPS-verified arrival time, and the time and limited result status of the latest safety check may be stored locally. P40 may also store the timestamp and a limited, language-independent outcome for the latest automatic attempt, such as started, already active, unavailable, uncertain or failed. This is used to render the result in the language currently selected in the app and is not automatically sent to the developer. These are identifiers, status and event timestamps, not GPS coordinates. The state is retained only while relevant to the current automation flow and expires no later than 24 hours after booking. The GPS coordinate itself is not stored as parking history.</li>
       <li>
         <strong>Built-in two-hour safety check</strong> – after a confirmed
@@ -363,7 +363,10 @@
     <p>
       Much of the information processed by P40 exists only locally on the
       user's device and is therefore not available to the developer. Signing
-      out removes the SmartPark session from Apple Keychain. Vehicles and
+      out removes SmartPark authentication credentials from Apple Keychain.
+      In the forthcoming hardening update, an unresolved booking-safety marker
+      may remain protected on-device until the parking result is verified to
+      prevent duplicate bookings. Vehicles and
       vehicle photos can be deleted in the app. Uninstalling the app removes
       data stored in the app's local container.
     </p>
