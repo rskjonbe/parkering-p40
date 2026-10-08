@@ -83,6 +83,13 @@
       verified through SmartPark.
     </p>
     <p>
+      Starting with Build 84, P40 attempts to renew the SmartPark sign-in
+      after an access-token rejection if a refresh credential is available.
+      SmartPark may reject renewal, so continued sign-in is not guaranteed.
+      Always rely on a fresh SmartPark status confirmation for parking.
+      If renewal fails permanently, sign in with SMS again.
+    </p>
+    <p>
       If the SmartPark session has expired, the app may show
       <strong>“P40 – sign-in required”</strong>. Use the notification action,
       or choose <strong>“Go to sign in”</strong> in the app. P40 first shows
