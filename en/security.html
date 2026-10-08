@@ -28,7 +28,8 @@
     <ul>
       <li>The SmartPark session/token is stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
       <li>Phone number and SMS code are used in the sign-in flow and are not included in shared diagnostics.</li>
-      <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again. A temporary network/restore failure while a Keychain session is still stored is not by itself treated as confirmed sign-out, and an older local sign-in warning is cleared after a later authenticated SmartPark verification succeeds.</li>
+      <li>Build 84 attempts to renew a rejected SmartPark access token through the observed <code>client/reauth</code> flow when a matching refresh credential is available. If renewal is rejected, P40 stops the operation and requires SMS sign-in. This flow is based on an independent, unofficial reference implementation; successful renewal at natural expiry remains to be verified before a stable release. A temporary network failure is not, by itself, proof of sign-out.</li>
+      <li>A subsequent security update retains unresolved parking-request safety information in a separate Apple Keychain item even when authentication credentials are removed. This prevents a new SMS sign-in from silently allowing a possible duplicate booking. The marker is cleared after parking status has been verified.</li>
       <li>After real expiry, the notification/dialog action reveals the normal phone-number sign-in form. P40 does not start the SmartPark verification page until a valid mobile number has been entered.</li>
     </ul>
 
@@ -77,7 +78,7 @@
       <li>Interface translation uses Apple Translation on-device. That API does not expose a separate system-prompt field, so P40 uses short, explicit and context-rich source text to improve translation quality.</li>
       <li>An older error is labelled historical/resolved when a later authenticated SmartPark check succeeds.</li>
       <li>Session diagnostics may locally store counters/timestamps, a coarse endpoint label, HTTP status and whether an X-Token header was observed or actually rotated. The token value itself is never written to diagnostics and remains Keychain-only.</li>
-      <li>P40 does not add or guess an undocumented SmartPark refresh endpoint.</li>
+      <li>P40 implements the <code>client/reauth</code> flow observed in an independent public reference but does not claim it is an officially supported or stable SmartPark API.</li>
       <li>Live Activity diagnostics may store a local timestamp/result for creation, update or fallback. This introduces no new external data sharing.</li>
     </ul>
 
