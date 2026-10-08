@@ -228,9 +228,13 @@
       </li>
 
       <li>
-        <strong>Teknisk sesjonsinformasjon</strong> – begrenset teknisk
-        informasjon kan lagres midlertidig for å håndtere en pågående eller
-        uavklart parkeringsregistrering.
+        <strong>Teknisk sesjonsinformasjon og uavklart bestilling</strong> –
+        begrenset teknisk informasjon kan lagres lokalt for å håndtere en
+        pågående eller uavklart parkeringsregistrering. En kommende
+        sikkerhetsoppdatering bruker en egen beskyttet Keychain-post for
+        bestillings-ID og usikkerhetsmarkør, også etter utlogging, frem til
+        parkeringsstatus er verifisert. Denne posten inneholder ikke
+        SmartPark-token, SMS-kode eller posisjonsdata.
       </li>
 
       <li>
@@ -567,7 +571,10 @@
     <p>
       Mye av informasjonen P40 behandler finnes bare lokalt på brukerens egen
       enhet og er derfor ikke tilgjengelig for utvikleren. Utlogging fjerner
-      SmartPark-sessionen fra Apple Keychain. Kjøretøy og kjøretøybilder kan
+      SmartPark-innloggingsinformasjonen fra Apple Keychain. I den kommende
+      sikkerhetsoppdateringen kan en beskyttet markør for en uavklart bestilling
+      beholdes lokalt til parkeringen er verifisert, for å unngå dobbeltbestilling.
+      Kjøretøy og kjøretøybilder kan
       slettes i appen. Avinstallering fjerner data som ligger i appens lokale
       lagringsområde.
     </p>
