@@ -29,7 +29,8 @@
     <ul>
       <li>SmartPark-session/token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
       <li>Telefonnummer og SMS-kode brukes i innloggingsflyten og inngår ikke i delt diagnostikk.</li>
-      <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging. Midlertidig nettverks-/restore-feil med fortsatt lagret Keychain-session behandles ikke alene som bekreftet utlogging, og et eldre lokalt innloggingsvarsel ryddes når en senere autentisert SmartPark-kontroll lykkes.</li>
+      <li>Fra Build 84 forsøker P40 å fornye et avvist SmartPark-tilgangstoken via den observerte <code>client/reauth</code>-flyten når SmartPark har utstedt et eget fornyingstoken. Fungerer fornyingen, kan innloggingen fortsette uten en ny SMS-kode. Dette er avhengig av SmartPark og er ikke en garanti for varig innlogging.</li>
+      <li>Hvis SmartPark avviser fornyingen, stopper P40 handlingen og krever ny SMS-innlogging. Midlertidige nettverksfeil fører ikke alene til at innloggingen slettes. Et tidligere innloggingsvarsel fjernes etter en ny bekreftet autentisert kontroll.</li>
       <li>Etter ekte utløp åpner varsel-/dialoghandlingen den vanlige innloggingsskjermen med mobilnummerfelt. P40 starter ikke SmartPark-verifiseringssiden før et gyldig mobilnummer er skrevet inn.</li>
     </ul>
 
@@ -44,6 +45,7 @@
     <h2>Bestilling og avslutning av parkering</h2>
     <ul>
       <li>P40 sjekker eksisterende P40-status før ny bestilling og forsøker ikke blindt på nytt etter et usikkert skriveresultat.</li>
+      <li>En kommende stabiliseringsversjon kan i tillegg bevare markøren for en uavklart parkeringsbestilling i en egen, sikker Keychain-post ved utløpt innlogging eller utlogging. Den sendes ikke til utvikleren og skal ikke slettes før et bekreftet SmartPark-resultat avklarer bestillingen. Denne endringen er ennå ikke distribuert som ferdig versjon.</li>
       <li>Destruktiv avslutning bindes til forventet bil og eksakt aktiv SmartPark-tillatelse.</li>
       <li><strong>P40 avslutter ikke en ubrukt tidsstyrt parkering automatisk.</strong> Etter sikkerhetskontroll kan appen tilby <strong>Behold parkering</strong> eller <strong>Frigi parkering</strong>. DELETE sendes bare etter brukerens uttrykkelige valg og en ny kontroll av aktiv parkering.</li>
       <li>Hvis status, innlogging, nettverk, GPS eller tillatelses-ID er usikker, beholdes parkeringen.</li>
@@ -78,7 +80,7 @@
       <li>Grensesnittoversettelser bruker Apple Translation lokalt. Dette grensesnittet har ikke et eget systemprompt-felt, så P40 bruker korte, tydelige og kontekstrike kildetekster for å øke oversettelseskvaliteten.</li>
       <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
       <li>Sesjonsdiagnostikk kan lokalt lagre tellere/tidspunkt, grov endepunktetikett, HTTP-status og om en X-Token-header ble observert eller faktisk rotert. Selve tokenverdien logges aldri i diagnostikken og forblir i Keychain.</li>
-      <li>P40 legger ikke til eller gjetter et udokumentert SmartPark refresh-endepunkt.</li>
+      <li>P40 bruker den konkrete <code>client/reauth</code>-flyten som er observert i offentlig tilgjengelig referansekode. Dette er ikke et offentlig dokumentert eller garantert støttet SmartPark-API. Andre fornyingsendepunkter blir ikke gjettet.</li>
       <li>Live Activity-diagnostikk kan lagre lokal tidspunkt/resultatstatus for opprettelse, oppdatering eller fallback. Den introduserer ingen ny ekstern datadeling.</li>
     </ul>
 
