@@ -29,7 +29,8 @@
     <ul>
       <li>SmartPark-session/token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
       <li>Telefonnummer og SMS-kode brukes i innloggingsflyten og inngår ikke i delt diagnostikk.</li>
-      <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging. Midlertidig nettverks-/restore-feil med fortsatt lagret Keychain-session behandles ikke alene som bekreftet utlogging, og et eldre lokalt innloggingsvarsel ryddes når en senere autentisert SmartPark-kontroll lykkes.</li>
+      <li>I Build 84 forsøker P40 å fornye et avvist SmartPark-tilgangstoken gjennom en observert <code>client/reauth</code>-flyt når et tilhørende refresh-token finnes. Fungerer ikke fornyingen, stopper P40 handlingen og krever ny SMS-innlogging. Flyten er basert på en uoffisiell referanseimplementasjon, og praktisk fornyelse ved naturlig utløp må fortsatt verifiseres før stabil utgivelse. En midlertidig nettverksfeil er ikke i seg selv bevis på utlogging.</li>
+      <li>I en senere sikkerhetsoppdatering bevares uavklarte parkeringsbestillinger separat i Apple Keychain selv om innloggingsinformasjonen slettes. Dette hindrer at et nytt påloggingsforsøk automatisk åpner for en mulig dobbeltbestilling. Tilstanden ryddes etter verifisert parkeringsstatus.</li>
       <li>Etter ekte utløp åpner varsel-/dialoghandlingen den vanlige innloggingsskjermen med mobilnummerfelt. P40 starter ikke SmartPark-verifiseringssiden før et gyldig mobilnummer er skrevet inn.</li>
     </ul>
 
@@ -78,7 +79,7 @@
       <li>Grensesnittoversettelser bruker Apple Translation lokalt. Dette grensesnittet har ikke et eget systemprompt-felt, så P40 bruker korte, tydelige og kontekstrike kildetekster for å øke oversettelseskvaliteten.</li>
       <li>En eldre feil merkes som historisk/løst når en senere autentisert SmartPark-kontroll lykkes.</li>
       <li>Sesjonsdiagnostikk kan lokalt lagre tellere/tidspunkt, grov endepunktetikett, HTTP-status og om en X-Token-header ble observert eller faktisk rotert. Selve tokenverdien logges aldri i diagnostikken og forblir i Keychain.</li>
-      <li>P40 legger ikke til eller gjetter et udokumentert SmartPark refresh-endepunkt.</li>
+      <li>P40 bruker den observerte <code>client/reauth</code>-flyten fra en uavhengig offentlig referanse, men har ingen garanti for et offisielt støttet eller stabilt SmartPark-API.</li>
       <li>Live Activity-diagnostikk kan lagre lokal tidspunkt/resultatstatus for opprettelse, oppdatering eller fallback. Den introduserer ingen ny ekstern datadeling.</li>
     </ul>
 
