@@ -27,7 +27,7 @@
 
     <h2>Innlogging og legitimasjon</h2>
     <ul>
-      <li>SmartPark-session/token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
+      <li>SmartPark access-token og refresh-token lagres i Apple Keychain og ikke i vanlig UserDefaults, widgetstatus, diagnostikk eller Apple Watch.</li>
       <li>Telefonnummer og SMS-kode brukes i innloggingsflyten og inngår ikke i delt diagnostikk.</li>
       <li>Ved bekreftet utløpt innlogging stopper P40 handlingen og krever ny innlogging. Midlertidig nettverks-/restore-feil med fortsatt lagret Keychain-session behandles ikke alene som bekreftet utlogging, og et eldre lokalt innloggingsvarsel ryddes når en senere autentisert SmartPark-kontroll lykkes.</li>
       <li>Etter ekte utløp åpner varsel-/dialoghandlingen den vanlige innloggingsskjermen med mobilnummerfelt. P40 starter ikke SmartPark-verifiseringssiden før et gyldig mobilnummer er skrevet inn.</li>
@@ -44,6 +44,7 @@
     <h2>Bestilling og avslutning av parkering</h2>
     <ul>
       <li>P40 sjekker eksisterende P40-status før ny bestilling og forsøker ikke blindt på nytt etter et usikkert skriveresultat.</li>
+      <li>Ved en uavklart booking lagres en separat lokal Keychain-sikkerhetsmarkør før ny permit-acquire kan tillates. Markøren overlever ved behov utløpt/avsluttet innlogging for å hindre dobbelbestilling og inneholder ikke SmartPark access-token, refresh-token, telefonnummer eller GPS-koordinater. Manuell opprydding krever brukerbekreftelse og to ferske lesekontroller mot SmartPark.</li>
       <li>Destruktiv avslutning bindes til forventet bil og eksakt aktiv SmartPark-tillatelse.</li>
       <li><strong>P40 avslutter ikke en ubrukt tidsstyrt parkering automatisk.</strong> Etter sikkerhetskontroll kan appen tilby <strong>Behold parkering</strong> eller <strong>Frigi parkering</strong>. DELETE sendes bare etter brukerens uttrykkelige valg og en ny kontroll av aktiv parkering.</li>
       <li>Hvis status, innlogging, nettverk, GPS eller tillatelses-ID er usikker, beholdes parkeringen.</li>
