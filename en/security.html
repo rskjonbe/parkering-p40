@@ -26,7 +26,7 @@
 
     <h2>Sign-in and credentials</h2>
     <ul>
-      <li>The SmartPark session/token is stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
+      <li>The SmartPark access token and refresh token are stored in Apple Keychain, not ordinary UserDefaults, widget state, diagnostics or Apple Watch.</li>
       <li>Phone number and SMS code are used in the sign-in flow and are not included in shared diagnostics.</li>
       <li>When authentication is confirmed expired, P40 fails closed and requires sign-in again. A temporary network/restore failure while a Keychain session is still stored is not by itself treated as confirmed sign-out, and an older local sign-in warning is cleared after a later authenticated SmartPark verification succeeds.</li>
       <li>After real expiry, the notification/dialog action reveals the normal phone-number sign-in form. P40 does not start the SmartPark verification page until a valid mobile number has been entered.</li>
@@ -43,6 +43,7 @@
     <h2>Parking booking and stopping</h2>
     <ul>
       <li>P40 checks existing P40 status before a new booking and does not blindly retry writes after an uncertain result.</li>
+      <li>When a booking is unresolved, a separate local Keychain safety marker is retained before another permit acquire can be allowed. The marker may survive expired/signed-out authentication to prevent duplicate booking and does not contain the SmartPark access token, refresh token, phone number or GPS coordinates. Manual recovery requires explicit user confirmation and two fresh read-only SmartPark checks.</li>
       <li>A destructive stop is bound to the expected vehicle and exact active SmartPark permit.</li>
       <li><strong>P40 does not automatically stop an unused scheduled parking session.</strong> After safety checks the app may offer <strong>Keep parking</strong> or <strong>Release parking</strong>. DELETE is sent only after the user's explicit choice and a fresh active-parking verification.</li>
       <li>If status, authentication, network, GPS or permit identity is uncertain, the parking session is kept.</li>
