@@ -230,7 +230,13 @@
       <li>
         <strong>Teknisk sesjonsinformasjon</strong> – begrenset teknisk
         informasjon kan lagres midlertidig for å håndtere en pågående eller
-        uavklart parkeringsregistrering.
+        uavklart parkeringsregistrering. For å hindre dobbelbestilling kan P40
+        også beholde en separat, lokal sikkerhetsmarkør i Apple Keychain når en
+        booking er uavklart, selv om SmartPark-innloggingen utløper eller brukeren
+        logger ut. Markøren kan inneholde en teknisk ventende bestillings-ID og
+        usikkerhetsstatus, men <strong>ikke</strong> access-token, refresh-token,
+        telefonnummer eller GPS-koordinater. Den fjernes først når tilstanden er
+        sikkert avklart.
       </li>
 
       <li>
